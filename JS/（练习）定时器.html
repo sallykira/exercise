@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>（练习）定时器</title>
+</head>
+<body>
+<p>获取时间，格式"时：分：秒"，并赋值给attime</p>
+<input type="text" id="clock" size="50" style="background:#000;color:#00ff00;width:55px">
+<script>
+    var attime;
+    function clock(){
+        var time = new Date;
+        attime = time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
+        document.getElementById("clock").value = attime;
+    }
+    setInterval(clock,1000)
+</script>
+</body>
+</html>

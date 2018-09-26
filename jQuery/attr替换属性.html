@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>attr替换属性</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        #a{color: red;background: gray}
+        #b{color: blue}
+    </style>
+</head>
+<body>
+<div id="a">内容</div>
+<button type="button">按钮</button>
+<script>
+    $("button").click(function () {
+        $("div").attr("id",'b')
+    })
+</script>
+</body>
+</html>

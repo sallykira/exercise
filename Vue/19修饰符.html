@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修饰符</title>
+</head>
+<body>
+<div id="demo">
+    <!--无修饰-->
+    <h1>1.无修饰</h1>
+    <input v-model="txt" type="text" placeholder="请输入内容">
+    <span>{{ txt }}</span>
+    <br>
+
+    <!--控制只有在回车的时候才显示内容-->
+    <h1>2.控制只有在回车的时候才显示内容</h1>
+    <input v-model.lazy="content" type="text" placeholder="请输入内容">
+    <span>{{ content }}</span>
+    <br>
+
+    <!--限制只显示数字-->
+    <h1>3.限制只显示数字</h1>
+    <input v-model.number="num" type="number" placeholder="请输入数字">
+    <span>{{ num }}</span>
+    <br>
+
+    <!--删除输入文字前后空格-->
+    <h1>4.删除输入文字前后空格</h1>
+    <input v-model.trim="msg" type="text" placeholder="请输入内容">
+    <span>{{ msg }}</span>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            txt: "",
+            content: "",
+            num: "",
+            msg: ""
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>box-shadow</title>
+    <style>
+        p{margin: 0;margin-top: 50px}
+        /*boxa 普通投影*/
+        .boxa .box-shadow{
+            width: 200px;
+            height: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            display: inline-block;
+        }
+        .boxa .box-shadow.top{
+            box-shadow: 0 -2px 0 red;
+        }
+        .boxa .box-shadow.right{
+            box-shadow: 2px 0 0 green;
+        }
+        .boax .box-shadow.bottom{
+            box-shadow: 0 2px 0 blue;
+        }
+        .boxa .box-shadow.left{
+            box-shadow: -2px 0 0 orange;
+        }
+        /*boxb 模糊投影*/
+        .boxb .box-shadow{
+            width: 200px;
+            height: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            display: inline-block;
+        }
+        .boxb .box-shadow.top{
+            box-shadow: 0 -2px 5px red;
+        }
+        .boxb .box-shadow.right{
+            box-shadow: 2px 0 5px green;
+        }
+        .boxb .box-shadow.bottom{
+            box-shadow: 0 2px 5px blue;
+        }
+        .boxb .box-shadow.left{
+            box-shadow: -2px 0 5px orange;
+        }
+        /*boxc 只有一边的投影*/
+        .boxc .box-shadow{
+            width: 200px;
+            height: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            display: inline-block;
+        }
+        .boxc .box-shadow.top{
+            box-shadow: 0 -4px 5px -3px red;
+        }
+        .boxc .box-shadow.right{
+            box-shadow: 4px 0 5px -3px green;
+        }
+        .boxc .box-shadow.bottom{
+            box-shadow: 0 4px 5px -3px blue;
+        }
+        .boxc .box-shadow.left{
+            box-shadow: -4px 0 5px -3px orange;
+        }
+        /*boxd 四边相同阴影效果*/
+        .boxd .box-shadow{
+            width: 200px;
+            height: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            display: inline-block;
+        }
+        .boxd .box-shadow.top{
+            box-shadow: 0 0 15px  red;
+        }
+        .boxd .box-shadow.right{
+            box-shadow:0 0 15px  green;
+        }
+        .boxd .box-shadow.bottom{
+            box-shadow: 0 0 15px  blue;
+        }
+        .boxd .box-shadow.left{
+            box-shadow: 0 0 15px  orange;
+        }
+        /*boxe 类似边框的四边相同阴影*/
+        .boxe .box-shadow{
+            width: 200px;
+            height: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            display: inline-block;
+        }
+        .boxe .box-shadow.top{
+            box-shadow: 0 0 0 15px  red;
+        }
+        .boxe .box-shadow.right{
+            box-shadow:0 0 0 15px  green;
+        }
+        .boxe .box-shadow.bottom{
+            box-shadow: 0 0 0 15px  blue;
+        }
+        .boxe .box-shadow.left{
+            box-shadow: 0 0 0 15px  orange;
+        }
+        /*boxf 内阴影*/
+        .boxf .box-shadow{
+            width: 200px;
+            height: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            display: inline-block;
+        }
+        .boxf .box-shadow.top{
+            box-shadow:inset 0 0 15px  red;
+        }
+        .boxf .box-shadow.right{
+            box-shadow:inset 0 0 15px  green;
+        }
+        .boxf .box-shadow.bottom{
+            box-shadow: inset 0 0 15px  blue;
+        }
+        .boxf .box-shadow.left{
+            box-shadow: inset 0 0 15px  orange;
+        }
+        /*boxg 多层阴影*/
+        .boxg .box-shadow{
+            width: 200px;
+            height: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            display: inline-block;
+        }
+        .boxg .box-shadow.top{
+            box-shadow: 0 0 5px  red,
+                        0 0 15px  orange,
+                        0 0 20px green,
+                        0 0 25px blue,
+        }
+        .boxg .box-shadow.right{
+            box-shadow: 0 0 5px  red,
+            0 0 15px  orange,
+            0 0 20px green,
+            0 0 25px blue,
+        }
+        .boxg .box-shadow.bottom{
+            box-shadow: 0 0 5px  red,
+            0 0 15px  orange,
+            0 0 20px green,
+            0 0 25px blue,
+        }
+        .boxg .box-shadow.left{
+            box-shadow: 0 0 5px  red,
+            0 0 15px  orange,
+            0 0 20px green,
+            0 0 25px blue,
+        }
+        .boxh .box-shadow{
+            width: 200px;
+            height: 100px;
+            border-radius: 5px;
+            box-shadow:0px 0px 0px 3px #bb0a0a,
+            0px 0px 0px 6px #2e56bf,
+            0px 0px 0px 7px #ea982e;
+        }
+
+    </style>
+</head>
+<body>
+<p>1.普通投影</p>
+<div class="boxa">
+    <div class="box-shadow top"></div>
+    <div class="box-shadow right"></div>
+    <div class="box-shadow bottom"></div>
+    <div class="box-shadow left"></div>
+</div>
+<p>2.模糊投影</p>
+<div class="boxb">
+    <div class="box-shadow top"></div>
+    <div class="box-shadow right"></div>
+    <div class="box-shadow bottom"></div>
+    <div class="box-shadow left"></div>
+</div>
+<p>3.只有一边的投影</p>
+<div class="boxc">
+    <div class="box-shadow top"></div>
+    <div class="box-shadow right"></div>
+    <div class="box-shadow bottom"></div>
+    <div class="box-shadow left"></div>
+</div>
+<p>4.四边相同阴影效果</p>
+<div class="boxd">
+    <div class="box-shadow top"></div>
+    <div class="box-shadow right"></div>
+    <div class="box-shadow bottom"></div>
+    <div class="box-shadow left"></div>
+</div>
+<p>5.类似边框的四边相同阴影</p>
+<div class="boxe">
+    <div class="box-shadow top"></div>
+    <div class="box-shadow right"></div>
+    <div class="box-shadow bottom"></div>
+    <div class="box-shadow left"></div>
+</div>
+<p>6.多层阴影，用","隔开</p>
+<div class="boxg">
+    <div class="box-shadow top"></div>
+    <div class="box-shadow right"></div>
+    <div class="box-shadow bottom"></div>
+    <div class="box-shadow left"></div>
+</div>
+<p>7.内阴影(内阴影在img元素上无效，需要再加一个div)</p>
+<div class="boxf">
+    <div class="box-shadow top"></div>
+    <div class="box-shadow right"></div>
+    <div class="box-shadow bottom"></div>
+    <div class="box-shadow left"></div>
+</div>
+
+<p>8.多重阴影</p>
+<div class="boxh">
+    <div class="box-shadow"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12(2)绑定class用在组件上</title>
+</head>
+<body>
+<div id="demo">
+    <my-component class="baz boo"></my-component>
+    <my-component v-bind:class="{active: isActive}"></my-component>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    Vue.component('my-component', {
+        template: '<p class="foo bar">Hi</p>'
+    });
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            isActive: true
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深入响应式原理--异步更新队列2</title>
+</head>
+<body>
+<div id="demo">
+    <my-component ></my-component>
+    <button v-on:click="updateMessage">按钮</button>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    Vue.component('my-component',{
+        template: '<span>{{ msg }}</span>',
+        data: function () {
+            return {
+                msg: 'not updated'
+            }
+        },
+        methods: {
+            updateMessage: function(){
+//                this.message = 'update';
+//                console.log(this.$el.message);        //没有更新
+//                this.nextTick(function(){
+//                    console.log(this.$el.message);      //有更新
+//                })
+                alert('hah')
+            }
+        }
+    });
+    var vm = new Vue({
+        el: '#demo'
+    })
+</script>
+</body>
+</html>

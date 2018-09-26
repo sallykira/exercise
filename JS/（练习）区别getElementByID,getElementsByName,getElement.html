@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>（练习）区别getElementByID,getElementsByName,getElement</title>
+</head>
+<body>
+<h1>编程练习</h1>
+<p>1.实现当点击"全选"按钮时，将选中所有的复选项。</p>
+<p>2.实现当点击"全不选"按钮时，将取消所有选中的复选项。</p>
+<p>3.在第40行处补充完整，在文本框中输入输入1-6数值，当点击"确定"按钮时，根据输入的数值，通过id选中相应的复选项。</p>
+<br><br><br>
+<strong>结果：<br></strong>
+
+<!--解答部分-->
+<form>
+    请选择你爱好:<br>
+    <input type="checkbox" name="hobby" id="hobby1">  音乐
+    <input type="checkbox" name="hobby" id="hobby2">  登山
+    <input type="checkbox" name="hobby" id="hobby3">  游泳
+    <input type="checkbox" name="hobby" id="hobby4">  阅读
+    <input type="checkbox" name="hobby" id="hobby5">  打球
+    <input type="checkbox" name="hobby" id="hobby6">  跑步 <br>
+    <input type="button" value = "全选" onclick = "checkall();">
+    <input type="button" value = "全不选" onclick = "clearall();">
+    <p>请输入您要选择爱好的序号， 序号为1-6:</p>
+    <input id="wb" name="wb" type="text" >
+    <input name="ok" type="button" value="确定" onclick = "checkone();">
+</form>
+
+<script>
+    //全选
+    function checkall(){
+        var hobby = document.getElementsByTagName("input");
+        for(var i = 0;i <hobby.length; i++){
+            if(hobby[i].type == "checkbox"){
+                hobby[i].checked = true;
+            }
+        }
+    }
+
+    //全不选
+    function clearall(){
+        var hobby = document.getElementsByName("hobby");
+        for(var i = 0; i < hobby.length; i++){
+            hobby[i].checked = false;
+        }
+    }
+
+    //
+    function checkone(){
+        var hobby = document.getElementsByName("hobby");
+        var j = document.getElementById("wb").value;
+        if( j < 0 || j > 6){
+            alert("请输入1~6之间的数值！")
+        }
+        else{
+            hobby[j-1].checked = true;
+        }
+    }
+</script>
+</body>
+</html>

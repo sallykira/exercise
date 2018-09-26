@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript中this在闭包中的使用2</title>
+</head>
+<body>
+<script>
+    var x = 0;
+    var bar = function(){
+        var n = 999;
+        return function(){      //返回一个匿名函数
+            return n;
+        }
+    };
+    var outer = bar();
+    outer();        //999
+</script>
+</body>
+</html>

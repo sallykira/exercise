@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用Slot分发内容--作用域插槽</title>
+</head>
+<body>
+<div id="demo" class="parent">
+    <child>
+        <template scope="props">    <!--具有特殊属性scope的template元素表示他是作用域插槽的模板-->
+            <span>hello from parent</span>
+            <br>
+            <span>{{ props.text }}</span>
+        </template>
+    </child>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    Vue.component('child',{
+        template: '<div class="child"><slot text="hello from child"></slot></div>'
+    });
+    var vm = new Vue({
+        el: '#demo'
+    });
+</script>
+</body>
+</html>

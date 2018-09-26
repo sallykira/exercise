@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>阻止默认行为：阻止表单提交</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <form action="test.html">
+        <div class="row"><label>用户名：</label><input type="text" id="username"></div>
+        <div class="row"><label>密码：</label><input type="password" id="password"></div>
+        <div class="row"><input type="reset" value="取消"><input type="submit" value="提交" id="sub"></div>
+    </form>
+    <div id="msg"></div>
+<script>
+    $(function(){
+        $("#sub").bind("click",function(){
+            var username = $("#username").val();    //获取元素的值；
+            if(username == ""){
+                $("#msg").html("<p>文本框的值不能为空</p>");     //提示信息；
+//                event.preventDefault(); //阻止默认行为（表单提交）
+                return false;
+            }
+        })
+    })
+</script>
+</body>
+</html>

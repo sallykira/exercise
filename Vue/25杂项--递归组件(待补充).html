@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杂项--递归组件</title>
+</head>
+<body>
+<div id="demo">
+
+</div>
+
+<script src="vue.js"></script>
+<script>
+    //组件在它的模板内可以递归地调用自己，不过，只有当它有 name 选项时才可以
+    Vue.component('unique-name-of-my-component', {  //利用Vue.component全局注册了一个组件, 全局的ID作为组件的 name 选项，被自动设置
+
+        // ...
+    })
+</script>
+</body>
+</html>

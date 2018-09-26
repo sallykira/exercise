@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用cssText设置css属性的！important</title>
+    <style>
+        *{margin: 0;padding: 0}
+        div{width: 400px;height: 500px;background: mediumvioletred}
+    </style>
+</head>
+<body>
+    <div></div>
+    <button>click</button>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script>
+    $("button").click(function () {
+//        $("div").css("background","blue!important");    //直接写!important无效
+        $("div").css("cssText","background:blue!important;height:200px");
+        })
+</script>
+</body>
+</html>

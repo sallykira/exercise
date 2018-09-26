@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表渲染template v-for</title>
+    <style>
+        .divider{color: red}
+        .bought{text-decoration: underline}
+    </style>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li v-for="item in items"  :class='{bought:item.bought}'>{{item.msg}}</li>
+    </ul>
+
+    <template v-for="list in lists">    <!--用带有v-for的template来渲染多个元素块-->
+        <li>{{list.name}}</li>
+        <li class="divider">{{list.age}}</li>
+    </template>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            items: [
+                {msg: "apple",bought:true},
+                {msg: "banana",bought:false},
+                {msg: "orange",bought:true}
+            ],
+            lists:[
+                {name: "sally",age:16},
+                {name: "Rose",age:36},
+                {name: "kira",age:17}
+            ]
+        }
+    });
+</script>
+</body>
+</html>

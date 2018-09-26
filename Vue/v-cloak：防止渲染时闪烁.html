@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-cloak：防止渲染时闪烁</title>
+    <style>
+        [v-cloak]{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+    <!-- v-cloak和css中[v-cloak]{display:none}一起用来防止渲染时闪烁-->
+    <p v-cloak>{{ msg }}</p>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            msg: 'hello'
+        }
+    });
+</script>
+</body>
+</html>

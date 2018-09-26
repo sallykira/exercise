@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jqueryqr.js"></script>
+    <script src="js/qrcode.js"></script>
+</head>
+<body>
+    <div id="container2"><canvas width="300" height="300"></canvas></div>
+    <script>
+        $(document).ready(function () {
+
+
+            //图片logo
+            $('#container2').erweima({
+                mode: 4,
+                mSize:20,
+                image: $("#imgLogo")[0]
+            });
+        });
+    </script>
+</body>
+</html>

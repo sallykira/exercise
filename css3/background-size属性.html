@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>background-size属性</title>
+    <style>
+        div{
+            width: 320px;
+            height: 270px;
+            border: 1px solid red;
+        }
+        .auto{
+            background: url(images/background-clip.jpg) no-repeat;
+            background-size: auto;
+        }
+        .guding{
+            background: url(images/background-clip.jpg) no-repeat;
+            background-size: 280px 200px;
+        }
+        .guding2{
+            background: url(images/background-clip.jpg) no-repeat;
+            background-size: 280px auto;
+        }
+        .percentage{
+            background: url(images/background-clip.jpg) no-repeat;
+            background-size: 100% 100%;
+        }
+        .cover{
+            background: url(images/background-clip.jpg) no-repeat;
+            background-size: cover;
+            background-position: center ;
+        }
+        .contain{
+            background: url(images/background-clip.jpg) no-repeat;
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+<p>1.background-size值为auto</p>
+<div class="auto"></div>
+<br>
+<p>2.background-size值为280px 200px</p>
+<div class="guding"></div>
+<br>
+<p>3.background-size值为280px auto</p>
+<div class="guding2"></div>
+<br>
+<p>4.background-size值为100% 100%</p>
+<div class="percentage"></div>
+<br>
+<p>5.background-size值为cover</p>
+<div class="cover"></div>
+<br>
+<p>6.background-size值为contain</p>
+<div class="contain"></div>
+<br>
+</body>
+</html>

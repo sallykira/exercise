@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>setAttribute改变属性的值</title>
+</head>
+<body>
+    <p>目录</p>
+    <p title="JavaScript权威指南">JavaScript权威指南</p>
+    <p title="CSS权威指南">CSS权威指南</p>
+    <p title="HTML权威指南">HTML权威指南</p>
+<script>
+    var paras = document.getElementsByTagName("p");
+    for(var i = 0; i<paras.length ;i++){
+        var tit = paras[i].getAttribute("title");
+        if(tit){
+            paras[i].setAttribute("title","书本");
+            alert( paras[i].getAttribute("title"))
+        }
+    }
+</script>
+</body>
+</html>

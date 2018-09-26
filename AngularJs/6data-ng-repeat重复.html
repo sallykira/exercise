@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data-ng-repeat重复</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<div data-ng-app="" data-ng-init="names=['sally','kira','rose']">
+    <p data-ng-repeat="x in names">{{x}}</p>
+</div>
+
+<div data-ng-app="" data-ng-init="names=['sally1','kira','rose']">
+    <p data-ng-repeat="x in names">{{x}}</p>
+</div>
+</body>
+</html>

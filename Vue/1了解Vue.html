@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Demo</title>
+</head>
+<body>
+    <div id="demo" >
+        <input type="text" v-model="message">   <!--v-model适用于input，textarea等-->
+        <p>{{message}}</p>
+    </div>
+
+    <script src="vue.js"></script><!--注意：引用Vue.js文件一定要写在下面-->
+    <script>
+        new Vue({
+            el: '#demo',
+            data: {
+                message: 'Hello Vue.js!'
+            }
+        });
+    </script>
+</body>
+</html>

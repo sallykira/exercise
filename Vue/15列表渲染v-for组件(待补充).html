@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表渲染v-for组件(待补充)</title>
+</head>
+<body>
+<div id="demo">
+    <my-component v-for="(item, index) in items" v-bind:item="item" v-bind:index="index"></my-component>
+</div>
+
+<script src="vue.js"></script>
+<script>
+//    Vue.component('my-component',{
+//        template: ''
+//    });
+//    var vm = new Vue({
+//        el: '#demo'
+//    });
+
+Vue.component('todo-item', {
+    template: '\
+    <li>\
+      {{ title }}\
+      <button v-on:click="$emit(\'remove\')">X</button>\
+    </li>\
+  ',
+    props: ['title']
+})
+new Vue({
+    el: '#todo-list-example',
+    data: {
+        newTodoText: '',
+        todos: [
+            'Do the dishes',
+            'Take out the trash',
+            'Mow the lawn'
+        ]
+    },
+    methods: {
+        addNewTodo: function () {
+            this.todos.push(this.newTodoText)
+            this.newTodoText = ''
+        }
+    }
+})
+</script>
+</body>
+</html>

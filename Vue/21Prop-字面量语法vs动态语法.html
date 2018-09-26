@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prop-字面量语法vs动态语法</title>
+</head>
+<body>
+<div id="demo">
+    <my-component my-prop="Hello"></my-component>       <!--字面量语法-->
+    <my-component v-bind:my-prop="otherParent"></my-component>     <!--动态语法，动态数值的时候，前缀加上v-bind-->
+
+    <!--新手误区：-->
+    <my-component some-prop="1"></my-component>     <!--其中"1"以字符串传递下去，而不是实际数字，不能被Javascript表达式计算-->
+    <my-component v-bind:some-prop="1"></my-component>  <!--其中"1"为数字，能被Javascript表达式计算-->
+</div>
+
+<script src="vue.js"></script>
+<script>
+    Vue.component('my-component',{
+        template: '<div></div>'
+    });
+    var vm = new Vue({
+        el: '#demo'
+    });
+</script>
+</body>
+</html>

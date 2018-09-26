@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS应用</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div data-ng-app="myApp" data-ng-controller="myCtrl">
+        <p>姓 : <input type="text" data-ng-model="firstName"></p>
+        <p>名 : <input type="text" data-ng-model="lastName"></p>
+        <p>姓名 : {{firstName + " " + lastName}}</p>
+    </div>
+<script>
+    var app = angular.module("myApp", []);  //AnjularJS模块定义应用
+    app.controller('myCtrl',function ($scope) { //AngularJS控制器控制应用
+        $scope.firstName = 'Cao';
+        $scope.lastName = 'jialei';
+    })
+</script>
+</body>
+</html>

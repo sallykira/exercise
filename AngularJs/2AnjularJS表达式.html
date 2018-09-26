@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AnjularJS表达式</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<!--AnjularJS表达式不支持条件判断，循环和异常-->
+<div data-ng-app="" data-ng-init="firstname='Cao'; lastname='jialei'">
+    <p>我的第一个表达式 : {{firstname + " " + lastname}}</p>
+    <p>我的第一个表达式 : <span data-ng-bind="firstname + ' ' + lastname"></span></p> <!--同上-->
+</div>
+</body>
+</html>

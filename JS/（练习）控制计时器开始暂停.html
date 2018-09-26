@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>（练习）控制计时器暂停开始</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="count">
+        <input type="button" value="start" onclick="startCount()">
+        <input type="button" value="stop" onclick="stopCount()">
+    </form>
+<script>
+    var num = 0;
+    var i;
+    function startCount(){
+        document.getElementById("count").value = num;
+        num++;
+        i = setTimeout(startCount,1000);
+    }
+    function stopCount(){
+        clearTimeout(i)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>监听事件</title>
+</head>
+<body>
+<div id="demo">
+    <button v-on:click="count += 1" type="button">增加一次</button>
+    <p>这个按钮被点了{{ count }}次</p>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            count: 0
+        }
+    });
+</script>
+</body>
+</html>

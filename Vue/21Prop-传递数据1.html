@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prop-传递数据</title>
+</head>
+<body>
+<div id="demo">
+    <!--疑惑：为什么不是v-bind:message，与传递数据列表写法不一致-->
+    <!--解答：该处传递数据为字面量语法，故不需要加上前缀v-bind-->
+    <child message="hello"></child>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    Vue.component("child",{
+        //声明props,其中props是父组件用来传递数据的一个自定义属性，子组件需要显式地用props选项声明"prop"
+        props: ['message'],
+        //就像data一样，prop可以用在模板内
+        //可以在vm实例中像"this.message"使用（疑惑）
+        template: '<div>{{ message }}</div>'
+    });
+    var vm = new Vue({
+        el: '#demo'
+    });
+</script>
+</body>
+</html>

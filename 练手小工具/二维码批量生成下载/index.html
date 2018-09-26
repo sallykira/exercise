@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>生成二维码</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/qrcode.js"></script>
+    <style>
+        input,textarea,label{display: inline-block;}
+        #argSource{width: 200px;height: 200px}
+        label{width: 100px;vertical-align: top}
+        input,textarea{width: 400px;}
+        input{height: 30px}
+        textarea{height: 100px}
+        .row{margin: 10px}
+        .qrcode-item{float: left;overflow: hidden;margin: 25px 10px 10px 10px}
+    </style>
+</head>
+<body>
+<!--二维码设置-->
+<div class="row"><label>url</label><input id="qrcodeUrl" type="text"></div>
+<div class="row"><label>参数名</label><input id="qrcodeArgKey" type="text"></div>
+<div class="row"><label>参数值</label><textarea id="qrcodeArgVal"></textarea></div>
+<div class="row"><label>二维码大小</label><input id="qrcodeWidth" type="text" value="200"></div>
+<button id="create">生成</button>
+
+<!--生成二维码-->
+<button id="download-all">全部下载</button>
+<a id="qrcode-box"></a>
+<div id="qrcode-items"></div>
+
+<script type="text/javascript">
+    //init
+    var argOriginal,arg,qrcodeWidth;
+
+    //数组去重
+    function unique(arg) {
+        var res = [];
+        var json = {};
+        for(var i = 0; i < arg.length; i++){
+            if(!json[arg[i]]){
+                res.push(arg[i]);
+                json[arg[i]] = 1;
+            }
+        }
+        return res;
+    }
+
+    //数组去除空值
+    function clearEmptyItem(arg) {
+        for(var i = 0;i < arg.length; i++){
+            if(arg[i] == ''){
+                arg.splice(i,1);
+                i= i-1;
+            }
+        }
+        return arg;
+    }
+
+    //参数数组校验
+    function _check_Array(argOriginal){
+        arg = argOriginal.replace(/\ +/g,"\n").split("\n");
+//        arg = unique(arg);
+//        clearEmptyItem(arg);
+        arg = arg.filter(function(arg){return arg != ''});
+    }
+    //清除
+    function _clearQrcode() {
+        $(".qrcode-item").remove();
+    }
+
+    //生成二维码
+    $("#create").click(function () {
+        var urlPrefix;
+        //清除
+        _clearQrcode();
+        //二维码配置
+        qrcodeUrl = $("#qrcodeUrl").val();
+        qrcodeWidth = $("#qrcodeWidth").val();
+        qrcodeArgKey =  $("#qrcodeArgKey").val();
+        argOriginal =  $("#qrcodeArgVal").val();
+
+        //数组校验
+        _check_Array(argOriginal);
+        urlPrefix = qrcodeUrl + "?"  +qrcodeArgKey + "=";
+        console.log(arg);
+
+        //生成二维码
+        for(var i = 0;i < arg.length; i++){
+            var html = "<div class='qrcode-item'><div class='qrcode' id='qrcode" + arg[i] + "'></div><span>" + arg[i] + "</span><a class='download' href='' download='" + arg[i] + "'>下载</a></div>";
+            $('#qrcode-items').append(html);
+            var qrcode = new QRCode(document.getElementById("qrcode" + arg[i]), {
+                text: urlPrefix + arg[i],
+                width : qrcodeWidth,
+                height : qrcodeWidth,
+                name : arg[i],
+                correctLevel: QRCode.CorrectLevel.L
+            })
+        }
+    });
+
+    //下载全部二维码
+    $("#download-all").click(function () {
+        $(".download").each(function () {
+            var url = $(this).attr("href");
+            var fileName = $(this).attr("download");
+            $("#qrcode-box").attr("href",url).attr("download",fileName);
+            $("#qrcode-box")[0].click()
+        })
+    })
+</script>
+</body>

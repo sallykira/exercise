@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>根据值选择样式</title>
+    <style>
+        *{margin:0;padding: 0}
+        a{display: block;text-decoration: none;width: 70%;line-height: 30px;color: #fff;margin: 3% auto;text-align: center}
+        a.able{background: orange}
+        a.disable{background: grey}
+    </style>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <a href="javascript:void(0)" class="btn able">还剩下<span>0</span></a>
+    <a href="javascript:void(0)" class="btn able">还剩下<span>4</span></a>
+    <a href="javascript:void(0)" class="btn able">还剩下<span>0</span></a>
+    <script>
+//        $(function() {
+//            $("a").each(function(){
+//                console.log($(this).find("span").text() == 0)
+//                var num = $(this).find("span").text();
+//                if ( num == 0) {
+//                    $(this).removeClass("able").addClass("disable");
+//                }
+//            })
+//        })
+        $(function(){
+            $("a.btn").each(function(){
+                var num = $(this).find("span").html();
+                if( num == 0)
+                {
+                    $(this).removeClass("able").addClass("disable");
+                }
+                else{
+                    $(this).removeClass("disable").addClass("able");
+                }
+            })
+        })
+    </script>
+</body>
+</html>

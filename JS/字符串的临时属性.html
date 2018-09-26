@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>字符串的临时属性</title>
+</head>
+<body>
+<script>
+    var s = "test";   //创建一个字符串
+    s.len = 4;  //设置一个属性
+    var t = s.len;  //查询这个属性
+    document.write(t);   //临时属性创建后随即被销毁，
+</script>
+</body>
+</html>

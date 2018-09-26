@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>querySelector的使用</title>
+</head>
+<body>
+<img name="a" src="images/eg_bulboff.gif">
+<img id="as" name="b" src="images/night.jpg">
+<button>换一换</button>
+
+<script>
+    document.querySelector("button").onclick = function(){
+//        console.log(document.querySelector("#as"))
+        document.querySelectorAll("img[name]").setAttribute("src","images/girl.jpg")
+    }
+
+</script>
+</body>
+</html>

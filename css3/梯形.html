@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+    <title>梯形</title>
+    <style>
+        .box{margin: 10px;}
+        .pin{
+            width: 64px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #FEEA00;
+            position: relative;
+            margin-left: 15px;
+            text-align: center;
+        }
+        .pin:before{
+            content: "";
+            width: 0;
+            height: 0;
+            border-width: 30px 15px 0 0;
+            border-style: solid;
+            border-color: transparent red transparent transparent;
+            display: block;
+            position: absolute;
+            left: -15px;
+        }
+        .pin:before:active{
+            border-color: transparent green transparent transparent;
+        }
+        .zheng{
+            width: 65px;
+            border-left: 15px solid transparent;
+            border-bottom: 30px solid red;
+            text-align: center;
+            position: relative;
+        }
+        .zheng:active{
+            border-left: 15px solid transparent;
+            border-bottom: 30px solid yellow;
+        }
+        .zheng>span{position: absolute;top: 0}
+    </style>
+</head>
+<body>
+<div class="box"><div class="pin">发表</div></div>
+<div class="box"><div class="zheng"><span>发表</span></div></div>
+</body>
+</html>

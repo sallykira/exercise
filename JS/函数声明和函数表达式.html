@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数声明和函数和表达式</title>
+</head>
+<body>
+<script>
+    //1.函数声明
+    console.log(Sum(100));  //解析器通过函数提升，可以让方法调用写在函数声明前
+    function Sum(num){
+        return num + 100;
+    }
+
+    //2.函数表达式
+    console.log(add(100));  // 在执行到函数前，add中不会保存有对函数的引用
+    var add = function(num){
+        return num + 100;
+    };
+
+    //匿名函数（属于函数表达式）
+    function(){}
+
+</script>
+</body>
+</html>

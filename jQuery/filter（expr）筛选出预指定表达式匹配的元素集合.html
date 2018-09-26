@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>filter（expr）筛选出预指定表达式匹配的元素集合</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <ul class="ul1">
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+        <li>list item 6</li>
+    </ul>
+    <ul class="ul2">
+        <li>香蕉</li>
+        <li>苹果</li>
+        <li>西瓜</li>
+        <li>草莓</li>
+        <li>哈密瓜</li>
+        <li>葡萄</li>
+    </ul>
+    <script>
+        $(".ul1 li").filter(":even").css("background","red");
+        $(".ul2 li").filter(":contains(苹果),:contains(葡萄)").css("background","pink")
+    </script>
+</body>
+</html>

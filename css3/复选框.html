@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>复选框</title>
+    <style>
+        label{
+            display: block;
+            width: 11px;
+            height: 11px;;
+            border: 1px solid orange;
+            position: relative;
+        }
+        label:before{
+            content: " ";
+            width: 8px;
+            height: 4px;
+            border: 3px solid #808080;
+            border-top: none;
+            border-right: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+        input.checkbox{opacity: 0}
+        input.checkbox[type="checkbox"]:checked+label:before{opacity: 1}
+    </style>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <input class="checkbox" id="input1" type="checkbox">
+    <label for="input1"></label>
+    <p class="input_status"></p>
+    <script>
+        $("label").on("click",function(){
+            var status = $(".checkbox").attr("checked");
+            if (!status) {
+                //选中
+                $(this).attr("checked", "checked");
+                $(".input_status").html("选中");
+            } else {
+                //取消
+                $(this).attr("checked", false);
+                $(".input_status").html("未选中");
+            }
+        })
+    </script>
+</body>
+</html>

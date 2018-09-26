@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<script src="js/jquery-2.1.4.min.js"></script>-->
+</head>
+<body>
+<script>
+    var intf_url="http://caibaojian.com/intf";
+    var pathUrl = "http://caibaojian.com/";
+    var page=1;
+    var isLoadRB=false;
+    var ul_select=$("#fansList");
+    var btn_more=$("#loading");
+    if(ul_select.length <1) return ;
+    var is_more =true;
+    //跨域请求接口
+    function loadjs(src,callback){
+        var js= document.createElement('script');
+        js.src = src;
+        js.onreadystatechange = js.onload =function(){
+            if(!js.readyState || js.readyState=='loaded'
+                    || js.readyState=='complete'){
+                if(callback){callback()||callback};
+            }
+        };
+        js.charset="utf-8";
+        document.getElementsByTagName('head')[0].appendChild(js);
+    }
+    //回调函数
+    function fill(data){
+        if(data.pageCount==data.pageNo){
+            is_more=false;//如果数据全部加载完毕，取消加载
+            $("#loading").html("加载完毕");
+        }
+    }
+    //解析接口
+    function queryIntf(){
+        var url=page==1?intf_url+".json":intf_url+"_page"+page+".json";
+        loadJs(url,callback);
+    }
+    function callback(){
+        page++;
+    }
+    /*判断是否要加载接口*/
+    function needtoloadRB(){
+        var btn_top=btn_more.offset().top;
+        var window_height=$(window).height();
+        var scroll_Top=$(window).scrollTop();
+        return btn_top<scroll_Top+window_height?true:false;
+    }
+    $(window).scroll(function(){
+        var _needload=needtoloadRB();
+        if(_needload && isLoadRB==false &&is_more){isLoadRB=true;queryintf();}
+    })
+    window.onload = function(){
+        queryintf();
+    }
+</script>
+</body>
+</html>

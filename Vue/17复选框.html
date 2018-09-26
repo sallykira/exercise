@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框</title>
+</head>
+<body>
+<div id="demo">
+    <!--1.单个勾选框,逻辑值-->
+    <input type="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">{{ checked }}</label>
+    <br>
+    <!--2.多个勾选框，绑定到同一数组-->
+    <input type="checkbox" id="jack" value="jack" v-model="checkedNames">
+    <label for="jack">jack</label>
+    <input type="checkbox" id="sally" value="sally" v-model="checkedNames">
+    <label for="sally">jack</label>
+    <input type="checkbox" id="kira" value="kira" v-model="checkedNames">
+    <label for="kira">jack</label>
+    <br>
+    <span>入选的人有：{{ checkedNames }}</span>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        data:{
+            checked: false,
+            checkedNames: []
+        }
+    });
+</script>
+</body>
+</html>

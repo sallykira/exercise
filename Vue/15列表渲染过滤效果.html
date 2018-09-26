@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表渲染过滤效果</title>
+</head>
+<body>
+<!--1.用computed方法-->
+<ul id="demo">
+    <li v-for="n in evenNumbers">{{ n }}</li>
+</ul>
+
+<!--2.用methods方法-->
+<ul id="demo2">
+    <li v-for="n in even()">{{ n }}</li>
+</ul>
+<script src="vue.js"></script>
+<script>
+    /*1.用computed方法*/
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            numbers: [1,2,3,4,5,6,7,8,9]
+        },
+        computed: {
+            evenNumbers: function(){
+                return this.numbers.filter(function(number){
+                    return number%2 === 0;
+                })
+            }
+        }
+    });
+
+    /*2.用methods方法*/
+    var vm2 = new Vue({
+        el: '#demo2',
+        data: {
+            numbers: [1,2,3,4,5,6,7,8,9]
+        },
+        methods: {
+            even: function(){
+                return this.numbers.filter(function (number) {
+                    return number%2 === 0
+                })
+            }
+        }
+    });
+</script>
+</body>
+</html>

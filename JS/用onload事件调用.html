@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用onload事件调用</title>
+    <script>
+        function message()
+        {
+            alert("该提示是通过onload事件调用的")
+        }
+    </script>
+</head>
+<body onload="message()">
+onload 属性在对象已加载时触发。
+onload 常用在 〈body〉中，一旦完全加载所有内容（包括图像、脚本文件、CSS 文件等），就执行一段脚本。
+</body>
+</html>

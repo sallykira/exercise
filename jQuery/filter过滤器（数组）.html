@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组filter过滤器</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(function(){
+        var arr = [0,1,2,3,4,5,6,8,8];
+        var newArr = arr.filter(function (item) {
+            return item%2 === 0
+        });
+        console.log('newArr是：' + newArr)
+    })
+</script>
+</body>
+</html>

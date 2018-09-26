@@ -1,0 +1,54 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        .hide{display:none;}
+        .fuceng{width: 290px;height: 290px;position: absolute;top: 50%;left: 50%;margin-left: -145px;margin-top: -145px;background: rgba(0,0,0,0.8)}
+        .fuceng ul{display: table-cell;vertical-align: middle}
+        .fuceng ul li{width: 250px;margin: 0 auto;color: #fff;text-align: center;}
+        .fuceng ul li img{width: 90px;height: 90px;margin: 0 auto;}
+        .fuceng ul li.zmt_name{margin-top:12px;font-size: 15px;}
+        .fuceng ul li.zmt_intro{margin-top:20px;margin-bottom:25px;font-size: 13px;}
+    </style>
+    <title>点击弹出层 ，点击弹出层外区域关闭弹出层jquery特效</title>
+    <script type="text/javascript" src="http://jt.875.cn/js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("div.down").click(function(e) {
+                e.stopPropagation();
+                $("div.fuceng").removeClass("hide");
+            });
+            /*$("div.con a").click(function() {
+                $("div.con").addClass("hide");
+            });*/
+
+            $(document).click(function() {
+                if (!$("div.fuceng").hasClass("hide")) {
+                    $("div.fuceng").addClass("hide");
+                }
+            });
+
+            $("div.fuceng").click(function (e) {
+                e.stopPropagation();//阻止事件向上冒泡
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+<div class="down">click</div>
+<div class="fuceng radius_26 hide">
+    <!--<a style="color:#fff;">关闭</a>
+    <p style="color:#fff;">guanchu</p>-->
+    <ul>
+        <li><img class="radius_50b" src="images/zmt_pic.jpg" alt=""></li>
+        <li class="zmt_name">权威科技</li>
+        <li class="zmt_intro">科技道路上的引领者</li>
+        <li><span class="subscribe index"><i>+</i>关注</span></li>
+    </ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>将页面保存为图片</title>
+</head>
+<body>
+    <div class="box" id="id1">这里是内容</div>
+    <div id="id2"></div>
+    <canvas id="canvas"></canvas>
+<script>
+    html2canvas(document.getElementById("id1"), {
+        onrendered: function(canvas) {
+            document.getElementById("id2").appendChild(canvas);//生成画布后如何处理，当然可以在新标签打开，在浮层展示等等
+        },
+        canvas_id: 'canvas'//通过修改html2canvas源码添加canvas的id
+    });
+    var canvas = document.getElementById("canvas"),
+            url = canvas.toDataURL();//
+    //以下代码为下载此图片功能
+    var triggerDownload = $("").attr("href", url).attr("download", "img.png").appendTo("body");
+    triggerDownload[0].click();
+    triggerDownload.remove();
+</script>
+</body>
+</html>

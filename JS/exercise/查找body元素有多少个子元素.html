@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>查找body元素有多少个子元素</title>
+</head>
+<body>
+    <p>目录</p>
+    <p title="JavaScript权威指南">JavaScript权威指南</p>
+    <p title="CSS权威指南">CSS权威指南</p>
+    <p title="HTML权威指南">HTML权威指南</p>
+<script>
+    function countBodyChildren(){
+        var body_element = document.body;
+        alert(body_element.childNodes.length);
+        alert(body_element.nodeType);
+    }
+    window.onload = countBodyChildren();
+</script>
+</body>
+</html>

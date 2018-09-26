@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>改变HTML样式</title>
+</head>
+<body>
+<p id="demo">JavaScript 能改变 HTML 元素的样式。</p>
+<button type="button" onclick="changeStyle()">点击这里</button>
+<script>
+    function changeStyle()
+    {
+        x=document.getElementById("demo");  /*找到元素*/
+        x.style.color="orange";  /*改变样式*/
+    }
+</script>
+</body>
+</html>

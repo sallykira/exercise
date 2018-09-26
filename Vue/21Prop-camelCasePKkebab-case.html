@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prop-camelCase vs. kebab-case</title>
+</head>
+<body>
+<div id="demo">
+    <!--HTML特性不区分大小写，当使用非字符串模板时，prop名字形式必须要从camelCase转为kebab-case(短横线隔开)-->
+    <my-component my-msg="hello"></my-component>
+</div>
+
+<script src="vue.js"></script>
+<script>
+Vue.component("my-component",{
+    props: ['myMsg'],       //props不接受短横杠
+   template: '<div>{{ myMsg }}</div>'
+});
+var vm = new Vue({
+   el: '#demo'
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=0"/>-->
+    <!--<title>2014-5-4</title>-->
+    <!--<style>-->
+        <!--* {margin: 0;  padding: 0;}-->
+        <!--#outer{ width:90%; height: 490px; background: #000; margin: auto;  overflow: hidden;}-->
+        <!--#inner{width:80%; height: 85px; background: #e4e4e4; margin: auto; position:relative; top:0;}-->
+        <!--#spText{ height: 40px; width: 100%;border:1px solid red;}-->
+        <!--h2{ width: 100%; text-align: center; }-->
+        <!--h3{ width: 100%; padding-left:60%;}-->
+    <!--</style>-->
+    <!--<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div id="spText"></div>-->
+<!--<div id="spText2"></div>-->
+<!--<div id="outer">-->
+    <!--<div id="inner">-->
+
+    <!--</div>-->
+<!--</div>-->
+
+<!--<script>-->
+    <!--var startX,//触摸时的坐标-->
+            <!--startY,-->
+            <!--x, //滑动的距离-->
+            <!--y,-->
+            <!--aboveY=0; // 设一个全局变量记录上一次内部块滑动的位置-->
+    <!--var documentHeight=$("#inner").height();//内部滑动模块的高度-->
+    <!--var wapperHeight=$("#outer").height(); //外部框架的高度-->
+
+
+    <!--var inner=document.getElementById("inner");-->
+
+    <!--function touchStart(e){//触摸开始-->
+        <!--e.preventDefault();-->
+        <!--var touch=e.touches[0];-->
+        <!--startY = touch.pageY;   //刚触摸时的坐标-->
+    <!--}-->
+
+    <!--function touchMove(e){//滑动-->
+        <!--e.preventDefault();-->
+        <!--var  touch = e.touches[0];-->
+        <!--y = touch.pageY - startY;//滑动的距离-->
+        <!--inner.style.top=aboveY+y+"px";-->
+        <!--document.getElementById("spText").innerHTML=inner.style.top;-->
+
+
+    <!--}-->
+
+    <!--function touchEnd(e){//手指离开屏幕-->
+        <!--aboveY=parseInt(inner.style.top);//touch结束后记录内部滑块滑动的位置 在全局变量中体现 一定要用parseInt()将其转化为整数字;-->
+        <!--if(y>0&&aboveY>0){//当滑动到最顶端时候不能再网上滑动-->
+            <!--//inner.style.top=0;-->
+<!--//            $("#inner").animate({top:0},200);-->
+            <!--$("#inner").animate({top:0},200);-->
+            <!--aboveY=0;-->
+        <!--}-->
+
+<!--//        if(y<0&&(aboveY<(-(documentHeight-wapperHeight)))){//当滑动到最底部时候不能再网下滑动-->
+        <!--if(y<0&&(aboveY<(-(documentHeight-wapperHeight)))){//当滑动到最底部时候不能再网下滑动-->
+            <!--// inner.style.top=-(documentHeight-wapperHeight)+"px";-->
+<!--//            $("#inner").animate({top:-(documentHeight-wapperHeight)},200);-->
+            <!--$("#inner").animate({top:-68 + 'px'},200);-->
+<!--//            aboveY=-(documentHeight-wapperHeight);-->
+            <!--aboveY=-68+'px';-->
+        <!--}-->
+    <!--}//-->
+    <!--document.getElementById("outer").addEventListener('touchstart', touchStart,false);-->
+    <!--document.getElementById("outer").addEventListener('touchmove', touchMove,false);-->
+    <!--document.getElementById("outer").addEventListener('touchend', touchEnd,false);-->
+<!--</script>-->
+<!--</body>-->
+
+<!--</html>-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=0"/>
+    <title>2014-4-29</title>
+    <style>
+    #div{width: 100%;height: 82px;background: orange;top:0;position: relative}
+    </style>
+    <!--<script src='jquery-1.9.1.min.js'></script>-->
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
+</head>
+<body>
+
+<div id="div">fg</div>
+
+
+<script>
+//    window.onload=function(){
+        var mybody = document.getElementById('div');
+        //滑动处理
+        var startX, startY, moveEndX, moveEndY, X, Y;
+        mybody.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            startX = e.touches[0].pageX;
+            startY = e.touches[0].pageY;
+        });
+
+        mybody.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            moveEndX = e.changedTouches[0].pageX;
+            moveEndY = e.changedTouches[0].pageY;
+            X = moveEndX - startX;
+            Y = moveEndY - startY;
+            if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
+                $("#div").animate({top:0},200);
+            }
+
+            else if ( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
+                $("#div").animate({top: -60 + 'px'}, 200);
+            }
+        });
+//    }
+
+</script>
+</body>
+
+</html>

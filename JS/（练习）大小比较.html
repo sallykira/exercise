@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>（练习）大小比较</title>
+</head>
+<body>
+    <strong>编程练习</strong>
+    <p>使用javascript代码写出一个函数：实现传入两个整数后弹出较大的整数。判断9和6，8和15,8和8的大小。</p>
+    <br><br><br><br>
+    <strong>解答：</strong>
+    <script>
+        function compare(a,b){      //定义函数
+            if(a > b){
+                return a;
+            }
+            else if( a==b ){
+                return "一样";
+            }
+            else{
+                return b;               //判断两个数值比较的三种情况
+            }
+        }
+        document.write("9和6相比:"+compare(9,6)+"大<br>");
+        document.write("8和15相比:"+compare(8,15)+"大<br>");
+        document.write("8和8相比:"+compare(8,8)+"大<br>")
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        .box{width: 200px;
+            height:30px;font-size: 0;border: 1px solid grey;overflow: hidden}
+        .box>div{
+            width:20%;
+            height:30px;line-height: 30px;text-align: center;
+            display:inline-block;font-size: 12px;}
+        .content>div{display: none}
+        .box>div.active{color: red}
+        .content>div.on{display: block!important;}
+    </style>
+</head>
+<body>
+<div class="box">
+    <div id="moudle_0">仿</div>
+    <div id="moudle_1">卞</div>
+    <div id="moudle_2">龙</div>
+    <div id="moudle_3">亭</div>
+    <div id="moudle_4">的</div>
+    <div id="moudle_5">和</div>
+    <div id="moudle_6">他</div>
+    <div id="moudle_7">去</div>
+    <div id="moudle_8">盘</div>
+    <div id="moudle_9">看</div>
+    <div id="moudle_10">开</div>
+</div>
+<div class="content">
+    <div>仿</div>
+    <div>卞</div>
+    <div>龙</div>
+    <div>亭</div>
+    <div>的</div>
+    <div>和</div>
+    <div>他</div>
+    <div>去</div>
+    <div>盘</div>
+    <div>看</div>
+    <div>开</div>
+</div>
+<button type="button">换一组</button>
+<script>
+    $(function () {
+        $("button").click(function(){
+            $(".box>div").each(function(){
+                if(parseInt(Math.random()*2)==0){
+                    $(this).prependTo($(this).parent());
+                }
+            })
+        })
+        $(".box>div").click(function () {
+            $(this).siblings(".box>div").removeClass("active").end().addClass("active");
+            var i = $(".active").attr("id");
+//            console.log(i)
+            var index  = i.split("_")[1];
+
+            $(".content>div").hide().removeClass("on").eq(index).addClass("on")
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>公转</title>
+    <style type="text/css">
+        #caseMarron {
+            background:url(images/globe_bg.png) no-repeat center center;
+            height :620px;
+            width :1200px;
+            padding-top : 10px;
+            float : left;
+            position : relative;
+        }
+        /****DEBUT BOULE****/
+        #boule {
+            height :20px;
+            width : 10px;
+            position : absolute;
+            top :310px;
+            left :200px;
+            background:url(images/01.png) no-repeat center center;
+            border-radius : 50%;
+            animation : boule 5s infinite;
+            -webkit-animation : boule 5s infinite;
+        }
+
+        @keyframes boule {
+            0% {left :300px;opacity : 0;top:150px;background-size: 52px 42px;height : 42px; width : 52px;}
+            50% {height : 81px; width : 66px; opacity : 1;background-size: 81px 66px;}
+            100% {left : 900px; opacity : 0; height : 42px; width : 52px;top:400px;background-size:52px 42px; }
+        }
+
+        @-webkit-keyframes boule {
+            0% {left :300px;opacity : 0;top:150px;background-size: 52px 42px;height : 42px; width : 52px;}
+            50% {height : 81px; width : 66px; opacity : 1;background-size: 81px 66px;}
+            100% {left : 900px; opacity : 0; height : 42px; width : 52px;top:400px;background-size:52px 42px;}
+        }
+        /****FIN BOULE****/
+    </style>
+</head>
+
+<body>
+    <div id="caseMarron">
+        <div id="boule"></div>
+        <div id="load">
+        </div>
+    </div>
+</body>
+</html>

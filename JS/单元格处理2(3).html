@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>合并单元格</title>
+    <style>
+        *{margin: 0;padding: 0}
+        table{
+            border-spacing:0;
+            border: 1px solid grey;
+        }
+        tr,td{border: 1px solid grey}
+        td{width: 50px;height: 20px}
+        td.on{background: red}
+        .selected{
+            background:#CCCCCC;
+        }
+    </style>
+</head>
+<body>
+<table id="table" style="z-index: 1000">
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<script>
+
+
+    document.onmousedown = function(ev) {
+        var startX = 0;
+        var startY = 0;
+        var ev = ev || event;
+        var oDiv = document.createElement("div");
+        oDiv.style.left = ev.clientX + "px";
+        oDiv.style.top = ev.clientY + "px";
+        startX = ev.clientX;
+        startY = ev.clientY;
+        oDiv.style.cssText = "position:absolute;border:1px solid #ddd;background:#fff;opacity:0";
+        this.body.appendChild(oDiv);
+
+        this.onmousemove = function(ev) {
+            var ev = ev || event;
+            //当前div 长宽
+            var width = Math.abs(ev.clientX - startX);
+            var height = Math.abs(ev.clientY - startY);
+            oDiv.style.width = width + "px";
+            oDiv.style.height = height + "px";
+            //当前div 左上角位置
+            var currentLeft = Math.min(ev.clientX, startX), currentTop = Math.min(ev.clientY, startY);
+            oDiv.style.top = currentTop + "px";
+            oDiv.style.left = currentLeft + "px";
+            //获取相对于 起点对角线坐标
+            var endTop = ev.clientY ;
+            var endLeft = ev.clientX;
+            //table长宽(坐标)
+            var table = document.getElementById("table");
+            var tableWidth = table.offsetWidth;//522
+            var tableHeight = table.offsetHeight;//22
+            //1.算出起点坐标 所对应的 index1  =  高度*10 + 宽度
+            var beginIndex = parseInt(startY / tableHeight * 10) * 10 + parseInt(startX / tableWidth * 10);
+            //2.算出终点坐标(对角线) 所对应的 index2
+            var endIndex = parseInt(endTop / tableHeight * 10) * 10 + parseInt(endLeft / tableWidth * 10);
+            //3.根据两者的index计算 中间 确保begin在前 end在后
+            if (beginIndex > endIndex) {
+                var temp = endIndex;
+                endIndex = beginIndex;
+                beginIndex = temp;
+            }
+            //4.获取横轴和纵轴的个数
+            var intervalX = Math.abs(endIndex % 10 - beginIndex % 10) + 1;
+            var intervalY = Math.abs(parseInt(endIndex / 10) - parseInt(beginIndex / 10)) + 1;
+            //5.获取所有的td元素
+            var tds = document.getElementsByTagName("td");
+            //6.添加样式
+            for (var col = 0; col < intervalX; col++) {
+                for (var row = 0; row < intervalY; row++) {
+                    var index = beginIndex + 10 * row + col;
+                    tds[index].setAttribute("class","selected") ;
+                    tds[index].setAttribute("index",index);
+                }
+            }
+
+        }
+        this.onmouseup = function() {
+            this.onmousemove = null;
+            this.onmouseup = null;
+            var selectedTds = document.getElementsByClassName("selected");
+            if (selectedTds != null && selectedTds.length >0){
+                var firstIndex = selectedTds[0].getAttribute("index");//取出第一个
+                var lastIndex = selectedTds[selectedTds.length -1].getAttribute("index");//取出最后一个
+                var colspan = lastIndex % 10 - firstIndex %10 + 1;
+                var rowspan = parseInt(lastIndex /10) - parseInt(firstIndex / 10) +1;
+                var length = selectedTds.length;
+                console.log(length);
+                for (var i = 1 ;i < length ; i++){
+                    console.log(selectedTds[i])
+                    var selectedTd = selectedTds[i];
+                    console.log("parentNode:" + selectedTd.parentNode)
+//                    selectedTd.parentNode.removeChild(selectedTd);
+                }
+//                selectedTds[0].setAttribute("rowspan",rowspan);
+//                selectedTds[0].setAttribute("colspan",colspan);
+            }
+        }
+        return false;
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>

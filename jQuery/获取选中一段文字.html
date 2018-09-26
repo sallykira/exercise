@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>获取选中文字内容</title>
+<script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<div class="text">这是一段文字</div>
+
+<button class="btn">按钮</button>
+<script>
+    var userSelection = window.getSelection();
+    if (userSelection.rangeCount > 0 && userSelection.type == 'Range') {
+        var range = userSelection.getRangeAt(0);
+        window.sessionStorage.huabaotxt = userSelection.toString();
+    }
+    $(".btn").click(function () {
+        alert(userSelection.toString())
+    });
+
+</script>
+</body>
+</html>

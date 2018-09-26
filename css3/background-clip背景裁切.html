@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>background-clip背景裁切</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            border: 20px dashed rgba(0,0,0,0.3);
+            background: orange url(images/globe_bg.png) no-repeat left top;
+            padding: 20px;
+        }
+        .border-box{
+            -webkit-background-clip: border-box;
+            -moz-background-clip: border-box;
+            -o-background-clip: border-box;
+            -ms-background-clip: border-box;
+            background-clip: border-box;
+        }
+        .padding-box{
+            -webkit-background-clip: padding-box;
+            -moz-background-clip: padding-box;
+            -o-background-clip: padding-box;
+            -ms-background-clip: padding-box;
+            background-clip: padding-box;
+        }
+        .content-box{
+            -webkit-background-clip: content-box;
+            -moz-background-clip: content-box;
+            -o-background-clip: content-box;
+            -ms-background-clip: content-box;
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+<p>1.border-box裁切</p>
+<div class="border-box"></div>
+<br>
+<p>2.padding-box裁切</p>
+<div class="padding-box"></div>
+<br>
+<p>3.content-box裁切</p>
+<div class="content-box"></div>
+<p>4.变形裁切</p>
+<div class="bianxing">sdahlhgkjdgsdahlhgkjdgsdahlhgkjdgsdahlhgkjdgsdahlhgkjdgsdahlhgkjdg</div>
+</body>
+</html>

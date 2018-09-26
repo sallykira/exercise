@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>文字溢出截断</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<p >谁见到过福建三个大家感觉到客户的开发规划快递费呵呵呵呵呵呵呵呵呵国家队</p>
+<p >谁见到过福建三个大三道沟队</p>
+<p >谁见到过福建三个大家感是大法官的双方各是大法官多分家队</p>
+<p >xiaoleilei_test1</p>
+<script>
+    $("p").each(function(){
+        var limit=4;
+        if($(this).text().length>limit){
+            $(this).text($(this).text().substring(0,limit));
+            $(this).html($(this).html()+'...');
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杂项--编写可复用组件</title>
+</head>
+<body>
+<div id="demo">
+    <!-- Vue 组件的 API 来自三部分 - props, events 和 slots -->
+    <!-- 1.Props 允许外部环境传递数据给组件 -->
+    <!-- 2.Events 允许组件触发外部环境的副作用 -->
+    <!-- 3.Slots 允许外部环境将额外的内容组合在组件中 -->
+    <my-component :foo="baz" :bar="qux" @event-a="doThis" @event-b="doThat">
+        <img slot="icon" src=" ">
+        <p slot="main-text">Hello!</p>
+    </my-component>
+</div>
+
+<script src="vue.js"></script>
+<script>
+
+</script>
+</body>
+</html>

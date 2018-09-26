@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用组件-data必须是函数</title>
+</head>
+<body>
+<div id="demo">
+    <simple-counter></simple-counter>
+    <simple-counter></simple-counter>
+    <simple-counter></simple-counter>
+</div>
+
+<script src="vue.js"></script>
+<script>
+//    var data = {counter: 0};      //错误
+    Vue.component("simple-counter",{
+        template: '<button v-on:click="counter += 1" type="button">{{ counter }}</button>',
+        data: function () {
+//            return data       //错误:三个组件共享一个data，改变了一个，其余的都会改变
+            return {
+                counter: 0      //为每个组件返回一个新的data
+            }
+        }
+    });
+    var vm = new Vue({
+        el: '#demo'
+    });
+</script>
+</body>
+</html>

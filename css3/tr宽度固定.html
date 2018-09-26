@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0}
+        table{border-collapse: collapse;border-spacing: 0;}
+        .box{width: 1000px;margin: 200px auto}
+        .box table{width:100%;border: 1px solid #000}
+        .box table tr td{height: 50px;text-align: center}
+        .box table tr td:nth-child(1){width: 10%}
+        .box table tr td:nth-child(2){width: 10%}
+        .box table tr td:nth-child(3){width: 10%}
+        .box table tr td:nth-child(4){width: 70%}
+        .box table tr td:nth-child(odd){background: grey}
+        .box table tr td p{width: 100%}
+        .ellipsis{overflow:hidden;
+            text-overflow:ellipsis;
+            -o-text-overflow:ellipsis;
+            white-space:nowrap;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <table>
+            <tr>
+                <td><div>1</div></td><td><div>A</div></td><td><div>组长</div></td><td><div>http://www.yizhihudie.com/wesite/default/index/id/12</div></td>
+            </tr>
+            <tr>
+                <td><div>1</div></td><td><div>A</div></td><td><div class="ellipsis"><p class="ellipsis">组长组长组长组长组长组长组长组长组长组长组长组长组长</p></div></td><td><div>http://www.yizhihudie.com/wesite/default/index/id/12</div></td>
+            </tr>
+            <tr>
+                <td><div>1</div></td><td><div>A</div></td><td><div>组长</div></td><td><div>http://www.yizhihudie.com/wesite/default/index/id/12</div></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--<tr>-->
+                <!--<td>2</td><td>a</td><td>组长</td><td>http://www.yizhihudie.com/wesite/default/index/id/12</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>3</td><td>a</td><td>组长</td><td>http://www.yizhihudie.com/wesite/default/index/id/12</td>-->
+            <!--</tr>-->
+        </table>
+    </div>
+</body>
+</html>

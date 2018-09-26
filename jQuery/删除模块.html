@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .demo{
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000000;
+        }
+        .demo:nth-child(even){
+            margin-left: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="demo">1</div>
+<div class="demo">2</div>
+<div class="demo">3</div>
+<div class="demo">4</div>
+<div class="demo">5</div>
+<div class="demo">6</div>
+<div class="demo">7</div>
+<div class="demo">8</div>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script>
+    $(".demo").on("click",function(){
+        $(this).remove();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue组件的重要选项-watch</title>
+</head>
+<body>
+<div id='demo'>
+    <button v-on:click='doSomething()'>增加</button>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el: '#demo',
+        data: {
+            a: 1,
+            b:[]        
+        },
+        methods: {
+            doSomething: function(){
+                this.a ++
+            }
+        },
+        watch: {
+            'a': function(val,oldVal){
+                console.log(val,oldVal)
+            } 
+        }
+    })
+</script>
+</body>
+</html>

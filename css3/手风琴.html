@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>手风琴</title>
+<style type="text/css">
+.accordionMenu{
+    background: #fff;
+    color: #424242;
+    font-family: "微软雅黑";
+    margin: 0 auto;
+    padding: 10px;
+    width: 500px;
+}
+.accordionMenu h2{
+    margin: 5px 0;
+    padding: 0;
+    position: relative;
+}
+.accordionMenu h2:before{
+    border: solid 5px #fff;
+    border-color: #fff transparent transparent;
+    content: "";
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    width: 0;
+}
+.accordionMenu h2 a{
+    background: #F4D0D0;
+    border-radius: 5px;
+    color: #424242;
+    display: block;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+.accordionMenu :target  h2 a,
+.accordionMenu h2 a:focus,
+.accordionMenu h2 a:hover,
+.accordionMenu h2 a:active{
+    background: #F289C1;
+    color: #fff;
+}
+.accordionMenu p{
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+}
+.accordionMenu :target p{
+    height: 100px;
+    overflow: auto;
+    transition: height 0.5s ease-in;
+}
+.accordionMenu :target h2:before{
+    border-color: transparent transparent transparent #fff;
+}
+</style>
+</head>
+
+<body>
+<div class="accordionMenu">
+    <div class="menuSection" id="brand">
+        <h2><a href="#brand">鹏鹏是谁？</a></h2>
+        <p>臭猴子</p>
+    </div>
+    <div class="menuSection" id="promotion">
+        <h2><a href="#promotion">鹏鹏是怎样一只猴子？</a></h2>
+        <p>超级坏，又色</p>
+    </div>
+    <div class="menuSection" id="event">
+        <h2><a href="#event">鹏鹏应该受到怎样的处罚</a></h2>
+        <p>狠狠的打屁股！！</p>
+    </div>
+</div>
+</body>
+</html>

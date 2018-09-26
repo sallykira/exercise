@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>innerHTML会替换原本全部内容</title>
+</head>
+<body>
+<div id="testdiv"><p>This is <em>my</em> content.</p></div>
+<script>
+    window.onload = function(){
+        var testdiv = document.getElementById("testdiv");
+        testdiv.innerHTML = "<p>这里是被替换掉后的话</p>";
+    }
+</script>
+</body>
+</html>

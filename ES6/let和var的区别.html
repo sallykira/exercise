@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let和var的区别</title>
+</head>
+<body>
+<script>
+    //1.
+    var a = [];
+    for (var i = 0; i < 10; i++) {
+        a[i] = function () {
+            console.log("var声明的i值为：" + i);
+        };
+    }
+    a[6](); // 6
+
+    //2.使用let，声明的变量仅在块级作用域内有效，最后输出的是6。
+    var b = [];
+    for (let i = 0; i < 10; i++) {
+        b[i] = function () {
+            console.log("let 声明的i值为：" + i);
+        };
+    }
+    b[6](); // 6
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <title>sticky footer</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box}
+        .popup{position:fixed;top:0;left:0;z-index:999;width: 100%;height: 100%;background: rgba(0,0,0,.7);overflow: scroll}
+        .popup-main{width: 100%;min-height: 100%;padding-bottom: 60px}
+        .popup-main p{line-height: 50px;text-align: center;color:#fff}
+        .popup-footer{position:relative;margin-top:-60px;width: 100%;height: 60px;background: red}
+    </style>
+</head>
+<body>
+<div class="popup">
+    <div class="popup-main">
+        <p>斯柯达粉红色的</p>
+        <p>斯柯达粉红色的</p>
+        <p>斯柯达粉红色的</p>
+    </div>
+    <div class="popup-footer">
+        <div class="popup-footer-ico"></div>
+    </div>
+</div>
+</body>
+</html>

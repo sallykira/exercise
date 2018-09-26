@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="demo">
+    <p>{{ total }}</p>
+    <customer-button v-on:count="countTotal"></customer-button>     <!--监听到count事件被执行后就执行countTotal事件-->
+    <customer-button v-on:count="countTotal"></customer-button>
+    <customer-button v-on:count="countTotal"></customer-button>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    Vue.component('customer-button',{
+        template: '<button v-on:click="count" type="button">{{ counter }}</button>',
+        data: function () {
+            return {
+                counter: 0
+            }
+        },
+        methods: {
+            count: function () {
+                this.counter += 1;
+            }
+        }
+    });
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            total: 0
+        },
+        methods: {
+            countTotal: function () {
+                this.total += 1
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if指令</title>
+</head>
+<body>
+<div id="demo">
+    <p v-if="greeting">Hello!</p>
+</div>
+<script src="vue.js"></script>
+<script>
+    var exampleVM = new Vue({
+        el: '#demo',
+        data: {
+            greeting: true
+        }
+    });
+</script>
+</body>
+</html>

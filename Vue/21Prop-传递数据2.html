@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+</head>
+<body>
+    <ul id="demo">
+        <!--疑惑：为什么要加上v-bind，与传递数据“Hello”写法不一致-->
+        <!--解答：数据为动态数据而不是字面量，顾前缀加上v-bind-->
+        <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+    </ul>
+
+<script src="vue.js"></script>
+<script>
+    Vue.component('todo-item',{ //创建一个叫做todo-item的组件；
+        props:['todo'],     //注意props中不能为短横杠
+        template: '<li>{{ todo.text }}</li>'  //模型
+    });
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            groceryList: [
+                {text: 'apple'},
+                {text: 'orange'},
+                {text: 'mellon'}
+            ]
+        }
+    });
+</script>
+</body>
+</html>

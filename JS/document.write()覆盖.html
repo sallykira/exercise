@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>document.write覆盖</title>
+</head>
+<body>
+<p>警告</p>
+<p>请使用 document.write() 仅仅向文档输出写内容。</p>
+<p>如果在文档已完成加载后执行 document.write，整个 HTML 页面将被覆盖：</p>
+<p>因为鼠标动作是在页面加载完毕后执行的，所以整个页面会被 "糟糕！文档消失了！"所覆盖。</p>
+<p>若直接写document.write("糟糕！文档消失了！")，则不会被覆盖。</p>
+<button type="button" onclick="myFunction()">点击这里</button>
+<script>
+    function myFunction(){
+        document.write("糟糕！文档消失了！")
+    }
+</script>
+</body>
+</html>

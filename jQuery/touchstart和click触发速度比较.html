@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Touchstart和click触发速度比较</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        .color{width: 200px;height: 300px;border: 1px solid gray}
+    </style>
+</head>
+<body>
+<div class="color"></div>
+<script>
+    $(".color").click(function () {
+        $(this).css({"background":"red"})
+    });
+    $(".color").on("touchstart",function (e) {
+        e.preventDefault();                 //preventDefault()阻止事件的默认行为: 阻止click事件
+        $(this).css({"background":"blue"});       //touchstart事件出发速度比click事件快
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>（动态生成）图片库</title>
+    <style>
+        *{margin: 0;padding: 0}
+    </style>
+</head>
+<body>
+    <h1>图片库</h1>
+    <ul id="imagegallery">这里是图片</ul>
+<script>
+    window.onload = function(){
+        var placeholder = document.createElement("img");
+        placeholder.setAttribute("id","placeholder");
+        placeholder.setAttribute("src","../images/placeholder.jpg");
+        placeholder.setAttribute("alt","图片库");
+        var description = document.createElement("p");
+        description.setAttribute("id","description");
+        var desctext = document.createTextNode("选择一张图片");
+        description.appendChild(desctext);
+        document.body.appendChild(placeholder);
+        document.body.appendChild(description);
+
+        var gallery = document.getElementById("imagegallery");
+        gallery.parentNode.insertBefore(description,gallery);   //将description元素插入至gallery元素之前;
+    }
+</script>
+</body>
+</html>

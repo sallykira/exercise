@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>string字符串</title>
+</head>
+<body>
+<script>
+    var s = "hello,world";      //定义一个字符串；
+
+    document.write(s.charAt(0)+"<br>");     //返回第1个字符
+    document.write(s.charAt(s.length-1)+"<br>");     //返回最后一个字符
+    document.write(s.substr(1,3)+"<br>");     //返回第2~4个字符
+    document.write(s.substring(1,4)+"<br>");     //返回第2~4个字符
+    document.write(s.slice(1,4)+"<br>");     //返回第2~4个字符，类似substring效果
+    document.write(s.slice(-3)+"<br>");     //返回最后3个字符
+    document.write(s.indexOf("o")+"<br>");     //返回字符o首次出现的位置
+    document.write(s.lastIndexOf("o")+"<br>");     //返回字符o最后一次出现的位置
+    document.write(s.indexOf("o",5)+"<br>");     //返回字符o在位置4及之后首次出现的位置
+    document.write(s.split(",")+"<br>");     //["hello","world"]分割成字符串
+    document.write(s.replace("h","H")+"<br>");     //把"h"换成"H"
+    document.write(s.toUpperCase()+"<br>");     //全部大写
+
+</script>
+</body>
+</html>

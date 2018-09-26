@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>highcharts-饼图</title>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#container0').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow:false,
+                    borderColor:null,
+                    type:'pie',
+                    backgroundColor: 'rgba(255, 255, 255, 0)',
+                },
+                title: {
+                    text: ''
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        innerSize:'150',
+                        dataLabels: {
+                            enabled: false,
+                        },
+                        borderColor:'none',
+                    }
+
+                },
+                exporting:{
+                    enabled:false
+                },
+                credits: {
+                    enabled: false
+                },
+                colors:[
+                    '#a0d5ff',
+                    '#0160ab',
+                ],
+                series: [{
+                    type: 'pie',
+                    name: 'share',
+                    data: [
+                        [ 30.0],
+                        [ 70]
+                    ]
+                }]
+            });
+        });
+    </script>
+    <style>
+        body{
+            background-color: #808080;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container0"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

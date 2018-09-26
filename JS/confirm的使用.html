@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>confirm的使用</title>
+</head>
+<body>
+    <h2>confirm的使用 </h2>
+    <p>confirm消息对话框通常用于允许客户选择的动作。弹出对话框（包括一个确定按钮和一个取消按钮）</p>
+    <p>语法:confirm(str)</p>
+    <p>str：在消息对话框中显示的文本</p>
+    <p><strong>返回值：</strong>Boolean值</p>
+    <input class="button" type="button" onclick="rec()" value="点击我！">
+<script>
+    function rec(){
+        var mymessage = confirm("你想学习JavaScript吗")
+        if(mymessage == true)  //这里要用"=="
+        {
+            document.write("加油，你一定能学好的！！！")
+        }
+        else
+        {
+            document.write("好可惜哦...")
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>移除样式</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        .bold{font-weight: bold}
+        .font{font-size: 20px;}
+    </style>
+</head>
+<body>
+<p class="bold font">测试</p>
+<button type="button">移除样式</button>
+<script>
+    $("button").click(function(){
+//        $("p").removeClass("bold font");        //移除多个样式可用空格隔开；
+        $("p").removeClass();       //移除所有样式
+    })
+
+</script>
+</body>
+</html>

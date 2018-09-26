@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>js增加一个div</title>
+    <style>
+        div{margin: 5px;}
+        label{width: 40px;display: inline-block;text-align: left}
+        input{display: inline-block;width: 170px;}
+    </style>
+</head>
+<body>
+<form id="form">
+    <div>
+        <label>邮箱</label><input type="text">
+    </div>
+    <div>
+        <label>手机号</label><input type="text">
+    </div>
+    <div>
+        <label>邮箱</label><input type="text">
+    </div>
+</form>
+<button id="adddiv" type="button" onclick="myFunction()">新增</button>
+<script>
+    function myFunction(){
+        var newDiv=document.createElement("div");
+        newDiv.innerHTML="<label>QQ</label><input type='text'>";
+        var form=document.getElementById("form");
+        form.appendChild(newDiv);
+    }
+</script>
+</body>
+</html>

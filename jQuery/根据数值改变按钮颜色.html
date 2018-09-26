@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>根据数值改变按钮颜色</title>
+    <style>
+        *{margin: 0;padding: 0}
+        a{text-decoration: none;padding: 10px 0;margin: 10px;display: block;width: 100px;text-align: center;color: #fff;background: grey}
+        a.hasmore{background: orange}
+        /*a.nomore{background: grey}*/
+    </style>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<div>
+    <a href="#">唇彩礼品还剩<span class="num">200</span>件</a>
+    <a href="#">护肤礼品还剩<span class="num">0</span>件</a>
+    <a href="#">洁面礼品还剩<span class="num">500</span>件</a>
+</div>
+<script>
+    $(".num").each(function(){
+        var txt = $(this).text();
+        if(txt > 0){
+            $(this).parent("a").addClass("hasmore");
+        }
+    })
+</script>
+</body>
+</html>

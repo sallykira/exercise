@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<p>sdkjfas</p>
+<script>
+    $(function () {
+        $.ajax({
+            type:"get",
+            url:"http://www.yizhihudie.com/wesite/wzarticle/getusercommentlist?token=fb863028e68972",
+            xhrFields: {withCredentials: true},
+            dataType:"json",
+            success:function(data){
+                if(data.status == 0){
+                    alert('关注成功！');
+                    $(".wz-note-block").fadeOut(3000);
+                    $('.account_guide').remove();
+                }
+
+            }
+        })
+    })
+</script>
+</body>
+</html>

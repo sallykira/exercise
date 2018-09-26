@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机生成一组图片</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        *{margin: 0;padding: 0}
+        html,body{width: 100%;height: 100%}
+        .box_table{display: table;width: 100%;height: 100%;}
+        .box_table .box{display: table-cell;vertical-align: middle;text-align: center}
+        .box_table .box .tab{display: inline-block}
+        input{position: absolute;top:70%;left: 50%}
+    </style>
+</head>
+<body>
+<div class="box_table">
+    <div class="box">
+        <div class="tab"><img src="images/icon_baby.png"></div>
+        <div class="tab"><img src="images/icon_beauty.png"></div>
+        <div class="tab"><img src="images/icon_car.png"></div>
+        <div class="tab"><img src="images/icon_comic.png"></div>
+        <div class="tab"><img src="images/icon_easylove.png"></div>
+        <div class="tab"><img src="images/icon_edu.png"></div>
+        <div class="tab"><img src="images/icon_emotion.png"></div>
+        <div class="tab"><img src="images/icon_entertainment.png"></div>
+        <div class="tab"><img src="images/icon_finance.png"></div>
+        <div class="tab"><img src="images/icon_food.png"></div>
+        <div class="tab"><img src="images/icon_it.png"></div>
+        <div class="tab"><img src="images/icon_life.png"></div>
+    </div>
+</div>
+<input type="button" value="换一换">
+<script>
+    $(function () {
+        var a = parseInt(0.2);
+        console.log(a);
+    });
+
+    $("input").click(function () {
+        $(".tab").each(function () {
+            if(parseInt(Math.random()*2)==0){
+                $(this).prependTo($(this).parent());
+            }
+        })
+    })
+</script>
+</body>
+</html>

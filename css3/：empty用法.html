@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>：empty用法</title>
+    <style>
+        .box{background:red;width: 100px;height: 50px;}
+        .box.before:before{content: "有内容"}
+        .box:empty{background: yellowgreen;}
+        h1{margin-top: 30px;}
+    </style>
+</head>
+<body>
+    <div>
+        <h1>1.无内容</h1>
+        <div class="box"></div>
+    </div>
+    <div>
+        <h1>2.有内容</h1>
+        <div class="box">有内容</div>
+    </div>
+    <div>
+        <h1>3.:empty不认可空元素（：before；：after）生成的内容</h1>
+        <div class="box before"></div>
+    </div>
+    <div>
+        <h1>4.空格也算内容</h1>
+        <div class="box"> </div>
+    </div>
+</body>
+</html>

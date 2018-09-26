@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>移除事件</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<button id="btn" type="button">点击我</button><button id="delAll">移除全部</button><button id="delSecond">移除第二个</button>
+<p id="test"></p>
+
+<script>
+    $(function(){
+        $("#btn").bind("click",myFun1=function(){       //给btn绑定上三个click事件；
+            $("#test").append("<p>我绑定的函数1</p>");
+        }).bind("click",myFun2=function(){
+            $("#test").append("<p>我绑定的函数2</p>");
+        }).bind("click",myFun3=function(){
+            $("#test").append("<p>我绑定的函数3</p>");
+        });
+
+        $("#delAll").bind("click",function(){
+            $("#btn").unbind();     //移除全部
+        });
+
+        $("#delSecond").click(function(){
+            $("#btn").unbind("click",myFun2);   //删除“绑定函数2 ”
+        })
+    })
+</script>
+</body>
+</html>

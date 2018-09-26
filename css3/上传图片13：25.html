@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>input=file上传按钮</title>
+    <style>
+        .btn{
+            width:40px;
+            height: 17px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #909090;
+            border-radius: 1px;
+            background-color: #e6e6e6;
+            background:-moz-linear-gradient(top, #f6f6f6, #dfdfdf);
+            background:-webkit-linear-gradient(top, #f6f6f6, #dfdfdf);
+            background:-o-linear-gradient(top, #f6f6f6, #dfdfdf);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#dfdfdf');
+            -ms-filter:"progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#f6f6f6, endColorstr=#dfdfdf)";
+        }
+
+        .btn:active{
+            background:-moz-linear-gradient(top, #e2e1df,#f9f9f9);
+            background:-webkit-linear-gradient(top, #e2e1df,#f9f9f9);
+            background:-o-linear-gradient(top, #e2e1df,#f9f9f9);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#f6f6f6');
+            -ms-filter:"progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#dfdfdf, endColorstr=#f6f6f6)";
+            background-color: #32b5e1;
+        }
+        .btn .btn_txt{
+            text-align: center;
+            line-height: 19px;
+            font-size: 13px;
+            cursor: pointer;
+            height: 17px;
+        }
+        .btn .input_transparent{
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            height: 17px;
+        }
+    </style>
+</head>
+<body>
+<div class="btn">
+    <div class="btn_txt" >替换</div>
+    <input type="file" class="input_transparent">
+</div>
+<!--<br>
+<input type="file">-->
+</body>
+</html>

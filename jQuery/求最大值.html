@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>求最大值</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<script>
+    var arr = [
+        {"start_pos":13,"end_pos":54},
+        {"start_pos":34,"end_pos":520},
+        {"start_pos":46,"end_pos":10},
+        {"start_pos":2,"end_pos":220},
+        {"start_pos":1,"end_pos":13},
+        {"start_pos":1,"end_pos":40}
+    ];
+
+    arr.sort(function (a,b) {
+        return a.start_pos - b.start_pos;
+    });
+
+    console.log(arr);
+    var result = [];
+    for(var i = 0; i < arr.length; i++){
+
+    }
+</script>
+</body>
+</html>

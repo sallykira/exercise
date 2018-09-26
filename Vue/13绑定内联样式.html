@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定内联样式</title>
+</head>
+<body>
+<div id="demo">
+    <!--1.对象语法-->
+    <p v-bind:style="{color: activeColor, fontSize:fontSize + 'px'}">展示内容</p>
+    <p v-bind:style="styleObject">展示内容</p>
+    <!--2.数组语法-->
+    <p v-bind:style="[baseStyles,overridingStyles]">展示内容</p>
+</div>
+
+<script src="vue.js"></script>
+<script>
+new Vue({
+    el: '#demo',
+    data: {
+        activeColor: 'red',
+        fontSize: 30,
+        styleObject: {
+            color: 'blue',
+            fontSize: '50px'
+        },
+        baseStyles: {
+            color: 'pink',
+            fontSize: '50px'
+        },
+        overridingStyles: {
+            border: '1px solid pink',
+            background: "rgba(0,0,0,.1)",
+            width: '100px'
+        }
+    }
+});
+</script>
+</body>
+</html>

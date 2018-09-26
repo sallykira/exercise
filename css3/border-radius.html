@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>border-radius</title>
+<style type="text/css">
+.border-radius{
+    width: 250px;
+    height: 100px;
+    border: 10px solid orange;
+    border-radius: 40px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.border-radius.a{
+    border-radius: 20px 40px;
+}
+.border-radius.b{
+    border-radius: 20px 40px 5px;
+}
+.border-radius.c{
+    border-radius: 20px 40px 5px 10px;
+}
+.border-radius.d{
+    border-radius: 20px / 40px;
+}
+.border-radius.e{
+    background: #fff;
+    width: 80px;
+    height: 40px;
+    border: solid orange;
+    border-width: 10px 10px 50px 10px;
+    border-radius: 100%;
+}
+
+</style>
+</head>
+
+<body>
+<div class="border-radius"></div>
+<div class="border-radius a"></div>
+<div class="border-radius b"></div>
+<div class="border-radius c"></div>
+<div class="border-radius d"></div>
+<div class="border-radius e"></div>
+
+
+</body>
+</html>

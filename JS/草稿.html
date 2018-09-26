@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul id="purchases">
+    <li>fdgd</li>
+    <li>fdgd</li>
+    <li>fdgd</li>
+    <li>fdgd</li>
+    <li>fdgd</li>
+</ul>
+
+<script>
+    var shopping = document.getElementById("purchases");
+    var items = shopping.getElementsByTagName("*");
+    for(var i = 0; i<items.length; i++){
+        alert(typeof items[i])
+    }
+</script>
+</body>
+</html>

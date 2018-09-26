@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>图片左右滑动</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <div class="swiper-container">
+        <ul class="swiper-wrapper"></ul>
+    </div>
+
+    <script>
+        $(function(){
+            //图标
+            var tpls = [
+                {"icon":"journey","tpl":"journey","txt":"纸飞机"},
+                {"icon":"timeline","tpl":"timeline","txt":"时间流"},
+                {"icon":"international","tpl":"international","txt":"国际范"},
+                {"icon":"easylove","tpl":"easylove","txt":"简单爱"},
+                {"icon":"comic","tpl":"comic","txt":"漫画风"},
+                {"icon":"sports","tpl":"sports","txt":"体育风"},
+                /*{"icon":"it","tpl":"it","txt":"IT科技","url_hash":""},*/
+                {"icon":"beauty","tpl":"beauty","txt":"美容美体"},
+                {"icon":"car","tpl":"car","txt":"汽车"},
+                {"icon":"baby","tpl":"baby","txt":"母婴"},
+                {"icon":"edu","tpl":"edu","txt":"教育"},
+                {"icon":"emotion","tpl":"emotion","txt":"情感"},
+                {"icon":"entertainment","tpl":"entertainment","txt":"娱乐八卦"},
+                {"icon":"finance","tpl":"finance","txt":"金融"},
+                {"icon":"food","tpl":"food","txt":"美食"},
+                {"icon":"health","tpl":"health","txt":"养生"},
+                {"icon":"homefamily","tpl":"homefamily","txt":"家居"},
+                {"icon":"life","tpl":"life","txt":"生活"},
+                {"icon":"luxury","tpl":"luxury","txt":"奢侈品"},
+                {"icon":"music","tpl":"music","txt":"音乐"},
+                {"icon":"beijing","tpl":"icitybeijing","txt":"北京","bg":0},
+                {"icon":"changzhou","tpl":"icitychangzhou","txt":"常州","bg":0},
+                {"icon":"chengdu","tpl":"icitychengdu","txt":"成都","bg":0},
+                {"icon":"dalian","tpl":"icitydalian","txt":"大连","bg":0},
+                {"icon":"guangzhou","tpl":"icityguangzhou","txt":"广州","bg":0},
+                {"icon":"haerbin","tpl":"icityhaerbin","txt":"哈尔滨","bg":0},
+                {"icon":"hangzhou","tpl":"icityhangzhou","txt":"杭州","bg":0},
+                {"icon":"jiaxing","tpl":"icityjiaxing","txt":"嘉兴","bg":0},
+                {"icon":"nanchang","tpl":"icitynanchang","txt":"南昌","bg":0},
+                {"icon":"nanjing","tpl":"icitynanjing","txt":"南京","bg":0},
+                {"icon":"ningbo","tpl":"icityningbo","txt":"宁波","bg":0},
+                {"icon":"shanghai","tpl":"icityshanghai","txt":"上海","bg":0},
+                {"icon":"shaoxing","tpl":"icityshaoxing","txt":"绍兴","bg":0},
+                {"icon":"shenyang","tpl":"icityshenyang","txt":"沈阳","bg":0},
+                {"icon":"shenzhen","tpl":"icityshenzhen","txt":"深圳","bg":0},
+                {"icon":"suzhou","tpl":"icitysuzhou","txt":"苏州","bg":0},
+                {"icon":"wenzhou","tpl":"icitywenzhou","txt":"温州","bg":0},
+                {"icon":"wuhan","tpl":"icitywuhan","txt":"武汉","bg":0},
+                {"icon":"wuxi","tpl":"icitywuxi","txt":"无锡","bg":0},
+                {"icon":"xiamen","tpl":"icityxiamen","txt":"厦门","bg":0},
+                {"icon":"xian","tpl":"icityxian","txt":"西安","bg":0}
+            ];
+
+            //设置变量
+            var page = Math.ceil(tpls.length / 12);
+            var _swiperConyainer = $('.swiper-container>ul.swiper-wrapper');
+
+            //生成图标
+            for(var i = 0; i < tpls.length; i++){
+                var html = '<li class="icon-tpl "><a><img src=""</a></li>'
+            }
+        })
+    </script>
+</body>
+</html>

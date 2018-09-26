@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>改变HTML图像</title>
+</head>
+<body>
+<img id="myimage" src="images/eg_bulboff.gif" onclick="changeImage()">
+<p>点击灯泡来电量火熄灭这盏灯</p>
+<script>
+    function changeImage()
+    {
+        element=document.getElementById('myimage')
+        if (element.src.match("bulbon"))
+        {
+            element.src="images/eg_bulboff.gif";
+        }
+        else
+        {
+            element.src="images/eg_bulbon.gif";
+        }
+    }
+</script>
+</body>
+</html>

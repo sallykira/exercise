@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>createElement创建元素节点</title>
+</head>
+<body>
+<script>
+    var main = document.body;
+    //创建链接函数
+    function createlink(url,text){
+        var link = document.createElement("a");  //创建a元素节点
+        link.setAttribute("href",url);  //设置link的href属性
+        link.innerHTML = text;
+        return link;
+    }
+
+    //调用链接函数
+    main.appendChild(createlink(("http://www.baidu.com"),"百度"))
+</script>
+</body>
+</html>

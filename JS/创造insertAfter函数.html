@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>创造insertAfter函数</title>
+</head>
+<body>
+<script>
+    function insertAfter(newElement,targetElement){     //将被插入的新元素，目标元素
+        var parent = targetElement.parentNode;      //目标元素的parentNode属性保存在parent中
+        if(parent.lastChild == targetElement){      //检查目标元素是不是最后一个子元素
+            parent.appendChild(newElement);     //如果是：追加
+        }
+                      else{
+            parent.insertBefore(newElement,targetElement.nextSibling);      //如果不是：新元素插入到目标元素和目标元素的下一个兄弟元素之间
+        }
+    }
+</script>
+</body>
+</html>

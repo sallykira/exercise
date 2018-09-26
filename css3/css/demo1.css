@@ -1,0 +1,173 @@
+#banner .bannerad{
+    width: 100%;
+    height: 49px;
+    position: relative;
+}
+
+/*clapperboard*/
+#banner .bannerad .clapperboard{
+    width: 200px;
+    margin: 100px auto 0 auto;
+    position: relative;
+    z-index:2;
+    animation:clapperboard 3s;
+    transform-origin:right center;
+    transform:scale(0.3,0.3) translate(250px,400px);
+
+}
+@keyframes clapperboard{
+    0%{
+        transform-origin:top center;
+        transform:scale(0.1,0.1);
+    }
+    50%{
+        transform-origin:top center;
+        transform:scale(1,1);
+    }
+    60%{
+        transform-origin:center right;
+        transform: scale(1,1) translate(0,0);
+    }
+    100% {
+        transform-origin: center right;
+        transform: scale(0.3,0.3) translate(250px,400px);
+    }
+}
+#banner .bannerad .clapperboard .clapperboard_top{
+    width: 170px;
+    height: auto;
+    margin-left: 30px;
+    animation:clapperboard_top 3s;
+
+}
+@keyframes clapperboard_top{
+    0%{
+        transform-origin:bottom right;
+        transform:rotate(0deg);
+    }
+    50%{
+        transform-origin:bottom right;
+        transform:rotate(0deg);
+    }
+    55%{
+        transform-origin:bottom right;
+        transform:rotate(-20deg);
+    }
+    60%{
+        transform-origin:bottom right;
+        transform:rotate(0deg);
+    }
+    100%{
+        transform-origin:bottom right;
+        transform:rotate(0deg);
+    }
+}
+#banner .bannerad .clapperboard .clapperboard_bottom{
+    display: block;
+    width: 200px;
+    height: auto;
+    margin-top: -50px;
+    position: relative;
+}
+
+/*cover*/
+#banner .bannerad .cover{
+    width: 258px;
+    height: 337px;
+    margin: -320px auto 0 auto;
+    transform:rotate(-5deg);
+}
+/*cover1*/
+#banner .bannerad .cover .cover1{
+    position: absolute;
+    box-shadow: 7px 7px 8px rgba(0,0,0,0.4);
+    animation:cover1 3s;
+    opacity: 1;
+}
+@keyframes cover1{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    60%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*cover2*/
+#banner .bannerad .cover .cover2{
+    position: absolute;
+    animation:cover2 4s;
+}
+@keyframes cover2{
+    0%{
+        opacity: 0;
+    }
+    75%{
+        opacity: 0;
+    }
+    77%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#banner .bannerad .cover .flash{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    animation:flash 4s;
+    opacity: 0;
+}
+@keyframes flash{
+    0%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 0;
+    }
+    73%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

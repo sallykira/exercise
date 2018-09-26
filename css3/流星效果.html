@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>流星效果</title>
+    <style>
+        *{margin: 0;padding: 0}
+        body{background: #011c45}
+        .stars_animation{width: 100%;position: absolute;top: 0;left: 0;}
+        .stars_animation .stars{
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            border-radius: 50%;
+            background: #4aecea;
+            background: -webkit-gradient(linear,left top,right top,color-stop(0%,rgba(31,238,251,1)),color-stop(9%,rgba(31,238,251,.9)),color-stop(92%,rgba(31,238,251,0)));
+            background: -webkit-linear-gradient(left,rgba(31,238,251,1) 0,rgba(31,238,251,.9) 9%,rgba(31,238,251,0) 92%);
+            background: linear-gradient(to right,rgba(31,238,251,1) 0,rgba(31,238,251,.9) 9%,rgba(31,238,251,0) 92%);
+            -webkit-transform: rotate(-55deg);
+            transform: rotate(-55deg);
+            box-shadow: 0 0 1px rgba(102,239,239,.8);
+            opacity: 0;
+        }
+        .stars-animation .stars:nth-child(1){
+            left: 80%;
+            top: 5%;
+            padding-right: 70%;
+            -webkit-animation-delay: 1.8s;
+            animation-delay: 1.8s;
+        }
+    </style>
+</head>
+<body>
+    <span class="stars_animation">
+        <i class="stars"></i>
+        <i class="stars"></i>
+        <i class="stars"></i>
+        <i class="stars"></i>
+    </span>
+</body>
+</html>

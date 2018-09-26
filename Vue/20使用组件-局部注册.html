@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用组件-局部注册</title>
+</head>
+<body>
+<div id="demo">
+    <my-component></my-component>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    //写法一:
+    var Child = {
+        template: '<div>A custom component!</div>'
+    };
+
+    //不必全局注册每个组件，通过使用组件实例选项注册，可以使组件仅在另一个实例/组件的作用域中可用：
+    new Vue({
+      el: '#demo',
+      components: {     //注意：局部注册时，components后面有"s"
+          'my-component': Child     //<my-component>将只在父模板可用
+      }
+    });
+
+    //写法二:
+//    new Vue({
+//        el: '#demo',
+//        components: {
+//            'my-component': {
+//                template: '<div>A custom component!</div>'
+//            }
+//        }
+//    })
+</script>
+</body>
+</html>

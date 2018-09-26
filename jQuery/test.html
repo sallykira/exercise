@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>li展开收起</title>
+    <style type="text/css">
+      div{
+          border:1px solid red;  
+          padding: 5px;
+          margin: 5px;
+      }
+      .fl{
+         float: left;
+      }
+      .footer.header{
+         clear: left;
+      }
+        .on{background: blue}
+    </style>   
+    <script src="js/jquery-2.1.4.min.js"></script> 
+</head>
+<body>
+  <div class="container">
+    <div class="header">开头</div>
+    <div id="showContent">
+        你妹妹的11111111111111
+
+    </div>
+    <button class="tag" val="0" >我要看第一个</button>
+    <button class="tag" val="1" >我要看第二个</button>
+    <button class="tag" val="2" >我要看第三个</button>
+  </div>
+
+  <div id="content" class="content fl" style="display: none;">
+      <div class="fl cc">你妹妹的11111111111111</div>
+      <div class="fl cc">你妹的2222222222222</div>
+      <div class="fl cc">他妹的3333333333333</div>
+  </div>
+</body>
+<script type="text/javascript">
+    var totalNum = $(".cc").size();//内容总数
+    var currentIndex = 0; //当前下标
+
+    function tagClick(){
+         $(".tag").on('click',function(){
+             var index = $(this).attr("val");
+             var content = $(".cc").eq(index).html()
+             $("#showContent").html(content);
+             currentIndex = index;//设置成当前下标
+             $("button").removeClass("on").eq(index).addClass("on");
+         })
+    }
+
+	function showText() {
+		var content = $(".cc").eq(currentIndex).html();
+        $("#showContent").html(content);
+        $("button").removeClass("on").eq(currentIndex).addClass("on");
+        currentIndex++;//每次递增
+        if (currentIndex == totalNum) {
+        	//每次够了总数都要重置,从头开始展示
+        	currentIndex = 0;
+        }
+    }  
+
+    //触发事件
+    tagClick();
+    setInterval("showText();", 1000);
+    
+</script>
+</html>

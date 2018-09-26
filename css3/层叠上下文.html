@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>层叠上下文</title>
+</head>
+<body>
+    <div>
+        <p>1.z-index:auto所在的 div 元素是一个普通的元素，于是，里面的两个 img 直接套用"谁大谁上"原则</p>
+        <div style="position: relative;z-index: auto">
+            <img src="images/3.jpg" style="position: absolute;z-index: 2" alt="">
+        </div>
+        <div style="position: relative;z-index: auto">
+            <img src="images/pai.png" style="position: relative;z-index: 1" alt="">
+        </div>
+    </div>
+    <div>
+        <p>2.z-index: 0所在的 div 元素是层叠上下文元素,父类层级顺序一样，子类则"后来者居上"</p>
+        <div style="position: relative;z-index: 0">
+            <img src="images/3.jpg" style="position: absolute;z-index: 2" alt="">
+        </div>
+        <div style="position: relative;z-index: 0">
+            <img src="images/pai.png" style="position: relative;z-index: 1" alt="">
+        </div>
+    </div>
+</body>
+</html>

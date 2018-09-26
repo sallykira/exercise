@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表渲染v-for基本</title>
+</head>
+<body>
+    <ul id="demo">
+        <li v-for="item in items">{{ item.msg }}</li>
+    </ul>
+
+    <ul id="demo2">
+        <li v-for="(item, index) in items">
+            {{ parentMessage }} - {{ index }} - {{ item.message }}
+        </li>  <!--item,index顺序的讲究(从右到左?)-->
+    </ul>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            items: [
+                {msg:'foo'},
+                {msg:'bzz'}
+            ]
+        }
+    });
+    var vm2 = new Vue({
+        el: '#demo2',
+        data: {
+            parentMessage: 'parent',
+            items: [
+                { message: 'Foo' },
+                { message: 'Bar' }
+            ]
+        }
+    });
+
+</script>
+</body>
+</html>

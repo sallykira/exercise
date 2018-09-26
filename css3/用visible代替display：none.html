@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用visible代替display：none</title>
+    <style>
+        .trans-fadeout{
+            -webkit-transition:all 0.5s linear;
+            -moz-transition:all 0.5s linear;
+            -ms-transition:all 0.5s linear;
+            -o-transition:all 0.5s linear;
+            transition:all 0.5s linear;
+        }
+        .image-fadeout{position:absolute; margin-top:20px; visibility:hidden; opacity:0;}
+        .hover-fadeout:hover .image-fadeout{ visibility:visible; opacity:1; }
+    </style>
+</head>
+<body>
+    <div class="hover-fadeout">
+        <img src="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg" class="trans-fadeout image-fadeout" />
+        <a href="#">经过我显示图片</a>
+    </div>
+</body>
+</html>

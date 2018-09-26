@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深入响应式原理--变化检测问题</title>
+</head>
+<body>
+<div id="demo">
+    <p>vm.a 的值为 {{ a }}</p>
+    <p>vm.b 的值为 {{ b }}</p>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        data: {     // 疑惑：（什么叫Vue转化）必须在data对象里的才能让Vue转化
+            a: 1,    //vm.a 是响应的
+            b: ''
+        }
+    });
+//    Vue.set(vm.$el.b, 2);     //写法有错误？
+//    vm.$set('b', 2)
+//    vm.b = 2;    //vm.b  是非响应的
+</script>
+</body>
+</html>

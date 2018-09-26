@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对一个对象数组，根据某个对象属性进行排序</title>
+</head>
+<body>
+<script>
+    function createComparisonFunction(porpertyName){
+        return function(object1,object2){
+            var value1 = object1[porpertyName];
+            var value2 = object2[porpertyName];
+            if(value1 < value2){
+                return -1;
+            }else if(value1 > value2){
+                return 1;
+            }else{
+                return 0
+            }
+        }
+    }
+    var data = [
+        {
+            name: 'Zachary',
+            age: 28
+        },{
+            name: 'Nicholas',
+            age: 29
+        }
+    ];
+    data.sort(createComparisonFunction('name'));
+    console.log(data[0].name);
+    data.sort(createComparisonFunction('age'));
+    console.log(data[0].name)
+</script>
+</body>
+</html>

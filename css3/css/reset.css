@@ -1,0 +1,14 @@
+*{margin: 0;padding: 0;}
+html,body{height: 100%;}
+a{text-decoration: none}
+a:focus, select:focus{outline:none;-moz-outline:none;}
+i, cite, em, var, address, dfn {font-style: normal;}
+li{list-style: none;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+img{display: block;}
+select{border: none;}
+textarea{resize: none;border: none;}
+textarea:focus, select:focus, button:focus, input:focus{outline: none;}
+button, html input[type="button"], input[type="reset"], input[type="submit"]{-webkit-appearance: button;cursor: pointer;}
+input[type=button],input[type=submit]{background-color: transparent;cursor: pointer}
+input{border: none}

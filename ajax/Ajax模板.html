@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Ajax模板</title>
+</head>
+<body>
+    <script>
+        function jasonAjax(url,param,datat,callback){
+            $.ajax({
+                type : "post",
+                url : url,
+                data : param,
+                dataType : datat,
+                success : callback,
+                error : function(){
+                    jQuery.fn.mBox({
+                        message:'恢复失败'
+                    })
+                }
+            })
+        }
+    </script>
+</body>
+</html>

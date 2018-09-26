@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>制作固定区域的博客列表</title>
+    <style>
+        .block{
+            margin: 0 auto;
+            margin-top: 20px;
+            width: 318px;
+            line-height: 20px;
+            border: 1px solid #fc9;
+        }
+        h3{
+            text-align: center;
+        }
+        .block ol{
+            padding-left: 23px;
+            width: 14em;
+        }
+        .block li{
+            clear: both;
+            margin: 0;
+            padding: 0;
+            list-style: none outside none;
+        }
+        .block li a{
+            float: left;
+            _display:inline;/*兼容ie6*/
+            max-width: 14em;
+            white-space: nowrap;
+            _white-space: nowrap;/*IE6超长就换行，第二行被截掉*/
+            _height:20px;/*IE6下隐藏换行的文本*/
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            _background:transparent;/*解决IE6莫名占据高度bug*/
+        }
+        .block li span{
+            _position:relative;/*解决IE6下父容器hacLayout裁切bug*/
+            float: left;
+            _display:inline;
+            margin-right: -99px;
+            padding-left: 10px;
+            font-size: 10px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+<div class="block">
+    <h3>最新博文</h3>
+    <ol>
+        <li>
+            <a href="#" >如何制作固定区域的博客列表</a>
+            <span>2014-10-9</span>
+        </li>
+        <li>
+            <a href="#" >解决Chrome中文版字体小于12px无效的方法</a>
+            <span>2014-10-9</span>
+        </li>
+        <li>
+            <a href="#" >IEBlog:IE10下CSS3的文本阴影(CSS3 text-shadow) </a>
+            <span>2014-10-9</span>
+        </li>
+        <li>
+            <a href="#" >CSS3阴影box-shadow与text-shadow详解-设计师常常使用一些独特</a>
+            <span>2014-10-9</span>
+        </li>
+        <li>
+            <a href="#" >CSS中box-shadow的使用_sceliay_新浪博客</a>
+            <span>2014-10-9</span>
+        </li>
+        <li>
+            <a href="#" >css box-shadow阴影不透明的解决办法</a>
+            <span>2014-10-9</span>
+        </li>
+        <li>
+            <a href="#" >IE下实现类似CSS3 text-shadow文字阴影的几种方法</a>
+            <span>2014-10-9</span>
+        </li>
+    </ol>
+</div>
+</body>
+</html>

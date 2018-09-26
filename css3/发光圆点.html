@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+    <title>发光圆点</title>
+    <style>
+        *{margin: 0;padding: 0}
+        div{width: 70px;height: 70px;border-radius: 50%;background: deepskyblue;margin: 100px;box-shadow: 0 0  30px deepskyblue; animation: bs linear 1.5s  infinite;     -webkit-animation: bs linear 1.5s   infinite;position: relative}
+        div:after{content: "";display: block;width: 62px;height: 62px;border-radius: 50%;border: 2px solid rgba(255,255,255,1);position: absolute;top: 2px;left: 2px;animation: bs linear 1.5s  infinite;     -webkit-animation: cs linear 1.5s   infinite;}
+        @keyframes bs{
+            0%{
+                box-shadow: 0 0  30px deepskyblue;
+            }
+            50%{
+                box-shadow: 0 0 0 deepskyblue;
+            }
+            100%{
+                box-shadow: 0 0 30px deepskyblue;
+            }
+        }
+        @keyframes cs{
+            0%{
+                border: 2px solid rgba(255,255,255,1);
+            }
+            50%{
+                border: 2px solid rgba(255,255,255,.6);
+            }
+            100%{
+                border: 2px solid rgba(255,255,255,1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

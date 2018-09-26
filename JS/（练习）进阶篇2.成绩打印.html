@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>进阶篇2.成绩打印</title>
+</head>
+<body>
+<h1>编程练习</h1>
+<p>某班的成绩出来了，现在老师要把班级的成绩打印出来。</p>
+<strong>效果图</strong>
+<p>XXXX年XX月X日 星期X--班级总分为:81</p>
+<strong>格式要求：</strong>
+<p>1、显示打印的日期。 格式为类似“XXXX年XX月XX日 星期X” 的当前的时间。</p>
+<p>2、计算出该班级的平均分（保留整数）。</p>
+<strong>同学成绩数据如下：</strong>
+<p>"小明:87; 小花:81; 小红:97; 小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76"</p>
+<br><br><br>
+<strong>结果：<br></strong>
+
+<!--解答部分-->
+<script>
+    var mydate = new Date;  //获得当前的日期；
+    var day = ["星期天","星期一","星期二","星期三","星期四","星期五","星期六"]
+    document.write(mydate.getFullYear()+"年"+(mydate.getMonth()+1)+"月"+day[mydate.getDay()]);
+    var scoreStr = "小明:87; 小花:81; 小红:97; 小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
+    var scoreArr = scoreStr.split(";");
+//    document.write("<br>"+scoreArr);
+    var sum = 0;
+    for(var i = 0; i < scoreArr.length;i++){
+        sum +=parseInt(scoreArr[i].substr(scoreArr[i].indexOf(":")+1))
+    }
+    document.write("--班级总分为"+sum+"<br>");
+    document.write("班级的平均分为"+Math.round(sum/scoreArr.length))
+</script>
+</body>
+</html>

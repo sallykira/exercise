@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>（继承方法）非构造函数</title>
+</head>
+<body>
+<script>
+    var Chinese = {
+        nation: '中国'
+    };
+    var Doctor = {
+        career: '医生'
+    };
+    function object(o){
+        var F = function(){};
+        F.prototype = o;
+        return new F();
+    }
+    var Doctor = object(Chinese);
+    alert(Doctor.nation)
+</script>
+</body>
+</html>

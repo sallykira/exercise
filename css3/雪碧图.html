@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <title>雪碧图</title>
+    <style>
+        .sprite{
+            background: url(images/sss.png);
+            width: 42px;    /*务必设置box的宽度，这样其他不在box中就不会显示*/
+            height:321px;
+            background-size: 1140px 321px;
+            -webkit-animation: demo 3s steps(24) infinite; /*steps（7）表示设置7步完成动画*/
+        }
+        @-webkit-keyframes demo{
+            0%{ background-position: 0 0 }
+            100%{ background-position: -1140px 0} /*设置背景图的位置从0 到-1120px*/
+        }
+    </style>
+</head>
+<body>
+    <div class="sprite"></div>
+</body>
+</html>

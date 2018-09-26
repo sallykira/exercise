@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>初始化结构</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <p title="选择你最喜欢的水果." >你最喜欢的水果是?</p>
+    <ul>
+        <li title='苹果'>苹果</li>
+        <li title='橘子'>橘子</li>
+        <li title='菠萝'>菠萝</li>
+    </ul>
+<script>
+//查找元素节点：
+//    var li = $("ul li:eq(2)");  //获取ul中第2个li节点
+    var li = $("ul li").eq(2);      //获取ul中第2个li节点;
+    var liTxt = li.text();
+    alert(liTxt);
+
+//查找属性节点：
+    var para = $("p");
+    var p_txt = para.attr("title");    //获取P的节点属性title
+    alert(p_txt);
+</script>
+</body>
+</html>

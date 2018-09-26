@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深入响应式原理--异步更新队列</title>
+    <style>
+        [v-cloak]{display: none}
+    </style>
+</head>
+<body>
+<div id="demo" v-cloak>{{ msg }}</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            msg: '23'
+        }
+    });
+    vm.msg = 'new msg';     //更改数据
+    console.log(vm.$el.msg === 'new msg');      // --->false: vm.someData = 'new value' ，该组件不会立即重新渲染
+    Vue.nextTick(function () {
+        console.log(vm.$el.textContent === 'new msg');    // --->true
+    })
+</script>
+</body>
+</html>

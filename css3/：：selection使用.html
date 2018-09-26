@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>::selection匹配突出显示文本</title>
+    <style>
+    .box{
+        width: 500px;
+        margin: 200px auto;
+    }
+    p{
+        width: 100%;;
+    }
+    /*Webkit,Opera9.5,IE 9+*/
+    ::selection{
+        background: orange;
+        color: #fff;
+    }
+    /*Mozilla Firefox*/
+    ::-moz-selection{
+        background: orange;
+        color: #fff;
+    }
+    </style>
+</head>
+<body>
+<div class="box">
+    <p>伪元素::selection只接受两个属性</p>
+    <p>一个是background</p>
+    <p>另一个是color</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript中this是如何工作的Title</title>
+</head>
+<body>
+    <script>
+        var x = 0;
+        var foo = {
+            x : 1,
+            bar : {
+                x : 2,
+                baz : function(){
+                    console.log(this.x);
+                }
+            }
+        };
+        var a = foo.bar.baz;
+        foo.bar.baz();      //2；baz被bar调用，所以指向的是bar<普通函数调用，函数被谁调用，This就指向谁>
+        a();        //0；a运行时所在的对象是window，所以指向的是window<匿名函数和不处于任何对象中的函数，This指向window>
+    </script>
+</body>
+</html>

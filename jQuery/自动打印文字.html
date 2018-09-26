@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html {
+            background: -webkit-linear-gradient(0deg, #00c6ff 10%, #0072ff 90%);
+            background: linear-gradient(90deg, #00c6ff 10%, #0072ff 90%);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            padding-top: 50px;
+        }
+        input {
+            box-sizing: border-box;
+            font-size: 13px;
+        }
+        .search {
+            padding: 0 30px;
+            font-size: 18px;
+            width: 60%;
+            max-width: 400px;
+            height: 80px;
+            border: 1px solid #b3b3b3;
+            border-radius: 20px 0 0 20px;
+        }
+    </style>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+        <input class="search" type="text" id="loading" readonly/>
+<script>
+
+    var ph = "the future is folding...",
+            searchBar = $('#loading'),
+            phCount = 0;
+
+    function randDelay(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function printLetter(string, el) {
+        var arr = string.split(''),
+                input = el,
+                origString = string,
+                curPlace = $(input).attr("placeholder"),
+                placeholder = curPlace + arr[phCount];
+
+        setTimeout(function() {
+            $(input).attr("placeholder", placeholder);
+            phCount++;
+            if (phCount < arr.length) {
+                printLetter(origString, input);
+            }
+
+        }, randDelay(50, 90));
+    }
+
+    function placeholder() {
+        $(searchBar).attr("placeholder", "");
+        printLetter(ph, searchBar);
+    }
+
+    placeholder();
+
+</script>
+</body>
+</html>

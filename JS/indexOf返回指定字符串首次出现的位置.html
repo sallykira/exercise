@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>indexOf返回指定字符串首次出现的位置</title>
+</head>
+<body>
+<script>
+    var mystr = "I love JavaScript!";
+    document.write(mystr.indexOf("a")+"<br>");  //检索字符a首次出现的位置
+    document.write(mystr.indexOf("a",9)+"<br>");     //规定字符串开始检索的位置
+    document.write(mystr.indexOf("z")+"<br>");     //检索的字符串不出现，则返回-1；
+    document.write(mystr.indexOf("x")+"<br>");     //检索的字符串不出现，则返回-1；
+
+</script>
+</body>
+</html>

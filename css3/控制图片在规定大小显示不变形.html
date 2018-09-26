@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>控制图片在规定大小显示不变形</title>
+    <style>
+        img {max-width:630px;myimg:expression_r(onload=function(){this.style.width=(this.offsetWidth > 630)?"630px":"auto"});}
+    </style>
+</head>
+<body>
+<div>
+    <img src="http://img.article.pchome.net/00/35/67/77/pic_lib/wm/9d2e63a44a362de09052eef5.jpg">
+</div>
+</body>
+</html>

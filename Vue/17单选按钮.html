@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单选按钮</title>
+</head>
+<body>
+<div id="demo">
+    <input type="radio" id="win" value="win" v-model="checked">
+    <label for="win">win</label>
+    <input type="radio" id="lose" value="lose" v-model="checked">
+    <label for="lose">lose</label>
+    <br>
+    <span>结果是：{{ checked }}</span>
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            checked: ''
+        }
+    });
+</script>
+</body>
+</html>

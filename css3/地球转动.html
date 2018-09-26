@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>地球转动</title>
+    <style>
+        *{margin: 0;padding: 0}
+        p.earth{width: 150px;height: 150px;margin:50px auto;background: url(http://lvyou.baidu.com/static/native/discovery/footprint/img/earth_3ceb602.png) no-repeat;background-size: cover;
+            animation:rotate2d 60s infinite linear;}
+        @keyframes rotate2d{
+            0% {transform:rotate(0deg)  }
+            25%{transform:rotate(90deg)}
+            50%{transform:rotate(180deg)}
+            75%{transform:rotate(270deg)}
+            100% {transform:rotate(360deg)  }
+        }
+    </style>
+</head>
+<body>
+    <p class="earth"></p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>replace()一段文字中替换部分</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        .on{color: red}
+    </style>
+</head>
+<body>
+<p>周日是圣诞节啊啊</p>
+<script>
+    $(function(){
+        var re = $("p");
+        re.html(re.html().replace(/圣诞节/ig ,"<span class='on'>圣诞节</span>"));
+    })
+</script>
+</body>
+</html>

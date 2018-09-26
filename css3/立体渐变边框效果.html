@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>立体渐变边框效果</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            border: 10px solid transparent;
+            border-radius: 15px 0 15px 0;
+            -moz-border-top-colors: #a0a #090 #808 #707 #606 #505 #404 #303;
+            -moz-border-right-colors: #a0a #090 #808 #707 #606 #505 #404 #303;
+            -moz-border-bottom-colors: #a0a #090 #808 #707 #606 #505 #404 #303;
+            -moz-border-left-colors: #a0a #090 #808 #707 #606 #505 #404 #303;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <p>仅有firefox3+以上版本支持border渐变色，实用性不高</p>
+</body>
+</html>

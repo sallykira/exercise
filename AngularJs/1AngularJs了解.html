@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>了解AngularJS</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app=""> <!--ng-app指令 : 初始化一个AngularJS应用程序，告诉AngularJS，div元素是AnjularJS程序的所有者（移除ng-app指令，HTML会把表达式显示出来，不去计算结果）-->
+        <p>名字: <input type="text" ng-model="name"></p>  <!--ng-model指令 : 把输入框内的值绑定到程序变量name-->
+        <h1>hello {{name}}</h1>
+        <span ng-bind="name"></span>    <!--ng-bind指令 : 把应用程序变量name绑定到段落的innerHtml中-->
+    </div>
+</body>
+</html>

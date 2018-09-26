@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>验证数字</title>
+</head>
+<body>
+<p>请输入数字。如果输入值不是数字，浏览器会弹出提示框。其中isNaN(x)为非数字值</p>
+<input id="demo" type="text">
+<button type="button" onclick="yanzheng()">验证</button>
+<script>
+    function yanzheng()
+    {
+        var x=document.getElementById("demo").value;
+        if(x==""||isNaN(x))
+        {
+            alert("请输入数字！")
+        }
+    }
+</script>
+</body>
+</html>

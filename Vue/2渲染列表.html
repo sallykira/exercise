@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渲染列表</title>
+</head>
+<body>
+<div id="demo">
+    <ul v-for="todo in todos">
+        <li>{{todo.text}}</li>
+    </ul>
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el: '#demo',
+        data: {
+            todos: [
+                {text: 'Learn Javascript'},
+                {text: 'Learn Vue.js'},
+                {text: 'Build Something Awesome'}
+            ]
+        }
+    });
+</script>
+</body>
+</html>

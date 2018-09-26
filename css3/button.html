@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>美化按钮</title>
+    <style>
+        .download-info{text-align: center;margin-top: 200px;}
+        .btn{
+            background-color: #0074cc;
+            background-color: #0055cc;
+            /*CSS3渐变制作背景图片*/
+            background-image: -ms-linear-gradient(top,#0088cc,#0055cc);
+            background-image: -webkit-gradient(linear, 0 0,0 100%,from(#0088cc),to(#0055cc));/*老式webkit写法*/
+            background-image: -webkit-linear-gradient(top,#0088cc,#0055cc);/*新式webkit写法*/
+            background-image: -o-linear-gradient(top,#0088cc,#0055cc);
+            background-image: -moz-linear-gradient(top,#0088cc,#0055cc);
+            background-image: linear-gradient(top,#0088cc,#0055cc);
+            background-repeat: repeat-x;
+            display: inline-block;
+            *display:inline;/*使display:inline-block在IE7以下的浏览器情况下显示正常*/
+            border: 1px solid #cccccc;
+            *border: 0;
+            border-color: #ccc;
+            /*CSS3色彩模块*/
+            border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+            border-radius: 6px;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: normal;
+            line-height: normal;
+            padding: 14px 24px;
+            text-align: center;
+            /*CSS3文字阴影特性*/
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+            text-decoration: none;
+            vertical-align: middle;
+            *zoom=1;
+        }
+        /*悬浮状态下按钮效果*/
+        .btn:hover{
+            background-position: 0 -15px;
+            background-color: #0055cc;
+            *background-color: #004ab3;
+            color:#ffffff;
+            text-decoration: none;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+            /*CSS3动画效果*/
+            -webkit-transition:background-position 0.1s liner;
+            -moz-transition:background-position 0.1s liner;
+            -ms-transition:background-position 0.1s liner;
+            transition:background-position 0.1s liner;
+        }
+        /*点击时按钮效果*/
+        .btn:active{
+            background-color: #0055cc;
+            *background-color: #004ab3;
+           /* background-color: #004099 \ 9;*/
+            background-image: none;
+            outline: 0;
+            /*CSS3盒子阴影特性*/
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+            color: rgba(255,255,255,0.75);
+        }
+        /*获得焦点按钮效果*/
+        .btn:focus{
+            outline: thin dotted #333;
+            outline:5px auto -webkit-focus-ring-color;
+            outline-offset:-2px ;
+        }
+    </style>
+</head>
+<body>
+<div class="download-info">
+    <a href="#" class="btn">美化按钮</a>
+</div>
+</body>
+</html>

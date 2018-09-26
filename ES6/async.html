@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>async</title>
+</head>
+<body>
+<script>
+    function normal() {
+      console.log('普通函数');
+    }
+    async function test() {
+      return 'async函数'
+    }
+
+    // 输出：
+    normal();
+    console.log('被普通函数执行阻塞了');
+//    console.log(test());    // async函数返回的是promise对象
+    test().then(result => {
+      console.log(console.log(result))
+    }).then(()=>{
+      console.log(111)
+    });
+    console.log('没有被async函数阻塞哟')
+</script>
+</body>
+</html>

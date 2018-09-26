@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片变彩色</title>
+    <style>
+        img{
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+
+            filter: grayscale(100%);
+
+            filter: gray;
+            transition: filter 1s;
+        }
+        img:hover{
+            filter:none;
+            transition: filter 1s;
+        }
+    </style>
+</head>
+<body>
+<img src="images/cover1.jpg">
+</body>
+</html>

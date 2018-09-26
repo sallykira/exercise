@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AnjularJS指令</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <!--HTML5允许扩展的属性需要以data-开头,AnjularJS需要以ng-开头-->
+    <!--<div data-ng-app="" data-ng-init="firstname='sally'">   &lt;!&ndash;data-ng-init指令(不常见) : 初始化AnjularJS应用程序数据&ndash;&gt;-->
+        <!--&lt;!&ndash;<p data-ng-bind="firstname"></p>&ndash;&gt;-->
+        <!--<p>{{firstname}}</p>-->
+    <!--</div>-->
+
+    <div data-ng-app="" data-ng-init="person = {firstname:'Cao',lastname:'jialei'}">
+        <p>{{person.firstname + " " + person.lastname}}</p>
+        <p data-ng-bind="person.firstname + ' ' + person.lastname"></p>
+    </div>
+</body>
+</html>

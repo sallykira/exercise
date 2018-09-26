@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Title</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/hidpi-canvas-polyfill.js"></script>
+    <script type="text/javascript" src="http://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+</head>
+<body>
+<img class="tupian" src="http://scimg.jb51.net/allimg/160618/77-16061Q44U6444.jpg" alt="" width="30%">
+
+<img id="xxx" src="">
+<script>
+
+    function init() {
+
+        html2canvas($(".tupian"), {
+            onrendered: function(canvas) {
+                var html_canvas = html2canvas.toDataURL();
+                $('#xxx').attr('src',html_canvas);
+                $("#xxx").css("height",$(".tupian").css("height"));
+//                $(".tupian").hide();
+                $('#xxx').show();
+            }
+        });
+
+
+
+
+
+    }
+
+    window.onload = init;
+
+
+</script>
+</body>
+</html>

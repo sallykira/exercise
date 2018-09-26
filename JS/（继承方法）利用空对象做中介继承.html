@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>利用空对象做中介继承</title>
+</head>
+<body>
+<script>
+    function Animal(){}
+    Animal.prototype.species = "动物";
+
+    function Cat(name,color) {
+        this.name = name;
+        this.color = color;
+    }
+
+    function extend(Child,Parent){
+        var F = function(){};
+        F.prototype = Animal.prototype;
+        Child.prototype = new F();
+        Child.prototype.constructor = Child;
+        Child.uber = Parent.prototype;  //uber属性直接指向父对象的prototype属性，可以直接调用父对象的方法。（纯属备用性质）
+    }
+
+    extend(Cat,Animal);
+    var cat1 = new Cat("大毛","黄色");
+    alert(cat1.species)
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置！important</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <style>
+        *{margin: 0;padding: 0}
+        body{padding: 200px}
+        div{width: 60px;height: 150px;background: red}
+    </style>
+</head>
+<body>
+<div>haha</div>
+<button>click</button>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script>
+    $("button").click(function () {
+//        $("div").css({"background":"pink" + !important})
+        $("div").css("cssText","height: 100px!important")
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择列表</title>
+</head>
+<body>
+<div id="demo">
+    <!--1.单选列表-->
+    <select v-model="selected">
+        <option>a</option>
+        <option>b</option>
+        <option>c</option>
+    </select>
+    <span>{{ selected }}</span>
+    <br>
+    <!--2.多选列表-->
+    <select v-model="selected_2" multiple>
+        <option>apple</option>
+        <option>orange</option>
+        <option>pineapple</option>
+        <option>juice</option>
+    </select>
+    <span>{{ selected_2 }}</span>
+    <br>
+    <!--3.动态选项-->
+    <select v-model="selected_3">
+        <option v-for="select in selects" v-bind:value="select.value">{{ select.msg }}</option>
+    </select>
+    <span>{{ selected_3 }}</span>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            selected: '',
+            selected_2: [],
+            selected_3: '',
+            selects: [
+                {msg: 'one', value: 'A'},
+                {msg: 'two', value: 'B'},
+                {msg: 'three', value: 'C'},
+                {msg: 'four', value: 'D'}
+            ]
+        }
+    });
+</script>
+</body>
+</html>

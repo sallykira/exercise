@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        body { font:12px/19px Arial, Helvetica, sans-serif; color:#666;}
+        form div { margin:5px 0;}
+        .int label { float:left; width:100px; text-align:right;}
+        .int input { padding:1px 1px; border:1px solid #ccc;height:16px;}
+        .sub { padding-left:100px;}
+        .sub input { margin-right:10px; }
+        .formtips{width: 200px;margin:2px;padding:2px;}
+        .onError{
+            background:#FFE0E9 url(images/reg3.gif) no-repeat 0 center;
+            padding-left:25px;
+        }
+        .onSuccess{
+            background:#E9FBEB url(images/reg4.gif) no-repeat 0 center;
+            padding-left:25px;
+        }
+        .high{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="a.html">
+        <div class="int">
+            <label for="username">用户名：</label>
+            <input id="username" type="text" class="required">
+        </div>
+        <div class="int">
+            <label for="email">邮箱：</label>
+            <input id="email" type="text" class="required">
+        </div>
+        <div class="int">
+            <label for="userinfo">个人资料：</label>
+            <input id="userinfo" type="text">
+        </div>
+        <div class="sub">
+            <input id="send" type="submit" value="提交">
+            <input id="res" type="reset" value="重置">
+        </div>
+    </form>
+<script>
+    $(function(){
+        //加重点小星星
+        $(".required").each(function(){
+            $(this).parent().append("<span class='high'>*</span>")
+        });
+
+        //失去焦点时事件
+        $("form input").blur(function(){
+            var parent = $(this).parent();
+            $(this).parent().find(".formtips").remove();
+
+            //用户名检测
+            if($(this).is("#username")){
+                var ErrorMsg = "请输入不少于6个字的用户名";
+                var SuccessMsg = "输入正确";
+                if($(this).val=="" || $(this).val().length < 6){
+                    parent.append("<span class='formtips onError'>"+ ErrorMsg + "</span>")
+                }else{
+                    parent.append("<span class='formtips onSuccess'>"+ SuccessMsg + "</span>")
+                }
+            }
+
+            //邮箱检测
+            if($(this).is("#email")){
+                var ErrorMsg = "请输入正确邮箱地址";
+                var SuccessMsg = "输入正确";
+                if($(this).val() == "" || $(this).val()!="" && !/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value)){
+                    parent.append("<span class='formtips onError'>"+ ErrorMsg + "</span>")
+                }else{
+                    parent.append("<span class='formtips onSuccess'>"+ SuccessMsg + "</span>")
+                }
+            }
+        }).keyup(function(){
+            $(this).triggerHandler("blur")
+        }).focus(function(){
+            $(this).triggerHandler("blur")
+        });
+        //按钮提交
+        $("#send").click(function(){
+            $("form input").trigger("blur");
+            var numError = $(".onError").length;
+            if(numError){
+                return false
+            }
+            alert("注册成功，密码已发至你的邮箱，请查收")
+        })
+    })
+</script>
+</body>
+</html>

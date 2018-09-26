@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <style>
+        div {width:600px;border:1px solid red;}
+    </style>
+
+    <script type="text/javascript">
+        function ExtendSelection () {
+            if (document.selection) {        // Internet Explorer
+                var myRange = document.selection.createRange ();
+                myRange.moveEnd ("character", 1);
+                myRange.select ();
+            }
+            else {
+                alert ("Your browser does not support this example!");
+            }
+        }
+    </script>
+</head>
+<body>
+<div contenteditable="true">Some text for selection.</div>
+<br /><br />
+<button onclick="ExtendSelection ()">Extend the selection by one character at the end!</button>
+</body>
+</html>

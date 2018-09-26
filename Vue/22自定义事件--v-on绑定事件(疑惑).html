@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义事件--v-on绑定事件</title>
+</head>
+<body>
+<!--父组件用props传递数据给子组件，子组件用自定义事件把数据传递回去-->
+<!--使用$on(eventName)监听事件，不是addEventListener的别名 -->
+<!--使用$emit(eventName)触发事件,不是dispatchEvent的别名 -->
+<div id="demo">
+    <p>{{ total }}</p>
+    <!--在子组件的地方用v-on来监听子组件触发的事件-->
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    Vue.component('button-counter',{
+        template: '<button v-on:click="increment">{{ counter }}</button>',
+        data: function () {
+            return {
+                counter: 0
+            }
+        },
+        methods: {
+            increment: function () {
+                this.counter += 1;
+                this.$emit('increment');     //疑惑：点击了按钮时候就是触发了increment事件，为什么还要在increment事件最后加上触发自己的事件？
+            }
+        }
+    });
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            total: 0
+        },
+        methods: {
+            incrementTotal: function () {
+                this.total += 1
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>增加一个div</title>
+    <style>
+        div{margin: 5px;}
+        label{width: 40px;display: inline-block;text-align: left}
+        input{display: inline-block;width: 170px;}
+    </style>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<form>
+    <div>
+        <label>邮箱</label><input type="text">
+    </div>
+    <div>
+        <label>手机号</label><input type="text">
+    </div>
+    <div>
+        <label>邮箱</label><input type="text">
+    </div>
+</form>
+<button id="adddiv" type="button">新增</button>
+<script>
+    $(function(){
+        $("#adddiv").click(function(){
+            $("form").append('<div><label>QQ</label><input type="text"></div>')
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>createElement和createTextNode</title>
+</head>
+<body>
+    <div id="testdiv"></div>
+    <script>
+        window.onload = function(){
+            var para = document.createElement("p");
+            var txt = document.createTextNode("Hello World！");
+            para.appendChild(txt);
+            var testdiv = document.getElementById("testdiv");
+            testdiv.appendChild(para);
+        }
+    </script>
+</body>
+</html>

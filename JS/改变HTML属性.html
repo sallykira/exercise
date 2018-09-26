@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>改变HTML属性</title>
+</head>
+<body>
+<p id="demo" style="background-color: hotpink;color: #fff;height: 20px;width: 400px;">这里的文字背景要变色了！</p>
+<script>
+    document.getElementById("demo").addEventListener(click,function(){
+        console.log("s")
+        document.getElementById("demo").style.backgroundColor="orange";
+    },true)
+</script>
+</body>
+</html>

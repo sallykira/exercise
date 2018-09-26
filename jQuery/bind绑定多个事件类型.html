@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>bind绑定多个事件类型</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        p.over{color: red}
+    </style>
+</head>
+<body>
+<p>测试</p>
+<script>
+    $("p").bind("mouseover mouseleave",function(){
+        $("p").toggleClass("over");
+    })
+</script>
+</body>
+</html>

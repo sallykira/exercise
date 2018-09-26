@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定HTML Class</title>
+</head>
+<body>
+<div id="demo">
+    <!--1.对象语法-->
+    <p class="static1" v-bind:class="{'class-a': isA, 'class-b': isB }"></p> <!--v-bind:class指令动态切换class，可以与普通的class特性共存-->
+    <p class="static1" v-bind:class="{classA: isA, classB: isB }"></p>
+    <p class="static1" v-bind:class="{classA:isA, 'class-b': isA}"></p>
+    <p class="static1" v-bind:class="classObject"></p>
+    <!--结论：-->
+    <!--1.类名为短横分隔命名时，必须加上双引号-->
+    <!--错误示例：-->
+    <!--<p class="static" v-bind:class="class-e class-f"></p>-->
+
+    <!--2.数组语法-->
+    <div class="static2" v-bind:class="[classA, classB]"></div>
+    <div class="static2" v-bind:class="[classA, isB ? classB : '']"></div>  <!--三元表达式：当isB是true时添加class-b-->
+    <div class="static2" v-bind:class="[classA, { classB: isB, classC: isC }]"></div><!--1.0.19+版本可用-->
+
+</div>
+
+<script src="vue.js"></script>
+<script>
+var vm = new Vue({
+    el: '#demo',
+    data: {
+        isA: true,
+        isB: false,
+        isC: true,
+        classObject: {
+            'class-c': true,
+            'class-d': false,
+            classH: true
+        },
+        classA: 'class-a',
+        classB: 'class-b'
+//        'class-e': true,      //错误
+//        'class-f': true       //错误
+    }
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        $(function(){
+            var html = "<button class='btn-bind' type='button'>用bind绑定的按钮</button><button class='btn-live' type='button'>用live绑定的按钮</button><button class='btn-delegate' type='button'>用delegate绑定的按钮</button><button class='btn-on' type='button'>用on绑定的按钮</button>";
+            $(html).appendTo(".box");
+        });
+        $(".btn-bind").bind("click",function () {   //直接绑定在目标元素上（3.0后弃用）
+            alert("bind有效")
+        });
+
+//        $(".btn-live").live("click",function () {       //通过冒泡的方式绑定在document上（1.7之后弃用）
+//            alert("live有效")
+//        });
+        $(".box").delegate(".btn-delegate","click",function () {    //绑定在就近父级上
+            alert("delegate有效")
+        });
+        $(".box").on("click",".btn-on",function () {
+            alert("on有效")
+        });
+    </script>
+</body>
+</html>

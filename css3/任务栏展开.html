@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>任务栏展开</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <style>
+        *{margin: 0;}
+        li{list-style: none;}
+        html{height: 100%;}
+        html body{width: 100%;height: 100%;}
+        .main{background: url(images/index.jpg) no-repeat center center;width: 414px;height: 100%;background-size: 100% 100%;}
+        .main a{font-size:18px;color: #fff;font-weight: bold;padding: 30px;display: inline-block;width: auto}
+        .nav{
+          width: 80%;
+          background-color: #313131;
+          height: 100%;
+          position: absolute;
+          display: none;
+
+        }
+        @keyframes nav-zhankai{
+            0%{
+                display: none;
+            }
+            100%{
+                display: block;
+            }
+        }
+        .nav>ul>li{color: #fff;line-height: 20px;height: 20px;}
+    </style>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<div class="nav">
+    <ul>
+        <li>掘金计划</li>
+        <li>合作广告商</li>
+        <li>关于我们</li>
+        <li>蝴蝶微站点</li>
+    </ul>
+</div>
+<div class="main"><a id="zhankai">展开</a></div>
+<script>
+    $("#zhankai").click(function(){
+        $(".nav").css({"display":"block",
+                       "animation":"nav-zhankai 2s"});
+        $(".main").css({
+                        "color":"red",
+                        "position":"fixed",
+                        "left":"80%",
+                        "top":"0px",
+                      });
+    });
+</script>
+</body>
+</html>

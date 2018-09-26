@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单元素/组件的过渡</title>
+    <style>
+        /*淡入淡出动效*/
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity .5s
+        }
+        .fade-enter, .fade-leave-active {
+            opacity: 0
+        }
+        /* 设置持续时间和动画函数 */
+        .slide-fade-enter-active {
+            transition: all .3s ease;
+        }
+        .slide-fade-leave-active {
+            transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+        .slide-fade-enter, .slide-fade-leave-active {
+            transform: translateX(10px);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo">
+        <button v-on:click="show =!show">toggle</button>
+        <!--<transition name="fade">    &lt;!&ndash;淡入淡出动效&ndash;&gt;-->
+            <!--<p v-if="show">hello</p>-->
+        <!--</transition>-->
+        <transition name="slide-fade">    <!--滑入滑出动效-->
+            <p v-if="show">hello</p>
+        </transition>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data: {
+                show: true
+            }
+        })
+    </script>
+</body>
+</html>

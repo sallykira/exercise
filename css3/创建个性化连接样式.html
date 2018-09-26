@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>创建个性化连接样式</title>
+    <style>
+        a{
+            font-size: 16px;
+            text-decoration: none;
+            padding-right: 20px;
+            display: inline-block;
+            margin-bottom: 5px;
+            background: url(images/unknow.png) no-repeat 100% center;
+            background-size: 15px 15px;
+        }
+        a[href^="http"]{
+            background: url(images/unknow.png) no-repeat 100% center;
+            background-size: 15px 15px;
+        }
+        a[href="home"]{
+            background: url(images/unknow.png) no-repeat 100% center;
+            background-size: 15px 15px;
+        }
+        a[href$="ppt"]{
+            background: url(images/ppt.png) no-repeat 100% center;
+            background-size: 15px 15px;
+        }
+        a[href$="xls"]{
+            background: url(images/xls.png) no-repeat 100% center;
+            background-size: 15px 15px;
+        }
+        a[href$="html"]{
+            background: url(images/html.png) no-repeat 100% center;
+            background-size: 15px 15px;
+        }
+        a[href$="pdf"]{
+            background: url(images/pdf.png) no-repeat 100% center;
+            background-size: 15px 15px;
+        }
+        a[href$="jpg"],
+        a[href$="gif"],
+        a[href$="png"]{
+            background: url(images/img.png) no-repeat 100% center;
+            background-size: 15px 15px;
+        }
+        a[href$="zip"],
+        a[href$="rar"]{
+            background: url(images/zip.png) no-repeat 100% center;
+            background-size: 15px 15px;
+        }
+        a[href$="mp3"]{
+            background: url(images/unknow.png) no-repeat 100% center;
+            background-size: 15px 15px;
+        }
+        a[href^="mailto"]{
+            background: url(images/unknow.png) no-repeat 100% center;
+            background-size: 15px 15px;
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="http://www.w3cplus.com">www.w3cplus.com</a></li>
+    <li><a href="home">home</a></li>
+    <li><a href="a.doc">Word文档</a></li>
+    <li><a href="b.ppt">Powerpoint文档</a></li>
+    <li><a href="c.xls">Excel文档</a></li>
+    <li><a href="d.html">HTML文档</a></li>
+    <li><a href="e.pdf">PDF文档</a></li>
+    <li><a href="f.jpg">JPG图片文档</a></li>
+    <li><a href="f.gif">GIF图片文档</a></li>
+    <li><a href="f.png">PNG图片文档</a></li>
+    <li><a href="g.swf">Flash文档</a></li>
+    <li><a href="h.zip">ZIP压缩文档</a></li>
+    <li><a href="h.rar">RAR压缩文档</a></li>
+    <li><a href="j.mp3">MP3文档</a></li>
+    <li><a href="mailto.w3cplus@hotmail.com">w3cplus@hotmail.com</a></li>
+    <li><a href="#">本地连接</a></li>
+</ul>
+</body>
+</html>

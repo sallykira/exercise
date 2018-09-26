@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript中this在闭包中的使用Title</title>
+</head>
+<body>
+<script>
+    var x = 0;
+    var foo = {
+        x : 1,
+        bar : function(){
+            console.log(this.x);
+            var that =  this;
+            return function(){      //返回了一个匿名函数;
+                console.log(this.x);
+                console.log(that.x);        //读取到了bar的执行上下文的变量对象that，这个函数形成了一个闭包;
+            }
+        }
+    };
+
+    foo.bar();      //1
+    foo.bar()();    //0,1
+</script>
+</body>
+</html>

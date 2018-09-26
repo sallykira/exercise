@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <title>浮层滚动</title>
+    <style>
+        *{margin: 0;padding: 0}
+        .popUp{width: 100%;height: 100%;position: fixed;top: 0;left: 0;background: rgba(0,0,0,.5)}
+        .popUp>div{width: 100%;overflow: scroll}
+        .popUp img{width: 90%;margin: 2% auto 0 auto;display: block}
+        .popUp>div>div{width: 80px;background: darkgray;line-height: 30px;text-align: center;margin: 90px auto}
+    </style>
+</head>
+<body>
+<div class="popUp">
+    <div>
+        <img src="http://pic.qiantucdn.com/58pic/17/81/42/63i58PICSvD_1024.jpg">
+        <div>按钮</div>
+    </div>
+</div>
+</body>
+</html>

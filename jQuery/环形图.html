@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>环形图</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/highcharts.js"></script>
+    <style>
+        .pieChart{width: 500px;height: 600px;}
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('#pieChart').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    height:160,
+                    width:160,
+                    marginTop:0,
+                    backgroundColor: 'grey',
+                    type:'pie',
+                },
+                title: {
+                    text: ''
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        innerSize:'103',
+                        dataLabels: {
+                            enabled: false,
+                        },
+                        borderColor:'none',
+                    }
+                },
+                exporting:{
+                    enabled:false
+                },
+                credits: {
+                    enabled: false
+                },
+                colors:[
+                    '#99d2ff',
+                    '#2196f3',
+                ],
+                series: [{
+                    type: 'pie',
+                    name: 'share',
+                    data: [
+                        [ 30.0],
+                        [ 70]
+                    ]
+                }]
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="pieChart" class="pieChart"></div>
+</body>
+</html>

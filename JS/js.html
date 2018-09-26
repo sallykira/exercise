@@ -1,0 +1,24 @@
+<html><head>
+    <title>监测手机倾斜DeviceOrientationEvent</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+</body>
+</html>
+<label>alpha:</label><div id="alpha"></div>
+<label>beta:</label><div id="beta"></div>
+<label>gamma:</label><div id="gamma"></div>
+<script>
+    if(window.DeviceOrientationEvent) {
+        window.addEventListener('deviceorientation', function(event) {
+            var a = document.getElementById('alpha'),b = document.getElementById('beta'),g = document.getElementById('gamma'),alpha = event.alpha,beta = event.beta,gamma = event.gamma;
+            a.innerHTML = Math.round(alpha);//沿z轴旋转的夹角
+            b.innerHTML = Math.round(beta);//沿x轴旋转的夹角
+            g.innerHTML = Math.round(gamma);//沿y轴旋转的夹角
+
+        }, false);
+    }else{
+        document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+    }
+</script>

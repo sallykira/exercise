@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript中this在闭包中的使用4</title>
+</head>
+<body>
+<script>
+    var singleton = (function(){
+        var instance;
+        return function(object){
+            if(!instance){
+                instance = new object();
+            }
+            return instance;
+        }
+    })();       //立即执行
+</script>
+</body>
+</html>

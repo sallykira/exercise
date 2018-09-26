@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>局部变量</title>
+</head>
+<body>
+<script>
+    function Square(num){
+        var total = num*num;    //用var把内部的total变量明确的声明为局部变量
+        return total;
+    }
+    var total = 50;
+    var number = Square(20);
+    alert(total)
+</script>
+</body>
+</html>

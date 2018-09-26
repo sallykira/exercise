@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+    <title>控制字数</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        .textarea{font-size: 12px;width: 200px;height: 60px;}
+    </style>
+</head>
+<body>
+    <textarea class="textarea"></textarea>
+    <span class="word_length"></span>
+    <script>
+        var a = $(".textarea").val().length;
+        $(".textarea").keyup(function(){
+            $(".textarea").attr('maxLength',20);
+            $(".word_length").html(a+"/20")
+        })
+    </script>
+</body>
+</html>

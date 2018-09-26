@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <title>内联元素padding和margin是否有效</title>
+    <style>
+        *{margin: 0 auto}
+        div{background: yellowgreen}
+        span{background: pink;padding: 50px;margin: 20px}
+        i{background: pink;padding: 50px;margin: 20px}
+        img{padding: 20px;background: blue;margin: 50px;}
+    </style>
+</head>
+<body>
+<div>sdds</div>
+<!--行内元素默认vertical-align: baseline;-->
+<span>测试span</span>
+<i>测试i</i>
+<img src="images/jiaocuo.png">
+</body>
+</html>

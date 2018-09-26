@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>图片展示</title>
+</head>
+<body>
+<h1>图片展示</h1>
+<ul>
+    <li><a href="../images/eg_bulboff.gif" onclick="showPic(this);return false" title="关灯">关灯</a></li>
+    <li><a href="../images/eg_bulbon.gif" onclick="showPic(this);return false" title="开灯">开灯</a></li>      <!--将链接本身用作showPic()的参数用this关键字-->
+</ul>
+<img id="placeholder" src="../images/placeholder.jpg" alt="展示 图片区">
+<p id="description">选择一张图片</p>
+<script>
+    function showPic(whichpic){
+        var source = whichpic.getAttribute("href");
+        var placeholder = document.getElementById("placeholder");
+        placeholder.setAttribute("src",source);
+        //placeholder.src = source;
+        var text = whichpic.getAttribute("title");
+        var description = document.getElementById("description");
+        alert(description.firstChild.nodeValue);
+//        description.setAttribute("")
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>计算两点之间的距离</title>
+    <script type="text/javascript">
+
+
+        points.dist = function(){       //定义一个方法来计算两点之间的距离
+            var p1 = this[0];
+            var p2 = this[1];
+            var a = p2.x - p1.x;
+            var b = p2.y - p1.y;
+            return Math.sqrt(a*a+b*b)
+        };
+        points.dist()
+    </script>
+</head>
+<body>
+</body>
+</html>

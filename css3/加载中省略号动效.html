@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>加载中省略号动效</title>
+    <style>
+        i{
+            display: inline-block;
+            height: 1em; line-height: 1;
+            vertical-align: -.25em;
+            overflow: hidden;
+        }
+        i::before {
+            display: block;
+            content: '...\A..\A.';
+            white-space: pre-wrap;
+            animation: dot 3s infinite step-start both;
+        }
+        @keyframes dot {
+            33% { transform: translateY(-2em); }
+            66% { transform: translateY(-1em); }
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:" class="grebtn">订单提交中<i>...</i></a>
+</body>
+</html>

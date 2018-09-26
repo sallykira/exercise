@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>进度条</title>
+    <style>
+        p{
+            margin: 0;
+        }
+        .process_bar{
+            width: 500px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: #ecebeb;
+            overflow: hidden;
+        }
+        .on{
+            background-color: #2196f3;
+            height: 10px;
+            /*width: 50%;*/
+        }
+    </style>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="process_bar"><p class="on"></p></div>
+        <p class="data">15%</p>
+    </div>
+    <div class="box">
+        <div class="process_bar"><p class="on"></p></div>
+        <p class="data">45%</p>
+    </div>
+    <div class="box">
+        <div class="process_bar"><p class="on"></p></div>
+        <p class="data">95%</p>
+    </div>
+
+    <script>
+
+//        $(function(){
+//            var a = $('.data').text();
+//            $(".on").css("width",a);
+//        }); //获取单个数值
+
+        $(function(){
+            $("p.on").each(function(){
+                console.log($(this).parent(".process_bar").siblings(".data").text());
+                var W = $(this).parent(".process_bar").siblings(".data").text();
+                $(this).css("width",W)  //引用不用加"",字符串的话需要加上"";
+            })
+        })
+    </script>
+</body>
+</html>

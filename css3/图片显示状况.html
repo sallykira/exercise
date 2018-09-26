@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>图片显示状况</title>
+    <style>
+        *{margin: 0;padding: 0}
+        ul{list-style: none;}
+        li{float: left;width: 200px;margin: 10px;}
+        li img{width: 100%}
+    </style>
+</head>
+<body>
+    <ul>
+        <li><p>jpg连续，先结构后细节</p><img src="images/lianxu.jpg" alt=""></li>
+        <li><p>jpg不连续，从上到下渲染</p><img src="images/pt1.jpg" alt=""></li>
+        <li><p>png交错，先结构后细节</p><img src="images/jiaocuo.png" alt=""></li>
+        <li><p>png不交错，从上到下渲染</p><img src="images/pt2.png" alt=""></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <title>Title</title>
+    <style>
+        .loader{width:50px;height:10px;position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
+        .loader>div{content:" ";width:10px;height:10px;background:#2196f3;border-radius:100%;position:absolute;-webkit-animation:shift 2s linear infinite;animation:shift 2s linear infinite}
+        .loader>div:nth-of-type(1){-webkit-animation-delay:-.2s;animation-delay:-.2s}
+        .loader>div:nth-of-type(2){-webkit-animation-delay:-.4s;animation-delay:-.4s}
+        .loader>div:nth-of-type(3){-webkit-animation-delay:-1.2s;animation-delay:-1.2s}
+        .loader>div:nth-of-type(4){-webkit-animation-delay:-1.6s;animation-delay:-1.6s}
+        @-webkit-keyframes shift{0%{left:-30px;opacity:0;background-color:#fff}
+            10%{left:0;opacity:1}
+            90%{left:50px;opacity:1}
+            100%{left:80px;background-color:rgba(0,0,0,.3);opacity:0}
+        }
+        @keyframes shift{0%{left:-30px;opacity:0;background-color:#fff}
+            10%{left:0;opacity:1}
+            90%{left:50px;opacity:1}
+            100%{left:80px;background-color:rgba(0,0,0,.3);opacity:0}
+        }
+
+    </style>
+</head>
+<body>
+<div class="loader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>

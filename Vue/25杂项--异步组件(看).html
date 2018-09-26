@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杂项--异步组件</title>
+</head>
+<body>
+<div id="demo">
+    <async-example></async-example>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    //将组件定义为一个工厂函数，动态地解析组件的定义
+//    Vue.component('async-example', function (resolve, reject) {
+//        setTimeout(function () {        //setTimeout为演示
+//            // 工厂函数接收一个 resolve 回调，在收到从服务器下载的组件定义时调用
+//            resolve({
+//                template: '<div>I am async!</div>'
+//            })
+//        }, 1000);
+//
+//        reject(reason);     //调用 reject(reason) 指示加载失败。
+//    })
+
+//推荐配合使用 ：Webpack 的代码分割功能
+    Vue.component('async-webpack-example', function (resolve) {
+        // 这个特殊的 require 语法告诉 webpack
+        // 自动将编译后的代码分割成不同的块，
+        // 这些块将通过 Ajax 请求自动下载。
+        require(['./my-async-component'], resolve)
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插值</title>
+</head>
+<body>
+<div id="demo">
+    <!--1.文本-->
+    <span>Message: {{msg}}</span>   <!--文本插值（每次属性变化时都会更新）-->
+    <span>This will never change: {{* msg }}</span>   <!--单次插值-->
+</div>
+
+    <!--2.原始HTML-->
+    <div>{{{ raw_html }}</div>  <!--解析真的html字符串，缺点：容易导致XSS攻击，不能用于用户提交内容-->
+
+    <!--3.HTML特性-->
+    <span id="item-{{id}}"></span>
+
+<script src="vue.js"></script>
+</body>
+</html>

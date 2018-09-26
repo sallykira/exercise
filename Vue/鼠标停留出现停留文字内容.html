@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标停留出现停留文字内容</title>
+</head>
+<body>
+<div id="demo">
+    <p v-bind:title="message">停留在这段文字上看看~</p>
+</div>
+<script src="vue.js"></script>
+<script>
+var vm = new Vue({
+    el: '#demo',
+    data: {
+        message: 'You loaded this page on'
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    <title>多个选择器</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <p>p</p>
+    <div>div</div>
+    <p class="myp">我的P标签</p>
+    <span>span</span>
+    <h1>i</h1>
+<script>
+    $("p,div,.myp").css({"color":"red"})
+</script>
+</body>
+</html>

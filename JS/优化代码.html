@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>优化代码</title>
+</head>
+<body>
+<script>
+//    优化以下代码,"+"在javascript中非常耗时和耗内存
+//    var str="我喜欢我可爱的女朋友，"；
+//    str=str+"她叫喵喵，";
+//    str=str+"她时而可爱，时而认真，";
+//    str=str+"她那天真的笑声可以让人忘掉一切烦恼。";
+//    console.log(str);
+
+//用数组的push方法来优化，数组是连续的存储空间
+    //1.开辟一块临时空间，存储字符串
+    var res = [];
+    //2.开辟一个空间
+    var str = "我喜欢我可爱的女朋友";
+    //3.把str中的字符串复制到刚刚开辟的空间;
+    res.push(str);
+    //4.把需要连接的字符串复制到str后面
+    res.push('她叫喵喵，');
+    res.push('她时而可爱，时而认真，');
+    res.push('她那天真的笑声可以让人忘掉一切烦恼。');
+    //5.str指向这个空间，回收str原来的空间和临时空间
+    console.log(res.join(''))
+</script>
+</body>
+</html>

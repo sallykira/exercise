@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>加载-小兔子掉萝卜</title>
+    <style type="text/css">
+    #div1
+        {
+            margin:100px;
+            position: absolute;
+            text-align: center;
+            background:lightpink;
+            width: 1000px;
+            height:150px;
+            padding-top:50px ;
+        }
+    @-webkit-keyframes move
+        {
+            0%{  -webkit-transform:translateY(0px) }
+            100%{-webkit-transform:translateY(-15px)}
+        }
+    #div1 img:nth-of-type(1){  -webkit-animation:.5s move alternate infinite; }
+    #div1 img:nth-of-type(2){  -webkit-animation:.5s .1s move alternate infinite;}
+    #div1 img:nth-of-type(3){  -webkit-animation:.5s .2s move alternate infinite;}
+    #div1 img:nth-of-type(4){  -webkit-animation:.5s .3s move alternate infinite;}
+    #div1 img:nth-of-type(5){  -webkit-animation:.5s .4s move alternate infinite;}
+    #div1 img:nth-of-type(6){  -webkit-animation:.5s .5s move alternate infinite;}
+    #div1 img:nth-of-type(7){  -webkit-animation:.5s .6s move alternate infinite;}
+    #div1 img:nth-of-type(8){  -webkit-animation:.5s .7s move alternate infinite;}
+
+
+
+    .sd{
+        float: left;
+    }
+    .a{
+    background-color: red;
+    position: relative;
+    display: block;
+        width: 200px;
+        height: 50px;
+    }
+    .b{
+    background-color: deeppink;
+    position: relative;
+        display: block;
+        width: 200px;
+        height: 50px;
+    }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <img src="../static/images/rabbit.png" />
+    <img src="../static/images/luobo.png" />
+    <img src="../static/images/luobo.png" />
+    <img src="../static/images/luobo.png" />
+    <img src="../static/images/luobo.png" />
+    <img src="../static/images/luobo.png" />
+    <img src="../static/images/luobo.png" />
+    <img src="../static/images/luobo.png" />
+</div>
+<div class="sd">
+<div class="a">
+    sdf
+</div>
+<div class="b">
+sdgdg
+</div>
+</div>
+</body>

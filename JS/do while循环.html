@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>do/while循环</title>
+</head>
+<body>
+<p>do/while循环:点击下面的按钮，只要 i 小于 5 就一直循环代码块。</p>
+<button onclick="myFunction()">点击这里</button>
+<p id="demo"></p>
+<script>
+    function myFunction()
+    {
+        var txt="",i=5;/*变量的值必须加上，否则循环永远不会结束！*/
+        do
+        {
+            txt= txt+"The number is " +i+"<br>";
+            i++;
+        }
+        while(i<5);
+        document.getElementById("demo").innerHTML=txt;
+    }
+</script>
+</body>
+</html>

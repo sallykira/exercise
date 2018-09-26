@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获得光标位置</title>
+</head>
+<body>
+<div>你不能选中我，不信你试试</div>
+<script>
+function test(){
+window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+}
+document.onmouseup = test
+</script>
+</body>
+</html>

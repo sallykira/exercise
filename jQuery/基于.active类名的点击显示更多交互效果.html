@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>基于.active类名的点击显示更多交互效果</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        .box {
+            max-height: 80px;
+            transition: max-height .25s;
+            position: relative;
+            overflow: hidden;
+        }
+        .more {
+            position: absolute;
+            width: 100%;
+            padding-top: 20px;
+            bottom: 0; left: 0;
+            background: linear-gradient(to bottom, hsla(0,0%,100%,0), hsla(0,0%,100%,.9) 50%, hsla(0,0%,100%,1));
+        }
+
+        .box.active {
+            max-height: 1000px;
+        }
+        .active > .more {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="box">
+项目地址：https://github.com/Bilibili/flv.js
+        一个纯JS的不依赖Flash的HTML5 Flash视频 (FLV)播放器！
+        本项目受hls.js启发，需要依赖Media Source Extensions才能生效。
+        项目地址：https://github.com/Bilibili/flv.js
+        一个纯JS的不依赖Flash的HTML5 Flash视频 (FLV)播放器！
+        本项目受hls.js启发，需要依赖Media Source Extensions才能生效。
+        项目地址：https://github.com/Bilibili/flv.js
+        一个纯JS的不依赖Flash的HTML5 Flash视频 (FLV)播放器！
+        本项目受hls.js启发，需要依赖Media Source Extensions才能生效。
+        项目地址：https://github.com/Bilibili/flv.js
+        一个纯JS的不依赖Flash的HTML5 Flash视频 (FLV)播放器！
+        本项目受hls.js启发，需要依赖Media Source Extensions才能生效。
+        项目地址：https://github.com/Bilibili/flv.js
+        一个纯JS的不依赖Flash的HTML5 Flash视频 (FLV)播放器！
+        本项目受hls.js启发，需要依赖Media Source Extensions才能生效。
+        项目地址：https://github.com/Bilibili/flv.js
+        一个纯JS的不依赖Flash的HTML5 Flash视频 (FLV)播放器！
+        本项目受hls.js启发，需要依赖Media Source Extensions才能生效。
+        <a href="javascript:" id="more" class="more">更多↓</a>
+    </div>
+<script>
+    var box = $('#box'),
+        more = $('#more');
+    if (box && more) {
+        more.click(function () {
+            box.addClass('active');
+        });
+    }
+</script>
+</body>
+</html>

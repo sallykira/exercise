@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prop-动态Prop</title>
+</head>
+<body>
+<div id="demo">
+    <input v-model="parentMsg" placeholder="请输入文字">
+    <br>
+    <child v-bind:my-msg="parentMsg"></child>       <!--注意：HTML不区分大小写，驼峰的需要改成短横杠-->
+</div>
+
+<script src="vue.js"></script>
+<script>
+//方法1.全局注册
+//    Vue.component("child",{   //注意：组件名字可以为短横杠
+//       props:['myMsg'],   //注意：props里的值不能为短横杠
+//       template:'<div>{{ myMsg }}</div>'
+//    });
+//    var vm = new Vue({
+//        el: '#demo',
+//        data: {
+//            parentMsg: ''
+//        }
+//    });
+
+
+//方法2.局部注册
+new Vue({
+    el: '#demo',
+    data: {
+        parentMsg: ''
+    },
+    components: {
+        child: {
+            props: ['myMsg'],
+            template: '<span>{{ myMsg }}</span>'
+        }
+    }
+})
+
+</script>
+
+</body>
+</html>

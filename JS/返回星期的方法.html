@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>返回星期的方法</title>
+</head>
+<body>
+<script>
+    var mydate = new Date();   //定义日期对象
+    var mynum = mydate.getDay();    //返回值存储在变量
+    document.write(mynum+"<br>");
+    var weekday = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];     //定义数组对象，给每个数组定义项赋值
+    document.write(weekday[mynum])
+</script>
+</body>
+</html>

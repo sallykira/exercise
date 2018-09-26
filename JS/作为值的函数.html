@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作为值的函数</title>
+</head>
+<body>
+<script>
+    function callSomeFunction(someFunction,someArgument){    // 这个函数接受两个参数，第一个为函数，第二个为传递给该函数的一个值
+        return someFunction(someArgument);
+    }
+
+    //add方法
+    function add(num){
+        return num + 10;
+    }
+    console.log(callSomeFunction(add,10));
+
+    //sayname方法
+    function sayName(name){
+        return "她的名字叫" + name
+    }
+    console.log(callSomeFunction(sayName,'Sally'))
+</script>
+</body>
+</html>

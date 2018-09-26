@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>event object事件对象</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<button type="button">按钮</button>
+    <script>
+        $(function(){
+            $("button").click(function(e){
+                alert(e.type)
+            })
+        })
+    </script>
+</body>
+</html>

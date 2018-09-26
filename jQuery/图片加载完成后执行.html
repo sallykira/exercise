@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片加载完成后执行</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<img src="images/apple_1.jpg">
+<div></div>
+<p></p>
+<script>
+    $(function(){
+        $("img").load(function(){   //图片加载完成后执行
+            $("div").text("图像已加载");
+            $("p").text("图片的高度为：" + $("img").height());
+        })
+    })
+</script>
+</body>
+</html>

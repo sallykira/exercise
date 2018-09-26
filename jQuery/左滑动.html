@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>Title</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        *{margin: 0;padding: 0}
+        ul,li{list-style: none}
+        #artical_li{width: 100%;}
+        #artical_li li{width: 100%;line-height: 50px;background: gray;margin-left: 0;position: relative}
+        .shanchu{position: absolute;
+            top: 0;
+            right: -20%;
+            width: 20%;
+            height: 100%;
+            z-index: 1;
+            background: #ff3b30 ;
+            background-size: 16px 23px;
+            margin-left: 0;
+            transition: margin-left .5s;
+            -webkit-transition: margin-left .5s;}
+    </style>
+</head>
+<body>
+    <!--&lt;!&ndash;<div id="outer" class="outer"><div id="inner" class="inner">测试&lt;!&ndash;<div class="shanchu" ></div>&ndash;&gt;</div></div>&ndash;&gt;-->
+    <!--<div class="outer"><div class="inner">测试&lt;!&ndash;<div class="shanchu" ></div>&ndash;&gt;</div></div>-->
+    <!--<div class="outer"><div class="inner">测试&lt;!&ndash;<div class="shanchu" ></div>&ndash;&gt;</div></div>-->
+    <!--<div class="outer"><div class="inner">测试&lt;!&ndash;<div class="shanchu" ></div>&ndash;&gt;</div></div>-->
+    <!--<div class="outer"><div class="inner">测试&lt;!&ndash;<div class="shanchu" ></div>&ndash;&gt;</div></div>-->
+    <!--<div class="outer"><div class="inner">测试&lt;!&ndash;<div class="shanchu" ></div>&ndash;&gt;</div></div>-->
+    <!--<div class="outer"><div class="inner">测试&lt;!&ndash;<div class="shanchu" ></div>&ndash;&gt;</div></div>-->
+    <ul id="artical_li">
+        <li>a<div class="shanchu">1</div></li>
+        <li>b<div class="shanchu">2</div></li>
+        <li>c<div class="shanchu">3</div></li>
+        <li>d<div class="shanchu">4</div></li>
+        <li>a<div class="shanchu">1</div></li>
+        <li>b<div class="shanchu">2</div></li>
+        <li>c<div class="shanchu">3</div></li>
+        <li>d<div class="shanchu">4</div></li>
+        <li>a<div class="shanchu">1</div></li>
+        <li>b<div class="shanchu">2</div></li>
+        <li>c<div class="shanchu">3</div></li>
+        <li>d<div class="shanchu">4</div></li>
+        <li>a<div class="shanchu">1</div></li>
+        <li>b<div class="shanchu">2</div></li>
+        <li>c<div class="shanchu">3</div></li>
+        <li>d<div class="shanchu">4</div></li>
+        <li>a<div class="shanchu">1</div></li>
+        <li>b<div class="shanchu">2</div></li>
+        <li>c<div class="shanchu">3</div></li>
+        <li>d<div class="shanchu">4</div></li>
+        <li>a<div class="shanchu">1</div></li>
+        <li>b<div class="shanchu">2</div></li>
+        <li>c<div class="shanchu">3</div></li>
+        <li>d<div class="shanchu">4</div></li>
+        <li>a<div class="shanchu">1</div></li>
+        <li>b<div class="shanchu">2</div></li>
+        <li>c<div class="shanchu">3</div></li>
+        <li>d<div class="shanchu">4</div></li>
+        <li>a<div class="shanchu">1</div></li>
+        <li>b<div class="shanchu">2</div></li>
+        <li>c<div class="shanchu">3</div></li>
+        <li>d<div class="shanchu">4</div></li>
+    </ul>
+<script>
+//    var startX,//触摸时的坐标
+//        startY,
+//        x, //滑动的距离
+//        y,
+//        s.innerpX=0; //设一个全局变量记录上一次内部块滑动的位置
+////    var inner=document.getElementById("inner");
+//    var inner=$(".inner");
+//    var marginLeft = inner.css("margin-left");
+//
+//    function touchStart(e){//触摸
+//        e.preventDefault();
+//        var touch=e.touches[0];
+////        startY = touch.pageY;   //刚触摸时的坐标
+////        console.log(startY)
+////        startX = touch.pageX;   //刚触摸时的坐标
+//        startX = touch.pageX;   //刚触摸时的坐标
+//        console.log("触摸的时候的位置：" + startX);
+//
+//    }
+//
+//    function touchMove(e){//滑动
+//        e.preventDefault();
+//        var  touch = e.touches[0];
+////        y = touch.pageY - startY;//滑动的距离
+//        x = touch.pageX - startX;//滑动的距离
+////            inner.style.webkitTransform = 'translate(' + x + 'px, ' + 0 + 'px)';  //也可以用css3的方式
+//////        inner.style.webkitTransform = 'translate(' + 0+ 'px, ' + y + 'px)';  //也可以用css3的方式
+//////        inner.style.top=aboveY+y+"px"; //这一句中的aboveY是inner上次滑动后的位置
+////            inner.style.left=s.innerpX+x+"px"; //这一句中的aboveY是inner上次滑动后的位置
+////        if((inner.style.marginLeft == 0 && x < 0) || (inner.style.marginLeft < 0 && x > 0)){
+////            inner.style.marginLeft= x+"px"; //这一句中的aboveY是inner上次滑动后的位置
+////            console.log(x);
+////        }
+//        if((marginLeft == 0 && x < 0) || (marginLeft < 0 && x > 0)){
+//            marginLeft = x+"px"; //这一句中的aboveY是inner上次滑动后的位置
+//            console.log(x);
+//        }
+//    }
+//
+//    function touchEnd(e){//手指离开屏幕
+//        e.preventDefault();
+////        aboveY=parseInt(inner.style.top);//touch结束后记录内部滑块滑动的位置 在全局变量中体现 一定要用parseInt()将其转化为整数字;
+////        s.innerpX=parseInt(inner.style.left);//touch结束后记录内部滑块滑动的位置 在全局变量中体现 一定要用parseInt()将其转化为整数字;
+//
+////        if(x < -20){
+////            inner.style.marginLeft = "-20%";
+////            inner.style.transition = "margin-left 1s";
+////        }else if( x > 20){
+////            inner.style.marginLeft = 0;
+////            inner.style.transition = "margin-left 1s";
+////        }else{
+////            inner.style.marginLeft = startX;
+////        }
+//
+//        if(x < -20){
+//            $(this).css({"marginLeft":"-20%","transition":"margin-left 1s"}) ;
+//        }else if( x > 20){
+//            $(this).css({"marginLeft":"0","transition":"margin-left 1s"}) ;
+//        }else{
+//            $(this).css({"marginLeft":startX}) ;
+//        }
+//    }
+//    document.getElementById("outer").addEventListener('touchstart', touchStart,false);
+//    document.getElementById("outer").addEventListener('touchmove', touchMove,false);
+//    document.getElementById("outer").addEventListener('touchend', touchEnd,false);
+
+
+//$(function(){
+
+    var startX,//触摸时的坐标
+            x //滑动的距离
+    var marginLeft = $("#artical_li li").css("margin-left");
+    $("body").on("touchstart","#artical_li li",function (e) {
+        e.preventDefault();
+        var touch = e.originalEvent.targetTouches[0];
+        startX = touch.pageX;   //刚触摸时的坐标
+        console.log("触摸的时候的位置：" + startX);
+//        alert(1)
+    });
+    $("body").on("touchmove","#artical_li li",function(e){
+        e.preventDefault();
+        var touch = e.originalEvent.targetTouches[0];
+        x = touch.pageX - startX;//滑动的距离
+        if((marginLeft == 0 && x < 0) || (marginLeft < 0 && x > 0)){
+            marginLeft = x+"px"; //这一句中的aboveY是inner上次滑动后的位置
+            console.log(x);
+        }
+    });
+    $("body").on("touchend","#artical_li li",function (e) {
+        e.preventDefault();
+        if(x < -20){
+            $(this).css({"marginLeft":"-20%","transition":"margin-left 1s"}) ;
+        }else if( x > 20){
+            $(this).css({"marginLeft":"0","transition":"margin-left 1s"}) ;
+        }else{
+            $(this).css({"marginLeft":startX});
+        }
+    });
+//})
+
+
+
+
+</script>
+</body>
+</html>

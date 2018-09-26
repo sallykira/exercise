@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用Slot分发内容--单个Slot</title>
+</head>
+<body>
+<div id="demo">
+    <h1>我是父组件的标题</h1>
+    <my-component>
+        <p>这是一些初始内容</p>
+        <p>这是更多的初始内容</p>
+    </my-component>
+
+    <br>
+
+    <my-component2></my-component2>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    Vue.component('my-component',{
+        //1.父组件的内容显示条件：
+        //子组件模板包含至少一个 <slot> 插口,并且没有属性。则父组件整个内容将插入到所有slot所在的DOM位置，并替换slot标签本身;
+        //2.slot标签里的内容显示条件：
+        //如果宿主元素（父组件）为空时，且没有要插入的内容时才显示备用内容;
+        template: '<div><h2>我是子组件的标题</h2><slot>只有在没有要分发的内容时才会显示。</slot><h2>我是子组件的底部内容</h2></div>'
+    });
+
+    Vue.component('my-component2',{
+        template: '<div><h2>我是子组件2的标题</h2><slot>只有在没有要分发的内容时才会显示。</slot><h2>我是子组件2的底部内容</h2></div>'
+    });
+
+    var vm = new Vue({
+        el: '#demo'
+    });
+</script>
+</body>
+</html>

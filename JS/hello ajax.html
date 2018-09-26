@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>hello ajax</title>
+</head>
+<body>
+    <input type="button" value="Ajax提交" onclick="Ajax()">
+    <div id="resText"></div>
+<script>
+    function Ajax(){        //定义一个函数，通过该函数来一步获取信息
+        var xmlHttpReq = null;  //声明一个空对象来装入XMLHttpRequset对象;
+        if(window.ActiveXObject){   //IE5 IE6是以ActiveXObject的方式引入XMLHttpRequest对象的
+            xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+        }else if(window.XMLHttpRequest){    //出IE5 IE6以外的浏览器XMLHttpRequest是window的子对象
+            xmlHttpReq = new XMLHttpRequest();  //实例化一个XMLHttpREquest对象
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>多背景案例</title>
+    <style>
+        .demo{
+            width: 800px;
+            height: 600px;
+            border: 20px solid rgba(104,104,142,0.5);
+            border-radius: 10px;
+            padding: 80px 60px;
+            color:forestgreen;
+            line-height: 1.5;
+            text-align: center;
+            margin: 20px;
+        }
+        .multipleBg{
+            background: url(images/tl.png) no-repeat left top,
+                        url(images/tr.png) no-repeat right top,
+                        url(images/bl.png) no-repeat left bottom,
+                        url(images/br.png) no-repeat right bottom,
+                        url(images/bg.jpg) repeat left top;
+            /*改变背景图position起始点，四朵花都是border边缘处起，而平铺背景是在padding内边缘起(无效？)*/
+            -webkit-background-origin: border-box, border-box, border-box, border-box, padding-box;
+            -moz-background-origin: border-box, border-box, border-box, border-box, padding-box;
+            -o-background-origin: border-box, border-box, border-box, border-box, padding-box;
+            background-origin: border-box, border-box, border-box, border-box, padding-box;
+            /*控制背景图片的显示区域，所有背景图片超过边border外的边缘被剪切掉*/
+            -webkit-background-clip: border-box;
+            -o-background-clip: border-box;
+            -moz-background-clip: border-box;
+            background-clip: border-box;
+        }
+        .test{
+            background: url(images/bg.jpg) repeat left top;
+            -webkit-background-origin:content-box;;
+            background-origin: content-box;
+        }
+    </style>
+</head>
+<body>
+<div class="demo multipleBg">我用5张背景图片。制作出这样的效果</div>
+<div class="demo test">测试(背景图用repeat后，position-origin无效？P158)</div>
+</body>

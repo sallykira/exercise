@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>（概念）String字符串对象</title>
+</head>
+<body>
+    <script>
+        var mystr = "Hello world,Javascript!"  //定义一个字符串；
+
+        //1.charAt(index):返回指定位置的字符
+        document.write(mystr.charAt(0)+"<br>");    //返回位置为0的字符；
+
+        //2.indexOf(substring,startpos):返回指定字符首次出现的位置
+        document.write(mystr.indexOf("o")+"<br>");     //返回字符"o"首次出现的位置；
+        document.write(mystr.indexOf("o",4)+"<br>");  //返回从第4个位置开始，"o"首次出现的位置；
+        document.write(mystr.indexOf("o",5)+"<br>");  //返回从第5个位置开始，"o"首次出现的位置；
+
+        //3.split(separator,limit)：分割字符串
+        document.write(mystr.split("")+"<br>");    //将每个字符分割，包括空格；
+        document.write(mystr.split(",")+"<br>");    //以","将字符串分割；
+        document.write(mystr.split(",",1)+"<br>");    //以","将字符串分割，并且只分割一次；
+//        document.write(mystr+"<br>");
+
+        //4.substring(startPos,stopPos):提取字符串
+        document.write(mystr.substring(6)+"<br>");     //提取从第6个位置开始直至最后一个之间的字符；
+        document.write(mystr.substring(6,11)+"<br>");  //提取从第6个位置直至第11个位置之间的字符；
+
+        //5.substr(startPos,length):提取指定数目的字符串
+        document.write(mystr.substr(6)+"<br>");    //提取从第6个位置开始直至最后一个之间的字符；
+        document.write(mystr.substr(6,11)+"<br>");    //提取从第6个位置开始共11个字符之间的字符；
+    </script>
+</body>
+</html>

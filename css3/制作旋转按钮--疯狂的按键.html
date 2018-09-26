@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>制作旋转按钮--疯狂的按键</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        li{list-style: none;}
+        img{display: block; width: 100px;height: 100px;}
+        li{display: inline-block;margin: 20px 10px; width: 100px; height: 100px;}
+        /*设置动画效果*/
+        #socialicons img,
+        #socialicon2 img{
+            transition:all 0.8s ease-in-out;
+        }
+        /*设置变形，顺时针旋转360度，放大1.5倍*/
+        #socialicons img:hover{
+            transform:rotate(360deg) scale(1.5);
+        }
+        #socialicon2 img:hover{
+            transform:rotate(-360deg) scale(0.7);
+        }
+    </style>
+</head>
+<body>
+<h1>顺时针旋转360度放大1.2倍</h1>
+<ul id="socialicons">
+    <li><a href="#"><img src="images/icon1.png"/></a></li>
+    <li><a href="#"><img src="images/icon2.png"/></a></li>
+    <li><a href="#"><img src="images/icon3.png"/></a></li>
+    <li><a href="#"><img src="images/icon4.png"/></a></li>
+    <li><a href="#"><img src="images/icon5.png"/></a></li>
+</ul>
+<h1>逆时针旋转360度缩小0.7倍</h1>
+<ul id="socialicon2">
+    <li><a href="#"><img src="images/icon1.png"/></a></li>
+    <li><a href="#"><img src="images/icon2.png"/></a></li>
+    <li><a href="#"><img src="images/icon3.png"/></a></li>
+    <li><a href="#"><img src="images/icon4.png"/></a></li>
+    <li><a href="#"><img src="images/icon5.png"/></a></li>
+</ul>
+</body>
+</html>

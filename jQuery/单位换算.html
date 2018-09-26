@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>单位换算</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<p>126</p>
+<h1></h1>
+<script>
+    var distance = $("p").text();
+    if(distance < 1000)
+        console.log(distance+"米");
+    else if(distance > 1000)
+        console.log((Math.round(distance/100)/10).toFixed(1) + "公里");
+    $(function(){
+        var a = $("p").text();
+        if(a>100&&a<1000)
+        {
+            $("h1").html("大咖")
+        }
+        else
+        {
+            $("h1").html("女神")
+        }
+    })
+</script>
+</body>
+</html>

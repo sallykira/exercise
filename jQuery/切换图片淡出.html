@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>切换图片淡出</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<img src="images/apple_1.jpg">
+<button type="button">切换</button>
+<script>
+
+    $('button').click(function(){
+//        $("img").attr("src","images/apple_2.jpg");
+        $("img").fadeOut().attr("src","images/apple_2.jpg").fadeIn();
+//        setTimeout(a(),3000)
+    });
+</script>
+</body>
+</html>

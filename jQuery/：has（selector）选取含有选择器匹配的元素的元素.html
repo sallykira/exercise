@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>：has（selector）选取含有选择器匹配的元素的元素</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <div><p>测试</p></div>
+    <div><a>测试</a></div>
+<script>
+    $("div:has(p)").css({"color":"red"});   //选取含有p元素的div元素
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>获得电脑当前时间</title>
+</head>
+<body>
+<p id="show"></p>
+<script>
+    function showTime(){
+        var mytime = new Date;
+        document.getElementById("show").innerHTML=(mytime.getHours()+":"+mytime.getMinutes()+":"+mytime.getSeconds());
+    }
+    setInterval(showTime,1000)
+</script>
+</body>
+</html>

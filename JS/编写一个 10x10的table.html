@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>合并单元格</title>
+    <style>
+        *{margin: 0;padding: 0}
+        tr,td{border: 1px solid grey}
+        td{width: 50px;height: 20px}
+        td.on{background: red}
+    </style>
+</head>
+<body>
+<table id="table">
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<script>
+    window.onload = function () {
+        window.sessionStorage.firstPositionX ="";
+        window.sessionStorage.firstPositionY ="";
+        window.sessionStorage.lastPositionX ="";
+        window.sessionStorage.lastPositionY =""
+    }
+    var isMouseDown = false;
+    var firstPosition = [0,0];
+    var ele = document.getElementsByTagName("td");
+    for(var i = 0;i<ele.length ;i++){
+        (function (n) {
+            ele[n].onmousedown = function () {
+                var firstPositionX = n %10 + 1;
+                var firstPositionY = parseInt(n /10) + 1;
+                firstPosition = [firstPositionX,firstPositionY];
+                isMouseDown = true;
+                window.sessionStorage.firstPositionX = firstPositionX;
+                window.sessionStorage.firstPositionY = firstPositionY;
+                console.log("firstPosition"+firstPosition)
+            }
+        })(i);
+
+        (function (n) {
+            ele[n].onmousemove = function () {
+                if(isMouseDown == true) {
+                    var lastPositionX = n % 10 + 1;
+                    var lastPositionY = parseInt(n / 10) + 1;
+                    lastPosition = [lastPositionX, lastPositionY];
+                    isMouseDown = false;
+                    window.sessionStorage.lastPositionX = lastPositionX;
+                    window.sessionStorage.lastPositionY = lastPositionY;
+                    console.log("lastPosition" + lastPosition)
+                }
+            }
+        })(i);
+
+        (function kuang(n) {
+            ele[n].onmouseup = function () {
+                if(isMouseDown == true){
+                    var lastPositionX = n %10 + 1;
+                    var lastPositionY = parseInt(n /10) + 1;
+                    lastPosition = [lastPositionX,lastPositionY];
+                    isMouseDown = false;
+                    window.sessionStorage.lastPositionX = lastPositionX;
+                    window.sessionStorage.lastPositionY = lastPositionY;
+                    console.log("lastPosition"+lastPosition)
+                }
+            }
+        })(i);
+
+
+        (function (n) {
+            var eleX = n %10 + 1;
+            var eleY = parseInt(n /10) + 1;
+            var l_x = compareL(window.sessionStorage.firstPositionX,window.sessionStorage.lastPositionX);
+            var l_y = compareL(window.sessionStorage.firstPositionY,window.sessionStorage.lastPositionY);
+            var b_x = compareB(window.sessionStorage.firstPositionX,window.sessionStorage.lastPositionX);
+            var b_y = compareB(window.sessionStorage.firstPositionY,window.sessionStorage.lastPositionY);
+            if(eleX >= l_x && eleX <= b_x && eleY>=l_y && eleY<=b_y){
+                ele[n].style.backgroundColor = "red"
+            }
+        })(i);
+
+    }
+    function  compareL(a,b) {
+        if(a > b){
+            return b
+        }else if(a==b){
+            return a
+        }else{
+            return a
+        }
+    }
+    function  compareB(a,b) {
+        if(a > b){
+            return a
+        }else if(a==b){
+            return b
+        }else{
+            return b
+        }
+    }
+
+</script>
+</body>
+</html>

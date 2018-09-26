@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <title>框选一段文字并显示</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box}
+        li{list-style: none}
+        .content{padding: 10px;width: 90%;margin: 15px 5% 0}
+        .selected{background: rgba(0,0,0,.5);width: 100%;padding: 15px ;display: none;position: fixed;top: 0;left: 0;}
+        button{margin-left: 10px;background: pink;padding: 15px 20px;}
+    </style>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <p title="选择你最喜欢的水果." >你最喜欢的水果是?</p>
+        <ul>
+            <li title='苹果'>苹果你最喜欢的水果是?你最喜欢的水果是?你最喜欢的水果是?</li>
+            <li title='橘子'>橘子你最喜欢的水果是?你最喜欢的水果是?你最喜欢的水果是?你最喜欢的水果是?你最喜欢的水果是?你最喜欢的水果是?你最喜欢的水果是?</li>
+            <li title='菠萝'>菠萝你最喜欢的水果是?你最喜欢的水果是?</li>
+        </ul>
+        <p title="选择你最喜欢的水果." >你最喜欢的水果是?</p>
+        <ul>
+            <li title='苹果'>苹果</li>
+            <li title='橘子'>橘子</li>
+            <li title='菠萝'>菠萝</li>
+        </ul>
+        <p title="选择你最喜欢的水果." >你最喜欢的水果是?</p>
+        <ul>
+            <li title='苹果'>苹果</li>
+            <li title='橘子'>橘子</li>
+            <li title='菠萝'>菠萝</li>
+        </ul>
+    </div>
+    <button>按钮</button>
+    <div class="selected"></div>
+<script>
+    $("button").on("touchstart",function(){
+        var userSelection = window.getSelection();
+        if (userSelection.rangeCount > 0 && userSelection.type == 'Range') {
+            var range = userSelection.getRangeAt(0);
+            var rangeText = range.toString();		//选中文本
+            window.sessionStorage.rangeText = rangeText;
+            $(".selected").show().html(window.sessionStorage.rangeText);
+        }
+    })
+</script>
+</body>
+</html>

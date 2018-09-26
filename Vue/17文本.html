@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本</title>
+</head>
+<body>
+<div id="demo">
+    <!--1.单行-->
+    <input v-model="message" type="text" placeholder="输入文字">
+    <p>你输入的内容为:{{ message }}</p>
+    <!--2.多行-->
+    <textarea v-model="msg" placeholder="输入文字"></textarea>
+    <p>你输入的内容为:{{ msg }}</p>
+</div>
+
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            message: '',
+            msg: ''
+        }
+    });
+</script>
+</body>
+</html>

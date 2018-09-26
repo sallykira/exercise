@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>tab切换效果</title>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<style>
+/*reset*/
+ul{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+h3{
+	margin: 0px;
+}
+/*tablist*/
+.tablist{
+	width:900px;
+	height: 212px;
+	margin: 56px auto;
+	text-align: center;
+}
+.tablist li{
+	float:left;
+	width: 300px;
+	cursor: pointer;
+}
+.tablist h3{
+	font-size: 24px;
+	margin: 24px 0 12px;
+}
+.tablist p{
+	font-size: 14px;
+	line-height:20px;
+}
+
+.tablist .tablist_logo{
+	width:110px;
+	height:110px;
+	margin: 0 auto;
+	background-size:110px 110px;
+}
+/*join*/
+.tablist .tablist_logo.join{
+	background-image: url(../static/images/icon1.png);
+}
+.tablist .tablist_logo.join:hover,.tablist .tablist_logo.join.current{
+	background-image: url(../static/images/icon1-a.png);
+}
+/*promise*/
+.tablist .tablist_logo.promise{
+	background-image: url(../static/images/icon2.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.tablist .tablist_logo.promise:hover,.tablist .tablist_logo.promise.current{
+	background-image: url(../static/images/icon2-a.png);
+}
+/*award*/
+.tablist .tablist_logo.award{
+	background-image: url(../static/images/icon3.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.tablist .tablist_logo.award:hover,.tablist .tablist_logo.award.current{
+	background-image: url(../static/images/icon3-a.png);
+}
+
+/*tabcon*/
+.tabcon{
+	width:900px;
+	height: 700px;
+	margin: 56px auto;
+}
+.hide{
+	display: none;
+}
+</style>
+</head>
+
+<body>
+<div class="qiehuan">
+	
+
+
+	<ul class="tablist">
+			<!-- 注册-->
+			<li>
+				<div class="tablist_logo join current"></div>
+				<h3>注册</h3>
+				<p>兰蔻 、欧莱雅等精美礼品</p>
+			</li>
+			
+			<!-- 承诺-->
+			<li>
+				<div class="tablist_logo promise"></div>
+				<h3>承诺</h3>
+				<p>我们承诺成功入驻3个月内</p>
+			</li>
+
+			<!-- 奖励-->
+			<li>
+				<div class="tablist_logo award"></div>
+				<h3>奖励</h3>
+				<p>成功推荐入驻</p>
+			</li>
+	</ul>
+
+
+
+	<div class="tabcon">
+		<div>注册页说明</div>
+		<div class="hide">承诺页说明</div>
+		<div class="hide">奖励页说明</div>
+	</div>	
+</div>
+
+<script>
+	/*鼠标点击切换效果*/
+	$(function(){
+		$(".tablist_logo").click(function(){
+			/*$("this").addClass("current").parent().siblings().children().addClass("current").siblings().removeClass("current");  比较繁琐*/
+			$(".tablist_logo").removeClass("current");
+			$(this).addClass("current");
+			$(".tabcon > div").hide().eq($(".tablist_logo").index(this)).show();
+		})
+
+	})
+
+	/*鼠标悬停切换效果*/	
+	$(function(){
+		$(".tablist_logo").mouseover(function(){
+			/*$("this").addClass("current").siblings().removeClass("current");*/
+			$(".tablist_logo").removeClass("current");
+			$(this).addClass("current");
+			$(".tabcon > div").hide().eq($(".tablist_logo").index(this)).show();
+		})
+
+	})
+</script>
+
+</body>
+</html>

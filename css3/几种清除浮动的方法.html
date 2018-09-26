@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>:before和:after清除浮动用法</title>
+    <style>
+        .box1,.box2,.box3{background-color: pink}
+        .small{
+            width: 100px;
+            height: 100px;
+            margin: 0 5px;
+            float: left;
+            background-color: orange;
+        }
+        .position{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            top:50px;
+        }
+        /*box1：增加多余的元素来清除浮动以达到撑起父类高度的目的*/
+        .cl{
+            clear: both;}
+        /*box2：增加：after来清除浮动以达到撑起父类高度的目的*/
+        .clearfix:before,
+        .clearfix:after{
+            content: "";
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        /*box3:在父类上加overflow：hidden来撑起父类的高度*/
+        .box3{
+            overflow: hidden;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="cl"></div><!--需要增加多余的元素来清除浮动以达到撑起父类高度的目的-->
+</div>
+<br/>
+<br/>
+<br/>
+<div class="box2 clearfix">
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+</div>
+<br/>
+<br/>
+<br/>
+<div class="box3">
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="position"></div><!--缺点：1>在IE6下不能完美解决  2>假如在该模块有定位的层就有定位层显示不完整的可能-->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用Slot分发内容--作用域插槽(列表组件)2</title>
+</head>
+<body>
+<div id="demo">
+    <my-awesome-list :items="items">        <!-- 疑惑：为什么写:items='items' -->
+        <!-- 作用域插槽也可以在这里命名 -->
+        <template slot="item" scope="props">
+            <li class="my-fancy-item">{{ props.text }}</li>
+        </template>
+    </my-awesome-list>
+
+</div>
+
+<script src="vue.js"></script>
+<script>
+    Vue.component('my-awesome-list',{
+        <!-- 作用域插槽也可以在这里命名 -->
+        template: '<ul><slot name="item" v-for="item in items" :text="item.text"><!-- fallback content here --></slot></ul>',
+        data: function () {         /*引用的items应该为改组件里的数据*/
+            return{
+                items: [
+                    {text: 'a'},
+                    {text: 'b'},
+                    {text: 'c'}
+                ]
+            }
+        }
+
+    });
+
+    var vm = new Vue({
+        el: '#demo'
+//        data: {                   /*引用的items应该为改组件里的数据，不该写在根实例*/
+//            items: [
+//                {text: 'a'},
+//                {text: 'b'},
+//                {text: 'c'}
+//            ]
+//        }
+    });
+</script>
+</body>
+</html>

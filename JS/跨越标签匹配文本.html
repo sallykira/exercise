@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跨越标签匹配文本</title>
+</head>
+<body>
+<p>
+    <span>我是美女</span><span>你不是</span><span>笨蛋</span>
+</p>
+<script>
+    function delHtmlTag(str){
+        str=str.replace(/^\n+|\n+$/g,"");
+        return str.replace(/<[^>]+>/g,"");
+    }
+    var source_str = "你的那段html";
+    var match_str = "美女你不是笨蛋";
+    source_str = delHtmlTag(source_str);
+    var str_index = source_str.indexOf(match_str);
+    if(str_index != -1) {
+        alert('matched');
+    }else{
+        alert('not match')
+    }
+</script>
+</body>
+</html>

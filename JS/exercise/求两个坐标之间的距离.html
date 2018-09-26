@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>求两个坐标之间的距离</title>
+</head>
+<body>
+<script>
+    var points = [{x: 0,y: 4} , {x: 4,y: 0}];
+    points.dist = function(){   //定义一个方法来计算两点之间的距离
+        var p1 = this[0];       //通过this获得对当前数组的调用
+        var p2 = this[1];       //X坐标轴上的距离
+        var a = p2.x - p1.x;
+        var b = p2.y - p1.y;
+        return Math.sqrt(a*a + b*b);
+    };
+    document.write(points.dist());
+</script>
+</body>
+</html>

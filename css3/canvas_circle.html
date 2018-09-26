@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用Canvas画圆</title>
+    <script src="js/jquery.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<canvas id="c1">你的浏览器不支持HTML5 canvas标签</canvas><!--canvas的尺寸默认为300*150-->
+<script type="text/javascript">
+    var canvas=document.getElementById('c1');
+    var ctx=canvas.getContext('2d');
+    var my_gradient=ctx.createLinearGradient(0,0,170,0);
+    my_gradient.addColorStop(0,"black");
+    my_gradient.addColorStop(1,"white");
+    ctx.fillStyle=my_gradient;
+    ctx.fillRect(20,20,100,100);
+</script>
+</body>
+</html>

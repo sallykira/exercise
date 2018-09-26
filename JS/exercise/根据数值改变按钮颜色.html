@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>根据数值改变按钮颜色</title>
+    <style>
+        *{margin: 0;padding: 0}
+        a{text-decoration: none;padding: 10px 0;margin: 10px;display: block;width: 100px;text-align: center;color: #fff;background: grey}
+        .hasmore{background: orange}
+        /*a.nomore{background: grey}*/
+    </style>
+</head>
+<body>
+<div>
+    <a href="#">唇彩礼品还剩<span>200</span>件</a>
+    <a href="#">护肤礼品还剩<span>0</span>件</a>
+    <a href="#">洁面礼品还剩<span>500</span>件</a>
+</div>
+<script>
+   window.onload = function(){
+       //找到所有span标签
+       var tags = document.getElementsByTagName("span");
+
+       //遍历tags
+       for(var i = 0 ;i<tags.length ;i++){
+           var tag = tags[i];
+           if(tag.innerHTML > 0){
+               tag.parentNode.className = "hasmore";
+           }
+           else{
+               tag.parentNode.className = "";
+           }
+       }
+   }
+</script>
+</body>
+</html>

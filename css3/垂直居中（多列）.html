@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>垂直居中多列</title>
+    <style>
+        /*reset*/
+        dd{padding: 0}
+        img{width:50px;height:50px;border-radius: 50%;margin: 0 auto;}
+        /*main*/
+        dl{display: table;width: 100%;background-color: #808080;height: 250px;}
+        dl dd{display: table-cell;vertical-align:middle;width:20%;box-shadow: -1px 0 orange inset;text-align: center ;}
+    </style>
+</head>
+<body>
+<dl>
+    <dd>
+        <p>标题一</p>
+    </dd>
+    <dd>
+        <p>标题二</p>
+        <p>垂直居中模块加了float会失效</p>
+    </dd>
+    <dd>
+        <p>标题三</p>
+        <p>内容</p>
+        <p>内容</p>
+    </dd>
+    <dd>
+        <img src="http://img.name2012.com/uploads/allimg/2015-06/30-023131_451.jpg">
+        <p>小丸子</p>
+    </dd>
+    <dd>
+        <p>标题三</p>
+        <p>内容</p>
+        <p>内容</p>
+    </dd>
+</dl>
+</body>
+</html>

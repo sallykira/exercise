@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+        a {
+            text-decoration: none;
+        }
+        p,
+        li,
+        a {
+            font-size: 14px;
+        }
+
+
+
+        /* ALL */
+
+
+        .hamburger .line {
+            width: 50px;
+            height: 5px;
+            background-color: #ecf0f1;
+            display: block;
+            margin: 8px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+        .hamburger:hover {
+            cursor: pointer;
+        }
+        /* ONE */
+
+        #hamburger-1.is-active .line:nth-child(2) {
+            opacity: 0;
+        }
+        #hamburger-1.is-active .line:nth-child(1) {
+            -webkit-transform: translateY(13px) rotate(45deg);
+            -ms-transform: translateY(13px) rotate(45deg);
+            -o-transform: translateY(13px) rotate(45deg);
+            transform: translateY(13px) rotate(45deg);
+        }
+        #hamburger-1.is-active .line:nth-child(3) {
+            -webkit-transform: translateY(-13px) rotate(-45deg);
+            -ms-transform: translateY(-13px) rotate(-45deg);
+            -o-transform: translateY(-13px) rotate(-45deg);
+            transform: translateY(-13px) rotate(-45deg);
+        }
+        /* THREE */
+
+        #hamburger-3.is-active .line:nth-child(1),
+        #hamburger-3.is-active .line:nth-child(3) {
+            width: 40px;
+        }
+        #hamburger-3.is-active .line:nth-child(1) {
+            -webkit-transform: translateX(-10px) rotate(-45deg);
+            -ms-transform: translateX(-10px) rotate(-45deg);
+            -o-transform: translateX(-10px) rotate(-45deg);
+            transform: translateX(-10px) rotate(-45deg);
+        }
+        #hamburger-3.is-active .line:nth-child(3) {
+            -webkit-transform: translateX(-10px) rotate(45deg);
+            -ms-transform: translateX(-10px) rotate(45deg);
+            -o-transform: translateX(-10px) rotate(45deg);
+            transform: translateX(-10px) rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <!--<div class="container">-->
+        <!--<div class="row cf">-->
+            <!--<div class="three col">-->
+                <!--<div class="hamburger" id="hamburger-1">-->
+                    <!--<span class="line"></span>-->
+                    <!--<span class="line"></span>-->
+                    <!--<span class="line"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="hamburger" id="hamburger-1">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </div>
+    <div class="three col">
+        <div class="hamburger" id="hamburger-3">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </div>
+<script>
+    $(document).ready(function() {
+        $(".hamburger").click(function() {
+            $(this).toggleClass("is-active");
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>弹出提示</title>
+    <style>
+        .overflow{width: 400px;background-color:orange;border: 1px solid #000000;margin: 200px auto;position: relative;overflow: hidden;height:200px;}
+        .absolute_box{width: 400px;position: relative;height: 50px;background-color: mediumpurple;}
+        .absolute{width: 500px;background-color: dodgerblue;height: 50px;position: absolute;top: 50px;/*display: none;*/}
+    </style>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<div class="overflow">
+    <h1>在overflow情况下显示absolute</h1>
+    <div class="absolute_box">
+        <div class="absolute"></div>
+    </div>
+</div>
+<script>
+    $(".overflow").mouseover(function(){
+        $(".absolute").show();
+    });
+    $(".overflow").mouseleave(function(){
+        $(".absolute").hide();
+    });
+</script>
+</body>
+</html>

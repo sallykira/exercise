@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>处理用户输入</title>
+</head>
+<body>
+<div id="demo">
+    <p>{{message}}</p>
+    <button type="button" v-on:click="reverseMessage">ReverseMessage（颠倒文字）</button>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el: '#demo',
+        data: {
+            message: 'Hello Vue.js!'
+        },
+        methods: {
+            reverseMessage: function(){
+                this.message = this.message.split(" ").reverse().join();    //1.split方法将字符串拆成数组； 2.reverse方法将拆好的数组前后颠倒，并返回数组 3.join方法将颠倒后的数组合并成字符串
+            }
+        }
+    });
+</script>
+</body>
+</html>

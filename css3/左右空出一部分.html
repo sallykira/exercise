@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>左右空出一部分</title>
+    <style>
+        *{margin: 0;padding: 0}
+        div{height: 50px;}
+        /*方法二：*/
+        #main { position:absolute; left:70px; right:70px }
+        #left, #right { width:70px; }
+        #left { float:left; }
+        #right { float:right; }
+    </style>
+</head>
+<body>
+    <!--1. 左右侧采用浮动 中间采用margin-left 和 margin-right 方法:右浮动的放在最前-->
+    <div style="width:100%; margin:20px auto;">
+        <div style="width:70px; float:right; background-color:#960">右</div>
+        <div style="width:80px; float:left; background:#6FF">左</div>
+        <div style="margin-left:80px;margin-right:70px; background-color:#9F3">中间</div>
+    </div>
+
+    <!--2. 左右两侧采用绝对定位 中间同样采用margin-left margin-right方法：-->
+    <div id="main"><p style="height:50px; background:#fffaba; ">content</p></div>
+    <div id="left"><p style="height:50px; background:#8fc41f;">left</p></div>
+    <div id="right"><p style="height:50px; background:#00b7ef;">right</p></div>
+</body>
+</html>

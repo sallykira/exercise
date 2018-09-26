@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>规定字数</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <p class="bt">这里一共有十个汉字啊</p>
+    <script>
+        $(function () {
+            $(".bt").each(function () {
+                var maxLength = 5;
+                if ($(this).text().length > maxLength) {
+                    var b = $(this).children().is("a");
+                    if (b) {
+                        $(this).children().text($(this).children().text().substring(0, maxLength) );
+                    } else {
+                        $(this).text($(this).text().substring(0, maxLength));
+                        $(this).text($(this).text() );
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>（练习）制作表格，显示班级的学生信息</title>
+    <style>
+        .active{background: #f2f2f2}
+        tr{background: #fff}
+    </style>
+</head>
+<body>
+    <strong>编程练习</strong>
+    <p>制作一个表格，显示班级的学生信息。</p>
+    <strong>要求：</strong>
+    <p>1. 鼠标移到不同行上时背景色改为色值为 #f2f2f2，移开鼠标时则恢复为原背景色 #fff</p>
+    <p>2. 点击添加按钮，能动态在最后添加一行</p>
+    <p>3. 点击删除按钮，则删除当前行</p>
+    <br><br><br><br>
+    <strong>解答：</strong>
+    <table border="1" width="50%" id="table">
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>操作</th>
+        </tr>
+
+        <tr>
+            <td>xh001</td>
+            <td>王小明</td>
+            <td><a href="javascript:;" onclick="delRow(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+        </tr>
+
+        <tr>
+            <td>xh002</td>
+            <td>刘小芳</td>
+            <td><a href="javascript:;" onclick="delRow(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+        </tr>
+
+    </table>
+    <input type="button" value="添加一行"  onclick="addRow()"/>   <!--在添加按钮上添加点击事件  -->
+
+    <script>
+        window.onload = function(){
+            Highlight();
+        };
+        // 鼠标移动改变背景,可以通过给每行绑定鼠标移上事件和鼠标移除事件来改变所在行背景色。
+//        window.onload = function(){
+        function Highlight() {
+            var trs = document.getElementsByTagName("tr");
+            for(var i = 1; i<trs.length ;i++){
+                trs[i].onmouseover = function(){    //鼠标移上时增加active样式
+                    this.className = "active";
+                };
+                trs[i].onmouseout = function(){     //鼠标移除时移除active样式
+                    this.className = "";
+                }
+            }
+        }
+
+        // 编写一个函数，供添加按钮调用，动态在表格的最后一行添加子节点；
+        function addRow(){
+            var table = document.getElementById("table");
+            var tr = document.createElement("tr");
+
+            var td = document.createElement("td");
+            td.innerHTML = "<input type='text'>";
+            tr.appendChild(td);
+
+            td = document.createElement("td");
+            td.innerHTML = "<input type='text'>";
+            tr.appendChild(td);
+
+            td = document.createElement("td");
+            td.innerHTML = "<a href='javascript:;' onclick='delRow(this)'>删除</a>";
+            tr.appendChild(td);
+
+            table.appendChild(tr);
+            Highlight();
+        }
+
+        // 创建删除函数
+        function delRow(obj){
+            var table = document.getElementById('table').lastChild;
+            var tr = obj.parentNode.parentNode;
+            table.removeChild(tr)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机生成颜色</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        *{margin: 0;padding: 0}
+        .box{width: 100px;margin: 0 auto}
+        .box>div{width: 100px;height: 100px;margin: 10px 0}
+    </style>
+</head>
+<body>
+<div class="box">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<script>
+    $(function () {
+        $(".box>div").each(function () {
+            var r = parseInt(Math.random()*255);
+            var g = parseInt(Math.random()*255);
+            var b = parseInt(Math.random()*255);
+            $(this).css({"background":"rgba(" + r + "," + g + "," + b + ",1)"})
+        })
+    })
+</script>
+</body>
+</html>

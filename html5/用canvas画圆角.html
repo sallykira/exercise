@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>y用canvas画圆角</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="625" height="605"></canvas>
+    <script>
+        var canvas = document.querySelector("#myCanvas"),image = new Image();
+        var context = canvas.getContext("2d");
+        image.onload = function(){
+//            创建图片纹理
+            var pattern = context.createPattern(image,"no-repeat");
+//            绘制一个圆
+            context.arc(312.5,302.5,0,2*Math.PI);
+//            填充绘制的圆
+            context.fillStyle = pattern;
+            context.fill();
+        }
+        image.src = "http://b.hiphotos.baidu.com/zhidao/pic/item/c995d143ad4bd113b2e8a9125bafa40f4bfb05ec.jpg"
+    </script>
+</body>
+</html>

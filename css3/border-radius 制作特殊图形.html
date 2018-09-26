@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>border-radius 制作特殊图形</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            border-radius: 50%;
+        }
+        .semicircle{
+            background-color: orange;
+            margin: 30px;
+            display: inline-block;
+        }
+        .semicircle.top{
+            width: 100px;
+            height: 50px;
+            border-radius: 50px 50px 0 0;
+        }
+        .semicircle.right{
+            width: 50px;
+            height: 100px;
+            border-radius: 0 50px 50px 0;
+        }
+        .semicircle.bottom{
+            width: 100px;
+            height: 50px;
+            border-radius: 0 0 50px 50px;
+        }
+        .semicircle.left{
+            width: 50px;
+            height: 100px;
+            border-radius: 50px 0 0 50px;
+        }
+        .quarterCircle{
+            background-color: hotpink;
+            margin: 30px;
+            display: inline-block;
+        }
+        .quarterCircle.top{
+            width: 100px;
+            height: 100px;
+            border-radius: 100px 0 0 0;
+        }
+        .quarterCircle.right{
+            width: 100px;
+            height: 100px;
+            border-radius: 0 100px 0 0;
+        }
+        .quarterCircle.bottom{
+            width: 100px;
+            height: 100px;
+            border-radius: 0 0 100px 0;
+        }
+        .quarterCircle.left{
+            width: 100px;
+            height: 100px;
+            border-radius: 0  0 0 100px;
+        }
+        .oval{
+            background-color: dodgerblue;
+            margin: 30px;
+        }
+        .oval.hov{
+            width: 200px;
+            height: 100px;
+            border-radius: 100px / 50px;
+        }
+        .oval.ver{
+            display: inline-block;
+            width: 100px;
+            height: 200px;
+            border-radius: 50px / 100px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="semicircle"></div>
+<div class="semicircle top"></div>
+<div class="semicircle right"></div>
+<div class="semicircle bottom"></div>
+<div class="semicircle left"></div>
+<div class="quarterCircle"></div>
+<div class="quarterCircle top"></div>
+<div class="quarterCircle right"></div>
+<div class="quarterCircle bottom"></div>
+<div class="quarterCircle left"></div>
+<div class="oval hov"></div>
+<div class="oval ver"></div>
+
+</body>
+</html>

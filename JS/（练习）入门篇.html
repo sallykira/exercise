@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" Content="text/html; charset=utf-8" />
+    <title>javascript</title>
+    <style type="text/css">
+        body{font-size:12px;}
+        #txt{
+            height:400px;
+            width:600px;
+            border:#333 solid 1px;
+            padding:5px;}
+        p{
+            line-height:18px;
+            text-indent:2em;}
+    </style>
+</head>
+<body>
+<h2 id="con">JavaScript课程</H2>
+<div id="txt">
+    <h5>JavaScript为网页添加动态效果并实现与用户交互的功能。</h5>
+    <p>1. 定义"改变颜色"的函数</p>
+    <p>2. 定义"改变宽高"的函数</p>
+    <p>3. 定义"隐藏内容"的函数</p>
+    <p>4. 定义"显示内容"的函数</p>
+    <p>5. 定义"取消设置"的函数</p>
+    <p>6. 当点击相应按钮，执行相应操作，为按钮添加相应事件</p>
+</div>
+<form>
+    <!--当点击相应按钮，执行相应操作，为按钮添加相应事件-->
+    <input type="button" value="改变颜色" onclick="colorChange()">
+    <input type="button" value="改变宽高" onclick="whChange()">
+    <input type="button" value="隐藏内容" onclick="hideTxt()">
+    <input type="button" value="显示内容"  onclick="showTxt()">
+    <input type="button" value="取消设置"  onclick="cancelTxt()">
+</form>
+<script type="text/javascript">
+    var obj = document.getElementById("txt");
+    //定义"改变颜色"的函数
+    function colorChange(){
+        obj.style.color="red";
+    }
+
+    //定义"改变宽高"的函数
+    function whChange(){
+        obj.style.width="400px";
+        obj.style.height="400px";
+    }
+
+    //定义"隐藏内容"的函数
+    function hideTxt(){
+        obj.style.display="none";
+    }
+
+    //定义"显示内容"的函数
+    function showTxt(){
+        obj.style.display="block";
+    }
+
+    //定义"取消设置"的函数
+    function cancelTxt(){
+        var reset=confirm("确定重置？")
+        if(reset==true)
+        {
+            obj.removeAttribute("style")
+        }
+    }
+
+
+</script>
+</body>
+</html>

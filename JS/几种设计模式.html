@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>几种设计模式</title>
+</head>
+<body>
+<script>
+//1.工厂模式
+// 好处：1）可以消除对象间的耦合，通过使用工程方法而不是new关键字。将所有实例化的代码集中在一个位置防止代码重复;
+//      2）解决重复实例化;
+// 缺点：1）无法识别对象的类型;
+    function createPerson(name,age,sex){
+        var obj = new Object();
+        obj.name = name;
+        obj.age = age;
+        obj.sex = sex;
+        obj.sayname = function () {
+            return this.name;
+        };
+        return obj;
+    }
+    var person1 = createPerson('Sally','24','girl');
+    console.log('person1的名字' + person1.name);
+    console.log(person1.sayname());
+
+//2.构造函数
+// 特点：
+// 1）方法名大写;
+// 2）构造函数里没有显示的创建对象(new object());
+// 3）直接属性还有方法传给this;
+// 4）没有return语句;
+// 优点：
+// 1）即解决了重复实例化的问题 ，又解决了对象识别的问题;
+    function Person(name,age,sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.sayname = function (){
+            return this.name;
+        }
+    }
+    var p1 = new Person('Kira','25','boy');
+    console.log('p1的名字' + p1.name);
+
+//3. 原型模式
+//每个函数都有prototype(原型属性)，该属性是一个指针指向一个对象
+// 好处
+// 1)所有对象实例都能共享它所包含的属性和方法
+// 注意
+// 1）可以通过实例来访问原型的值，但是不能通过实例来改变原型的值
+    function Human(){}
+    Human.prototype.name = 'Rose';
+    Human.prototype.age = '48';
+    Human.prototype.sex = 'girl';
+    Human.prototype.sayname = function(){
+        console.log(this.name)
+    };
+    var Human1 = new Human();
+    Human1.sayname();
+    var Human2 = new Human();
+    Human2.sayname();
+    console.log(Human1.sayname == Human2.sayname);
+    console.log('Human1 hasOwnProperty为' + Human1.hasOwnProperty('name'));  //false---来自原型
+    Human1.name = 'Sasa';
+    console.log('Human1.name:' + Human1.name);  //Sasa---来自实例
+    console.log('Human2.name:' + Human2.name);  //Rose---来自原型
+    console.log('Human1 hasOwnProperty为' + Human1.hasOwnProperty('name'));  //true---来自实例
+    delete Human1.name;
+    console.log('Human1 hasOwnProperty为' + Human1.hasOwnProperty('name'));  //false---来自原型
+    console.log('Human1.name:' + Human1.name);  //Rose---来自原型
+    //in的用法
+    Human1.emotion = 'happy';
+    console.log('Human1.emotion:' + ('emotion' in Human1)); //true---来自实例
+    delete Human1.emotion;
+    console.log('Human1.emotion:' + Human1.emotion);    //undefined
+    console.log('Human1.emotion:' + ('emotion' in Human1)); //false---来自原型
+    console.log('Human2.emotion:' + ('emotion' in Human2)); //false---来自原型
+</script>
+</body>
+</html>

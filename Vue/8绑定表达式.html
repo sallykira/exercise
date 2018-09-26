@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定表达式</title>
+</head>
+<body>
+<!--1.Javascript表达式-->
+<div>{{ number + 1}}</div>
+<div>{{ ok ? 'YES' : 'NO'}}</div>
+<div>{{ message.split('').reverse().join()}}</div>
+
+<div>{{ var a = 1 }}</div>   <!--无效：这是语句，不是表达式-->
+<div>{{ if(ok){ return message } }</div>   <!--无效：不可以流程控制，可改为三元表达式-->
+
+<!--2.过滤器-->
+<div>{{ message | capitalize }}</div>   <!--message的值"管输"到内置的capitalize过滤器-->
+<div>{{ message |　fiterA | filterB }}</div>     <!--串联-->
+<div>{{ message | filterA ('arg1' arg2) }}</div>      <!--接受参数-->
+
+</body>
+</html>

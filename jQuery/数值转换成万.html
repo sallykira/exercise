@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>数值转换成万</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<p class="count">656665000</p>
+<script>
+    $(function(){
+        changeUnit();
+    });
+    function changeUnit(){
+        var num = $(".count").text();
+        if(num >= 100000.00){
+            $(".count").text((num/10000).toFixed(0)+"万");
+        }
+    }
+</script>
+</body>
+</html>

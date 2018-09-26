@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机生成一定范围内的数值</title>
+</head>
+<body>
+<script>
+    window.onload = function(){
+        var i = 5,j = 1;
+        var a = Math.random();      //随机生成[0,1)范围内的数值；
+        var b = Math.random()*i + j;    //随机生成[1,6)范围内的数值；
+        var c = Math.floor(Math.random()*i + j);    //随机生成大于等于1，小于6的整数(其中Math.floor向下取整数)
+        console.log(a);
+        console.log(b);
+        console.log(c);
+    }
+</script>
+</body>
+</html>

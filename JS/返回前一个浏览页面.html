@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>返回前一个浏览</title>
+</head>
+<body>
+点击下面的锚点链接，添加历史列表项:
+
+<br />
+<a href="#target1">第一个锚点</a>
+<a name="target1"></a>
+<br />
+<a href="#target2">第二个锚点</a>
+<a name="target2"></a>
+<br>
+<a href="#target3">第三个锚点</a>
+<a name="target3"></a>
+<br />
+<a href="#target4">第四个锚点</a>
+<a name="target4"></a>
+<!--<a href="http://www.baidu.com">百度</a>
+<a href="http://www.qq.com">QQ</a>-->
+<br /><br />
+使用下面按钮，实现返回前一个页面:
+<form>
+    <input type="button"  value="返回前一个页面" onclick="GoBack();" />
+</form>
+<script>
+    function GoBack(){
+        window.history.back();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>小车动画</title>
+    <style>
+        @keyframes drive{
+            0%{
+                transform:translateX(0);
+            }
+            100%{
+                transform:translateX(400px);
+            }
+        }
+        .car{
+            width: 220px;
+        }
+        .car{
+            animation-name:drive;/*引用动画的名字*/
+            animation-duration:2s;/*动画持续的时间*/
+            animation-timing-function:ease;/*动画过渡的速度*/
+            animation-iteration-count:infinite;/*动画重复的次数*/
+        }
+
+        @keyframes ballroll{
+            0%{
+                transform:translateX(100px) rotate(0);
+            }
+            20%{
+                transform:translateX(-10px) rotate(-0.5turn);
+            }
+            100%{
+                transform:translate(450px) rotate(2turn);
+            }
+        }
+        .ball{
+            width: 100px;
+        }
+        .ball{
+            animation-name:ballroll;
+            animation-duration:4s;
+            animation-delay:2s;
+            animation-fill-mode:both;
+        }
+    </style>
+</head>
+<body>
+<img class="car" src="images/redcar.png" />
+<br>
+<img class="ball" src="images/ball.png" />
+</body>
+</html>

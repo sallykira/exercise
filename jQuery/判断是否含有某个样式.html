@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>判断是否含有某个样式</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        .bold{font-weight: bold}
+    </style>
+</head>
+<body>
+<p class="bold">测试测试测试</p>
+<button type="button">按钮</button>
+<script>
+    $("button").click(function(){
+//        if($("p").hasClass("bold")){      //实际上是调用了is()方法的
+        if($("p").is(".bold")){
+            alert("有样式")
+        }else{
+            alert("没有样式")
+        }
+    })
+</script>
+</body>
+</html>

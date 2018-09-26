@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杂项--组件命名约定</title>
+</head>
+<body>
+    <div id="demo">
+        <!-- 在HTML模版中始终使用 kebab-case(短横杠) -->
+        <kebab-cased-component></kebab-cased-component>
+        <camel-cased-component></camel-cased-component>
+        <title-cased-component></title-cased-component>
+    </div>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        components: {
+            //当注册组件（或者 props）时，可以使用 kebab-case ，camelCase ，或 TitleCase ;
+            // 1.使用 kebab-case(短横杠) 形式注册
+            'kebab-cased-component': { /* ... */ },
+            // 2.使用 camelCase(驼峰) 形式注册
+            'camelCasedComponent': { /* ... */ },
+            // 3.使用 TitleCase 形式注册
+            'TitleCasedComponent': { /* ... */ }
+        }
+    });
+</script>
+</body>
+</html>

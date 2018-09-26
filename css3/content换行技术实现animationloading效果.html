@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        dot {
+            display: inline-block;
+            height: 1em; line-height: 1;
+            vertical-align: -.25em;
+            overflow: hidden;
+        }
+        dot::before {
+            display: block;
+            content: '...\A..\A.';
+            white-space: pre-wrap;
+            animation: dot 3s infinite step-start both;
+        }
+        .loading::after {
+            display: inline-table;
+            content: "\A.\A..\A...";
+            white-space: pre;
+            animation: spin4 2s steps(4) infinite;
+        }
+        @keyframes dot {
+            33% { transform: translateY(-2em); }
+            66% { transform: translateY(-1em); }
+        }
+    </style>
+
+</head>
+<body>
+    <a href="javascript:" class="grebtn">订单提交中<dot>...</dot></a>
+    <span class="loading"></span>
+</body>
+</html>

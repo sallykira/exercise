@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传文件</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<input class="filelogo" id="fileLogo" type="file" name="logo" placeholder="选填" accept="application/pdf" onchange="handleFile(this.value)">
+<input type="text" disabled="disable" value="文件名" id="fileLogoName">
+<a href="" download=""></a>
+<script>
+    function handleFile(val){
+
+        var name = val.split("\\");
+        var fileLogoName = name[name.length-1];
+        fileLogoName.value = fileLogoName;
+        console.log(val)
+        $("a").attr("href",val).html(val)
+    }
+</script>
+</body>
+</html>

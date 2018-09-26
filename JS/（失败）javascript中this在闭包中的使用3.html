@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript中this在闭包中的使用3</title>
+</head>
+<body>
+<script>
+    var add;
+    var bar = function(){
+        var n = 999;
+        add = function(){
+            n += 1;
+        };
+        return function(){
+            return n;
+        }
+    };
+    var outer = bar();
+    outer();        //999
+    add();      //1000
+    outer();    //999
+</script>
+</body>
+</html>

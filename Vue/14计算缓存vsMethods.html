@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14计算缓存vsMethods</title>
+</head>
+<body>
+<div id="demo">
+    <!--<p>{{reverseMessage()}}</p>-->
+    <p>{{message}}</p>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            message: 'Hello'
+        },
+//        computed:{    //计算属性是基于他的依赖缓存
+//            now: function () {
+//                return Date.now()
+//            }
+//        },
+        methods: function (){   //methods调用总会执行函数
+            return this.message.split('').reverse().join('')
+        }
+    });
+</script>
+</body>
+</html>

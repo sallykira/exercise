@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用Slot分发内容--编译作用域</title>
+</head>
+<body>
+<div id="demo">
+    <!--父组件模板的内容在父组件作用域内编译；子组件模板的内容在子组件作用域内编译。-->
+    <child-component>{{ msg }}</child-component>    <!--正确-->
+    <child-component v-show="someChildProperty"></child-component>  <!--疑惑：为什么这是是子组件的属性/方法--><!--错误：父组件模板中不能将一个指令绑定到子组件的属性/方法-->
+</div>
+
+<script src="vue.js"></script>
+<script>
+    Vue.component('child-component',{
+        template: '<div v-show="someChildProperty"></div>'     // 有效，因为是在正确的作用域内
+    });
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            msg: 'lala'
+        }
+    })
+</script>
+</body>
+</html>

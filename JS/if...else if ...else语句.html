@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>if...else if...else语句</title>
+    <script>
+        var d = new Date()
+        var time= d.getHours()  /*也可以写成：var time=new Date().getHours();*/
+        if(time<10)
+        {
+            document.write("Good morning!~")
+        }
+        else if(time>=10&&time<16)
+        {
+            document.write("Good day！~")
+        }
+        else
+        {
+            document.write("Good evening!~")
+        }
+    </script>
+</head>
+<body>
+<p>本例演示 If 语句。</p>
+<p>如果浏览器时间小于 10，那么会向您问“早安”。</p>
+<p>Date()是系统内部函数,var d定义变量,var d=new date()这句是新建一个对象d建好对象后d就有函数date()中的所有特性,var time=d.getHours()获取你现在的小时。</p>
+</body>
+</html>

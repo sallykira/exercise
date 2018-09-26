@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引用文件后面加版本号</title>
+</head>
+<body>
+<script>
+
+    var wz_onerror = function() {
+        alert("网络不给力，请稍后再试！")
+    };
+    var wz_load_file = function(a, c, e) {
+        var version = parseInt(Math.random()*1000);
+        if (c == "js") {
+            var d = document.createElement("SCRIPT");
+            d.setAttribute("type", "text/javascript");
+            d.setAttribute("src", a + "?v=" + version)
+        } else {
+            if (c == "css") {
+                var d = document.createElement("LINK");
+                d.setAttribute("rel", "stylesheet");
+                d.setAttribute("type", "text/css");
+                d.setAttribute("href", a + "?v=" + version)
+            } else {
+                return
+            }
+        }
+        d.onload = e;
+        d.onerror = wz_onerror;
+        document.getElementsByTagName("head")[0].appendChild(d)
+    };
+
+
+
+    (function b(e, h) {
+        var g, i = b;
+        if ((g = e.pop())) {
+            wz_load_file(g, h,
+                    function() {
+                        i(e, h)
+                    })
+        }
+    })(["js/highcharts.js", "js/jquery.cookie.js", "js/jquery-2.1.4.min.js"], ["js"]);
+    (function b(e, h) {
+        var g, i = b;
+        if ((g = e.pop())) {
+            wz_load_file(g, h,
+                    function() {
+                        i(e, h)
+                    })
+        }
+    })(["css/jquery.multiSelect.css", "css/traversingDown.css"], ["css"]);
+</script>
+</body>
+</html>

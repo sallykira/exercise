@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>创建新的HTML元素</title>
+</head>
+<body>
+<div id="div1">
+    <p>appenChild是指在置顶元素节点的最后一个节点之后添加节点</p>
+    <p>这也是一段段落</p>
+</div>
+<button type="button" onclick="myFunction()">新增</button>
+<script>
+    function myFunction()
+    {
+        var newDiv=document.createElement("p");
+        var node=document.createTextNode("这是一个新的段落");
+        newDiv.appendChild(node);
+        var div= document.getElementById("div1");
+        div.appendChild(newDiv);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+#div1{
+    width: 500px;
+    height: 200px;
+    border: solid 3px chocolate;
+}
+#div2{
+    width: 400px;
+    height: 150px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: solid 3px chocolate;
+}p{
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 150px;
+    height: 80px;
+    border: solid 3px chocolate;
+ }
