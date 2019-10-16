@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数带参数调用的几种方法</title>
+</head>
+<body>
+<script>
+    // 1.展开运算符
+    const doSm1 = (foo = 1, bar = 'hi') => {
+       // do something
+       console.log("foo:" + foo);
+       console.log("bar:" + bar);
+    }
+    const args = [2, 'hello']
+    doSm1(...args);
+
+    // 2.解构
+    const doSm2 = ({foo2 = 1, bar2 = "hi2"}) => {
+        // do something
+        console.log("foo2:" + foo2);
+        console.log("bar2:" + bar2);
+    }
+    const args2 = {foo2: 3, bar: 'hello2'}
+    doSm2(args2);
+
+</script>
+</body>
+</html>

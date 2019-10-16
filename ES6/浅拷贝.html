@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浅拷贝</title>
+</head>
+<body>
+<script>
+    // 实现浅拷贝的方法
+    // 方法一：用展开运算符 ...
+    let a = {
+        age: 18
+    }
+    let b = {...a}
+    a.age = 19;
+    console.log(a.age) // 19
+    console.log(b.age) // 18
+
+    // 方法二：用Object.assign
+    let c = {
+        age: 18
+    }
+    let d = Object.assign({}, c);
+    c.age = 19;
+    console.log(c.age) // 19
+    console.log(d.age) // 18
+</script>
+</body>
+</html>
