@@ -4,16 +4,53 @@
     <meta charset="UTF-8">
     <title>虚线</title>
     <style>
-        div{
+        /* .line{
             width: 100px;
             height: 1px;
             background-image: linear-gradient(to right, #000 0%, #ccc 50%, transparent 50%);
             background-size: 8px 1px;
             background-repeat: repeat-x;
+        } */
+        .container{
+            /* width: 100px;
+            height: 50px;
+            border:10px solid #000; */
+            /* border:10px solid #ddd; */
+            /* border-image: linear-gradient(#F80, #2ED) 20 20; */
+            /* border-image: linear-gradient(to right, #000 0%, #ccc 50%, transparent 50%) 20 20; */
+            /* border-image: repeating-linear-gradient(
+                90deg,
+                red 0px,
+                red 10px,
+                #fff 10px,
+                #fff 14px
+                ) 10 10; */
+            /* padding: 1em; */
+            width: 100px;
+            height: 100px;
+            position: relative;
+            /* border: 1px dashed transparent; */
+            /* background: linear-gradient(pink,pink) padding-box,
+            repeating-linear-gradient(-45deg,#000 0, #000 0.25em,pink 0,pink 0.75em); */
+        }
+        .container::after {
+            border: 1px solid #fff; 
+            background: transparent;
+            
+            display: block;
+            content: " ";
+            height: 100%;
+            width: 100%;
+            
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
         }
     </style>
 </head>
 <body>
-    <div></div>
+    <!-- <div class='line'></div> -->
+    <div class='container'></div>
 </body>
 </html>

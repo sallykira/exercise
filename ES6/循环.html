@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>循环</title>
+</head>
+
+<body>
+  <script>
+    // for循环：最普通最普遍，可读性和易维护性比较差
+    // 循环中途能停止，用break出循环
+    let arrFor = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+    for (let i = 0; i < arrFor.length; i++) {
+      console.log(arrFor[i])
+      if (i == 2) {
+        console.log('结束')
+        break;
+      } else {
+        console.log('i是' + i)
+      }
+    }
+
+    console.log('--------------------------------------------')
+
+    // for...in：主要针对于对象的遍历，来获取对象的对应键值
+    // 循环中途能停止，用break出循环
+    let objForIn = { name: 'sally', sex: 'male', age: '18' }
+    for (let key in objForIn) {
+      if (objForIn.hasOwnProperty(key)) {
+        console.log(objForIn[key])
+        if (objForIn[key] === 'male') {
+          console.log(objForIn[key])
+          break
+        } else {
+          console.log(objForIn[key])
+        }
+      }
+    }
+
+    console.log('--------------------------------------------')
+
+    // map：将数组的所有成员依次传入参数函数，然后把每一次的执行结果组成一个新数组返回
+    // 循环中途是无法停止的，总是会将所有成员遍历完
+    let arrMap = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+    let arrMapNew = arrMap.map((n) => {
+      return n + 'z'
+    })
+    console.log(arrMapNew) // ["az", "bz", "cz", "dz", "ez", "fz", "gz"]
+
+
+    // map方法接受一个函数作为参数。该函数调用时，map方法向它传入三个参数：当前成员、当前位置和数组本身。
+    let arrObjMap = [{
+      id: 1,
+      name: 'xiaohua'
+    }, {
+      id: 2,
+      name: 'xiaomin'
+    }, {
+      id: 3,
+      name: 'xiaobai'
+    }]
+    arrObjMap.map((item, index, arr) => {
+      console.log(arr) // arrObjMap
+      console.log(index)  // 0 1 2
+      console.log(item.name) // xiaohua xiaomin xiaobai
+    })
+
+    console.log('--------------------------------------------')
+
+    // forEach的使用方法和map使用方法差不多,只是forEach方法不返回值，只用来操作数据
+    // 循环中途是无法停止的
+    let arrObjForeach = [{
+      id: 1,
+      name: 'xiaohua'
+    }, {
+      id: 2,
+      name: 'xiaomin'
+    }, {
+      id: 3,
+      name: 'xiaobai'
+    }]
+    arrObjForeach.forEach((item, index, arr) => {
+      console.log(arr) // arrObjForeach
+      console.log(index)  // 0 1 2
+      console.log(item.name) // xiaohua xiaomin xiaobai
+    })
+
+    console.log('--------------------------------------------')
+
+    console.log()
+    let arrObjFilter = [{
+      id: 1,
+      name: 'xiaohua'
+    }, {
+      id: 2,
+      name: 'xiaomin'
+    }, {
+      id: 3,
+      name: 'xiaobai'
+    }]
+    let arrObjFilter2 = arrObjFilter.filter((item, index, arr) => {
+      return (item.name === 'xiaohua')
+    })
+    console.log(arrObjFilter)  // [{id:1,name:'xiaohua}]
+
+    console.log('--------------------------------------------')
+    
+    // 1,1,2,3,5,8,...   第n个数值的值
+    function feiBo(n) {
+      //俩if约定前两项
+      if (n == 1) {
+        return 1;
+      }
+      if (n == 0) {
+        return 0;
+      }
+      return feiBo(n - 1) + feiBo(n - 2);//递归继续调用函数
+    }
+    var result = feiBo(4);
+    console.log(result);
+  </script>
+</body>
+
+</html>
